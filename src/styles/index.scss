@@ -1,10 +1,17 @@
+// fonts
 @import url('https://fonts.googleapis.com/css2?family=Nabla&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Maven+Pro&display=swap');
 $font: 'Nabla', cursive;
 $font2: 'Maven Pro', sans-serif;
 
+// colors
 $primary-color: #F6A700;
 $hover-color: #ffc74e;
+$lighter: #ffefce;
+
+// shodow
+$text-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+$box-shadow: 0 25px 50px -12px rgba(0, 0, 0, .25);
 
 body {
     background: #fff;
@@ -41,16 +48,36 @@ h2 {
     font-size: 3.5rem;
     font-weight: 900;
     color: $primary-color;
-    text-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
     margin: 0;
 }
 
+h3 {
+    font-size: 2.5rem;
+    font-weight: 900;
+    color: #000;
+    margin: 0;
+}
+
+
+
+
+
+
+// My Utilities --------------------
 .container {
     padding: 0 6rem;
 }
 
+.hidden {
+    display: inline;
+}
 
-// COMPONENT STYLES
+.d-block {
+    display: block;
+}
+
+// COMPONENT STYLES-----------------
+
 #primary-btn {
     padding: 0.8rem 2rem;
     background: $primary-color;
@@ -87,6 +114,10 @@ h2 {
         padding: 0 2rem;
     }
 
+    .hidden {
+        display: none;
+    }
+
     #primary-btn {
         padding: 0.4rem 0.9rem;
         font-size: 0.8rem;
@@ -95,5 +126,12 @@ h2 {
     h2 {
         font-size: 2.2rem;
         font-weight: 700;
+    }
+
+    h3 {
+        font-size: 1.8rem;
+        font-weight: 700;
+        color: #000;
+        margin: 0;
     }
 }
