@@ -1,0 +1,13 @@
+body {
+    background: #fff;
+}
+
+.container {
+    padding: 0 6rem;
+}
+
+@media screen and (max-width: 860px) {
+    .container {
+        padding: 0 2rem;
+    }
+}
