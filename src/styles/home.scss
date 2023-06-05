@@ -10,7 +10,7 @@
         width: 500px;
         height: 90vh;
         background: linear-gradient(45deg, $primary-color, $hover-color);
-        box-shadow: 0 25px 50px -12px rgba(0, 0, 0, .25);
+        box-shadow: $box-shadow;
     }
 
     #atf {
@@ -33,7 +33,8 @@
         button {
             background: $primary-color;
             border: none;
-            padding: 0.6rem 2rem;
+            padding: 0.6rem 4rem;
+            margin: 1.5rem 0 0.4rem;
             border-radius: 3rem;
             width: auto;
             text-transform: uppercase;
@@ -43,6 +44,62 @@
     }
 }
 
+.features {
+    margin: 3rem 0;
+
+    .feature-box {
+        border: 2px solid $primary-color;
+        border-radius: 0.5rem;
+        padding: 1rem 2rem;
+        background: $lighter;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        text-align: center;
+
+        div {
+            margin: 0 1.5rem;
+        }
+    }
+}
+
+.review {
+    text-align: center;
+    padding: 0 0 3rem;
+
+    .review-box {
+        cite {
+            color: #a9a9a9;
+        }
+    }
+}
+
+.mission {
+    padding: 2rem 0;
+    background: #F6F8FC;
+
+    .mission-box {
+        margin: 2rem 3rem 1rem;
+        display: flex;
+        justify-content: space-between;
+
+        .mission-text {
+            margin: 0 2rem;
+
+        }
+
+        .mission-img {
+            margin: 0 2rem;
+            border-radius: 0.5rem;
+            background: linear-gradient(45deg, $primary-color, $hover-color);
+            height: 200px;
+            width: 100%;
+        }
+    }
+}
+
+
+// All media queries for go below
 @media screen and (max-width: 860px) {
     .hero-section {
         margin: 0;
@@ -87,4 +144,38 @@
             }
         }
     }
+
+    .features {
+        .feature-box {
+            padding: 0.5rem 0;
+            background: $lighter;
+            display: block;
+            text-align: left;
+
+            div {
+                margin: 1rem 1.5rem;
+            }
+        }
+    }
+
+    .mission {
+        .mission-box {
+            margin: 2rem 0 1rem;
+            display: block;
+
+            .mission-text {
+                margin: 0 2rem;
+
+            }
+
+            .mission-img {
+                margin: 0 2rem;
+                border-radius: 0.5rem;
+                background: linear-gradient(45deg, $primary-color, $hover-color);
+                height: 200px;
+                width: auto;
+            }
+        }
+    }
+
 }
