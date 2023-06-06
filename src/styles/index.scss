@@ -1,17 +1,24 @@
 // fonts
 @import url('https://fonts.googleapis.com/css2?family=Nabla&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Maven+Pro&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Luckiest+Guy&family=Maven+Pro&display=swap');
 $font: 'Nabla', cursive;
 $font2: 'Maven Pro', sans-serif;
+$font3: 'Luckiest Guy', cursive;
 
 // colors
 $primary-color: #F6A700;
 $hover-color: #ffc74e;
 $lighter: #ffefce;
 
+$sec-color: #BD34FE;
+
+// Background
+$background: #F6F8FC;
+
 // shodow
 $text-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
-$box-shadow: 0 25px 50px -12px rgba(0, 0, 0, .25);
+$box-shadow: 0 25px 50px -12px #BD34FE40;
 
 body {
     background: #fff;
@@ -76,6 +83,9 @@ h3 {
     display: block;
 }
 
+
+
+
 // COMPONENT STYLES-----------------
 
 #primary-btn {
@@ -93,8 +103,30 @@ h3 {
     }
 }
 
+.course-card {
+    box-shadow: $box-shadow;
+    width: 18rem;
+    margin: 1rem;
+    transition: all .3s;
+    border-radius: 0.5rem;
 
+    .course-img {
+        height: 150px;
+        width: 100%;
+        background: linear-gradient(45deg, $primary-color, $sec-color);
+        border-radius: 0.5rem 0.5rem 0 0;
 
+        img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+    }
+
+    .course-detail {
+        padding: 5px 10px;
+    }
+}
 
 
 
@@ -133,5 +165,18 @@ h3 {
         font-weight: 700;
         color: #000;
         margin: 0;
+    }
+
+    .course-card {
+        display: flex;
+        align-items: center;
+        width: auto;
+        margin: 0.4rem;
+
+        .course-img {
+            border-radius: 2px 0 0 2px;
+            min-width: 40%;
+            min-height: 100%;
+        }
     }
 }

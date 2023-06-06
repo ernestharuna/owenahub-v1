@@ -27,6 +27,13 @@
             span {
                 display: inline-block;
                 margin-right: 2rem;
+                font-size: 1.3rem;
+
+                i {
+                    color: $sec-color;
+                    margin: 0 0.2rem;
+                    font-weight: bold;
+                }
             }
         }
 
@@ -59,6 +66,14 @@
 
         div {
             margin: 0 1.5rem;
+
+            i {
+                display: block;
+                color: $primary-color;
+                margin: 0 0.2rem;
+                font-weight: bold;
+                font-size: 2.2rem;
+            }
         }
     }
 }
@@ -76,24 +91,118 @@
 
 .mission {
     padding: 2rem 0;
-    background: #F6F8FC;
+    background: $background;
 
     .mission-box {
         margin: 2rem 3rem 1rem;
         display: flex;
         justify-content: space-between;
+        flex-direction: row-reverse;
 
         .mission-text {
             margin: 0 2rem;
-
         }
 
         .mission-img {
-            margin: 0 2rem;
+            margin: 2rem;
             border-radius: 0.5rem;
+            box-shadow: $box-shadow;
             background: linear-gradient(45deg, $primary-color, $hover-color);
             height: 200px;
             width: 100%;
+        }
+    }
+}
+
+.video {
+    padding: 4rem 0;
+    background: $background;
+
+    .video-box {
+        background: linear-gradient(45deg, $primary-color, $hover-color);
+        width: 100%;
+        height: 80vh;
+        border-radius: 0.5rem;
+        box-shadow: $box-shadow;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        i {
+            font-size: 5rem;
+            color: $sec-color;
+        }
+    }
+}
+
+.courses {
+    padding: 2rem 0;
+
+    .courses-box {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-wrap: wrap;
+    }
+}
+
+.cta {
+    text-align: center;
+    padding: 2rem 0 3rem;
+    margin: 3rem 0 5rem;
+
+    #neon-button {
+        color: $primary-color;
+        display: inline-block;
+        position: relative;
+        cursor: pointer;
+        font-weight: 700;
+        text-decoration: none;
+        font-size: 2.5rem;
+        font-family: $font3;
+        border: 0.1253em solid $primary-color;
+        padding: .25em 1em;
+        border-radius: .25em;
+        text-shadow: 0 0 0.125em hsl(0% 0% 100% / 0.3), 0 0 0.45em currentColor;
+        box-shadow: 0 0 0.5em 0 $primary-color, inset 0 0 0.5em 0 $primary-color;
+        transition: background 100ms linear;
+
+        &::before {
+            pointer-events: none;
+            content: '';
+            position: absolute;
+            background: $primary-color;
+            top: 120%;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            transform: perspective(1em) rotateX(40deg) scale(1, 0.35);
+            filter: blur(1em);
+            opacity: 0.7;
+        }
+
+        &::after {
+            content: '';
+            position: absolute;
+            background: $primary-color;
+            top: 0;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            opacity: 0;
+            transition: opacity 100ms linear;
+            box-shadow: 0 0 2em 0.5em $primary-color;
+            z-index: -1;
+        }
+
+        &:hover::after {
+            opacity: 1;
+        }
+
+        &:hover,
+        &:focus {
+            color: $sec-color;
+            text-shadow: none;
         }
     }
 }
@@ -128,6 +237,7 @@
                 span {
                     i {
                         display: block;
+                        // color: $;
                     }
 
                     display: inline-block;
@@ -154,6 +264,12 @@
 
             div {
                 margin: 1rem 1.5rem;
+
+                i {
+                    display: inline-block;
+                    margin: 0 0.4rem;
+                    font-size: 1.3rem;
+                }
             }
         }
     }
@@ -169,8 +285,6 @@
             }
 
             .mission-img {
-                margin: 0 2rem;
-                border-radius: 0.5rem;
                 background: linear-gradient(45deg, $primary-color, $hover-color);
                 height: 200px;
                 width: auto;
@@ -178,4 +292,12 @@
         }
     }
 
+    .video {
+        .video-box {
+            height: 200px;
+            border-radius: 0.5rem;
+            box-shadow: $box-shadow;
+        }
+
+    }
 }
