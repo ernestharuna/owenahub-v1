@@ -27,7 +27,8 @@
             span {
                 display: inline-block;
                 margin-right: 2rem;
-                font-size: 1.3rem;
+                text-transform: capitalize;
+                font-size: 1.2rem;
 
                 i {
                     color: $sec-color;
@@ -47,6 +48,12 @@
             text-transform: uppercase;
             font-weight: 500;
             font-size: 1rem;
+            transition: all .3s;
+
+            &:hover {
+                background: $sec-color;
+                color: #fff;
+            }
         }
     }
 }
@@ -63,6 +70,10 @@
         align-items: center;
         justify-content: space-between;
         text-align: center;
+
+        strong {
+            font-size: large;
+        }
 
         div {
             margin: 0 1.5rem;
@@ -135,15 +146,108 @@
     }
 }
 
+.social {
+    text-align: center;
+    padding: 2rem 0;
+
+    .social-box {
+        display: flex;
+        align-items: center;
+        justify-content: space-around;
+
+        span {
+            display: block;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        i {
+            display: block;
+            font-size: 4em;
+        }
+
+        .youtube {
+
+            i,
+            span {
+                color: red;
+            }
+        }
+
+        .facebook {
+
+            i,
+            span {
+
+                color: #3d3d9a;
+            }
+        }
+
+        .instagram {
+
+            i,
+            span {
+                color: $sec-color;
+            }
+        }
+
+        strong {
+            font-size: 3em;
+            font-weight: 900;
+        }
+    }
+}
+
 .courses {
     padding: 2rem 0;
 
     .courses-box {
         display: flex;
         align-items: center;
-        justify-content: center;
+        // justify-content: center;
         flex-wrap: wrap;
     }
+}
+
+.articles {
+    padding: 2rem 0;
+    background: $background;
+
+    .articles-box {
+        display: flex;
+        align-items: center;
+        flex-wrap: wrap;
+    }
+}
+
+.sessions {
+    li {
+        margin-bottom: 1rem;
+    }
+
+    hr {
+        border: none;
+        height: 3px;
+        background: linear-gradient(45deg, $primary-color, $sec-color);
+    }
+
+    button {
+        background: $primary-color;
+        border: none;
+        padding: 0.6rem 2rem;
+        margin: 1.5rem 0 0.4rem;
+        border-radius: 3rem;
+        width: auto;
+        text-transform: uppercase;
+        font-weight: 500;
+        font-size: 1rem;
+    }
+
+    .private-session {
+        margin-bottom: 1rem;
+    }
+
+    .in-person {}
 }
 
 .cta {
@@ -163,7 +267,7 @@
         border: 0.1253em solid $primary-color;
         padding: .25em 1em;
         border-radius: .25em;
-        text-shadow: 0 0 0.125em hsl(0% 0% 100% / 0.3), 0 0 0.45em currentColor;
+        text-shadow: 0 0 0.125em hsl(0 0% 100% / 0.3), 0 0 0.45em currentColor;
         box-shadow: 0 0 0.5em 0 $primary-color, inset 0 0 0.5em 0 $primary-color;
         transition: background 100ms linear;
 
@@ -199,6 +303,10 @@
             opacity: 1;
         }
 
+        &:hover::before {
+            opacity: 1;
+        }
+
         &:hover,
         &:focus {
             color: $sec-color;
@@ -206,7 +314,6 @@
         }
     }
 }
-
 
 // All media queries for go below
 @media screen and (max-width: 860px) {
@@ -297,6 +404,56 @@
             height: 200px;
             border-radius: 0.5rem;
             box-shadow: $box-shadow;
+        }
+
+    }
+
+    .social {
+        .social-box {
+            i {
+                display: block;
+                font-size: 2.3em;
+            }
+
+            .youtube {
+
+                i,
+                span {
+                    color: red;
+                }
+            }
+
+            .facebook {
+
+                i,
+                span {
+
+                    color: #3d3d9a;
+                }
+            }
+
+            .instagram {
+
+                i,
+                span {
+                    color: $sec-color;
+                }
+            }
+
+            strong {
+                font-size: 2em;
+                font-weight: 900;
+            }
+        }
+
+
+        .articles {
+            padding: 2rem 0;
+            background: $background;
+
+            .articles-box {
+                display: block;
+            }
         }
 
     }

@@ -1,6 +1,7 @@
 import { Link } from 'react-router-dom'
 import CourseCard from '../components/CourseCard'
 import '../styles/home.scss'
+import ArticleCard from '../components/ArticleCard'
 
 const Home = () => {
     return (
@@ -19,7 +20,7 @@ const Home = () => {
 
                     <div className="benefits">
                         <span><i class="bi bi-check-lg"></i>
-                            Improve your Skils
+                            Improve your skils
                         </span>
                         <span><i class="bi bi-check-lg"></i>
                             Learn at your own pace
@@ -132,6 +133,38 @@ const Home = () => {
                 </div>
             </section>
 
+            <section className="social">
+                <div className="container">
+                    <h3>Trusted by learners everywhere.</h3>
+                    <p>
+                        Rated 5 stars by musicians of all skill levels!
+                    </p>
+                    <div className="social-box">
+                        <div className="youtube">
+                            <i class="bi bi-youtube"></i>
+                            <strong>
+                                1.2M
+                            </strong>
+                            <span>subscribers</span>
+                        </div>
+                        <div className="facebook">
+                            <i class="bi bi-facebook"></i>
+                            <strong>
+                                422k
+                            </strong>
+                            <span>likes</span>
+                        </div>
+                        <div className="instagram">
+                            <i class="bi bi-instagram"></i>
+                            <strong>
+                                123k
+                            </strong>
+                            <span>followers</span>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
             <section className="courses">
                 <div className="container">
                     <h3>Let your learning start here</h3>
@@ -147,8 +180,24 @@ const Home = () => {
                         <CourseCard />
                         <CourseCard />
                         <CourseCard />
-                        <CourseCard />
-                        <CourseCard />
+                    </div>
+                </div>
+            </section>
+
+            <section className="articles">
+                <div className="container">
+                    <h3>
+                        Unlock the Power of Knowledge
+                    </h3>
+                    <p> Dive into Our Captivating Articles and Expand Your Horizons!</p>
+
+                    <div className="articles-box">
+                        <ArticleCard />
+                        <ArticleCard />
+                        <ArticleCard />
+                        <ArticleCard />
+                        <ArticleCard />
+                        <ArticleCard />
                     </div>
                 </div>
             </section>
@@ -158,6 +207,82 @@ const Home = () => {
                     <Link to={"#"} id='neon-button'>
                         Enroll Now
                     </Link>
+                </div>
+            </section>
+
+            <section className="sessions">
+                <div className="container">
+                    <h3>Exclusive sessions and In-person Classes</h3>
+                    <p>
+                        We believe in the power of personalized learning experiences and the value they bring to your growth and development.
+                        <br /> Whether you prefer one-on-one interactions or the energy of in-person gatherings, we have tailored sessions and classes that will cater to your unique needs and learning style.
+                    </p>
+                    <div className='private-session'>
+                        <h4>Private Sessions</h4>
+                        <p>
+                            Our private sessions are designed to provide you with a customized and focused learning environment. You will have the undivided attention of our expert instructors, allowing for personalized instruction and guidance tailored specifically to your goals and aspirations.
+                            Whether you're looking to deepen your knowledge in a particular subject, refine your skills, or gain a competitive edge, our private sessions are the perfect opportunity to accelerate your learning journey.
+                        </p>
+                        <ol>
+                            <li>
+                                <b>Personalized Attention:</b><br />
+                                Experience one-on-one guidance from our skilled instructors, who will adapt the content to suit your individual needs.
+                            </li>
+
+                            <li>
+                                <b>Flexible Scheduling:</b><br />
+                                We understand the importance of convenience, so we offer flexible scheduling options to accommodate your busy lifestyle.
+                            </li>
+
+                            <li>
+                                <b>Targeted Learning:</b><br />
+                                Focus on specific areas of interest, allowing you to delve deeper into subjects that matter most to you.
+                            </li>
+
+                            <li>
+                                <b>Rapid Progress:</b><br />
+                                With personalized instruction and tailored feedback, you can make significant progress in a shorter period.
+                            </li>
+                        </ol>
+                        <button>
+                            Book a session now
+                        </button>
+                    </div>
+                    <hr />
+                    <div className='in-person'>
+                        <h4>In-Person Classes</h4>
+                        <p>
+                            Nothing can replace the energy and connection that comes from being part of a vibrant learning community.
+                            Our in-person classes provide a collaborative environment where you can engage with like-minded individuals, share ideas, and benefit from the collective knowledge and experiences of your peers and instructors.
+                        </p>
+                        <ol>
+                            <li>
+                                <b>Community Building:</b> <br />
+                                Connect with a diverse community of learners who share your passion, fostering a sense of camaraderie and support.
+                            </li>
+                            <li>
+                                <b>Interactive Learning:</b> <br />
+                                Engage in group discussions, participate in hands-on activities, and benefit from real-time feedback and interaction.
+                            </li>
+                            <li>
+                                <b>Networking Opportunities:</b> <br />
+                                Expand your professional network and create lasting connections with fellow learners who may become valuable collaborators or mentors.
+                            </li>
+                            <li>
+                                <b>Immersive Experience:</b> <br />
+                                Immerse yourself in the learning process, away from distractions, and create a focused environment that fosters deep understanding and growth.
+                            </li>
+                        </ol>
+                        <button>
+                            Book a session now
+                        </button>
+                    </div>
+                </div>
+            </section>
+
+            <section className="faq">
+                <div className="container">
+
                 </div>
             </section>
         </div>

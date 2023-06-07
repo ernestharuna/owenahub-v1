@@ -20,6 +20,20 @@ const GuestLayout = () => {
                 <Outlet />
             </main>
 
+            <footer>
+                <div className="container">
+                    <h1>Owena</h1>
+                    <p>
+                        <b> Email</b> <br />
+                        owenacenter@gmail.com
+                    </p>
+                    <p>
+                        <b>Phone</b> <br />
+                        +2348 183 670 422
+                    </p>
+                </div>
+            </footer>
+
         </>
     )
 }
