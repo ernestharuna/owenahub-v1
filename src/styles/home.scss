@@ -241,6 +241,12 @@
         text-transform: uppercase;
         font-weight: 500;
         font-size: 1rem;
+        transition: all .3s;
+
+        &:hover {
+            background: $sec-color;
+            color: #fff;
+        }
     }
 
     .private-session {
@@ -456,5 +462,10 @@
             }
         }
 
+        .cta {
+            #neon-button {
+                font-size: 1rem;
+            }
+        }
     }
 }

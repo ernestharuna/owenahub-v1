@@ -212,7 +212,7 @@ const Home = () => {
 
             <section className="sessions">
                 <div className="container">
-                    <h3>Exclusive sessions and In-person Classes</h3>
+                    <h3>Exclusive sessions and<wbr /> In-person Classes</h3>
                     <p>
                         We believe in the power of personalized learning experiences and the value they bring to your growth and development.
                         <br /> Whether you prefer one-on-one interactions or the energy of in-person gatherings, we have tailored sessions and classes that will cater to your unique needs and learning style.
@@ -220,7 +220,8 @@ const Home = () => {
                     <div className='private-session'>
                         <h4>Private Sessions</h4>
                         <p>
-                            Our private sessions are designed to provide you with a customized and focused learning environment. You will have the undivided attention of our expert instructors, allowing for personalized instruction and guidance tailored specifically to your goals and aspirations.
+                            Our private sessions are designed to provide you with a customized and focused learning environment. You will have the undivided attention of our expert instructors,
+                            allowing for personalized instruction and guidance tailored specifically to your goals and aspirations. <br /> <br />
                             Whether you're looking to deepen your knowledge in a particular subject, refine your skills, or gain a competitive edge, our private sessions are the perfect opportunity to accelerate your learning journey.
                         </p>
                         <ol>
@@ -252,7 +253,7 @@ const Home = () => {
                     <div className='in-person'>
                         <h4>In-Person Classes</h4>
                         <p>
-                            Nothing can replace the energy and connection that comes from being part of a vibrant learning community.
+                            Nothing can replace the energy and connection that comes from being part of a vibrant learning community. <br /><br />
                             Our in-person classes provide a collaborative environment where you can engage with like-minded individuals, share ideas, and benefit from the collective knowledge and experiences of your peers and instructors.
                         </p>
                         <ol>

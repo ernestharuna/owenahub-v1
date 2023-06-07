@@ -31,9 +31,14 @@ const GuestLayout = () => {
                         <b>Phone</b> <br />
                         +2348 183 670 422
                     </p>
+                    <hr />
+                    <p>
+                        <small>
+                            Owenahub, &copy; 2023 - All rights reserved
+                        </small>
+                    </p>
                 </div>
             </footer>
-
         </>
     )
 }
