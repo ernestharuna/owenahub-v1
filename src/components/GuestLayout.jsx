@@ -1,13 +1,16 @@
 import { Outlet } from "react-router-dom";
 import PrimaryBtn from "./PrimaryBtn";
 
+import logo from '../assets/owena_logo.png'
+
 const GuestLayout = () => {
     return (
         <>
             <header>
                 <nav className="">
                     <div id="nav-list">
-                        <h1>Owena</h1>
+                        <img src={logo} alt="_logo" style={{ width: '60px' }} />
+                        <h1>Owena Music</h1>
                     </div>
 
                     <div>
