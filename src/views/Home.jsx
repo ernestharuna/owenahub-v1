@@ -12,24 +12,23 @@ const Home = () => {
                 </div>
                 <div id="atf">
                     <h2>
-                        Online music lessons for all skill levels.
+                        Welcome to The Learners Hub!
                     </h2>
                     <p>
-                        Learn the music faster with step-by-step lessons, a plethora of courses, and unlimited personal support.
+                        Personalized one-on-one online sessions: Empowering you to master any skill with expert guidance.
                     </p>
 
                     <div className="benefits">
                         <span><i class="bi bi-check-lg"></i>
-                            Improve your skils
+                            Improve your skills
                         </span>
                         <span><i class="bi bi-check-lg"></i>
-                            Learn at your own pace
+                            Get realistic perspective
                         </span>
                         <span><i class="bi bi-check-lg"></i>
-                            Affordable courses
+                            Personal support
                         </span>
                     </div>
-
 
                     <button>
                         Start for Free
@@ -48,35 +47,43 @@ const Home = () => {
                     <div className="feature-box">
                         <div>
                             <i class="bi bi-play-btn"></i>
-                            <strong>Piano Lessons</strong><br />
-                            <small>
-                                Step-by-step video <br className="hidden" />
-                                lessons on every topic.
-                            </small>
+                            <div>
+                                <strong>Video Lessons</strong><br />
+                                <small>
+                                    Step-by-step video <br className="hidden" />
+                                    lessons on every topic.
+                                </small>
+                            </div>
                         </div>
                         <div>
                             <i class="bi bi-person-workspace"></i>
-                            <strong>Artist Courses</strong><br />
-                            <small>
-                                Courses and live events <br className="hidden" />
-                                with inspiring pianists.
-                            </small>
+                            <div>
+                                <strong>Expert Sessions</strong><br />
+                                <small>
+                                    Connect with Inspiring Global Mentors and <br className="hidden" />
+                                    Book Your Personalized Sessions
+                                </small>
+                            </div>
                         </div>
                         <div>
                             <i class="bi bi-journal-bookmark"></i>
-                            <strong>1000+ Lessons</strong><br />
-                            <small>
-                                Play your favorite songs<br className="hidden" />
-                                from every style & era.
-                            </small>
+                            <div>
+                                <strong>Enriching Repository</strong><br />
+                                <small>
+                                    Access a Wealth of Informative Articles<br className="hidden" />
+                                    to Enhance Your Learning Journey.
+                                </small>
+                            </div>
                         </div>
                         <div>
                             <i class="bi bi-people"></i>
-                            <strong>Private Session</strong><br />
-                            <small>
-                                The largest community <br className="hidden" />
-                                of students & teachers.
-                            </small>
+                            <div>
+                                <strong>Private Session</strong><br />
+                                <small>
+                                    Private Sessions tailored to <br className="hidden" />
+                                    your individual needs and goals.
+                                </small>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -106,20 +113,21 @@ const Home = () => {
                             It is not impossible!
                             <br /> <br />
 
-                            All you need is proper guidance, and you'd will be unstopable. At Owena our mission
-                            is to see you learn, and learn well while enjoying the process (and having fun).
+                            All you need is proper guidance, and you'd will be unstopable. <br />
+                            Our mission at The Owena Hub is to address the common challenges faced by learners on their educational journey.
+                            We strive to provide comprehensive guidance and support, answering questions about where to begin, accessing essential learning resources, exploring available options, and understanding the necessary steps to embark on a chosen path.
+                            <br /><br />
+                            <b>We are dedicated to offering expert advice, counsel, and guidance to learners seeking to acquire new skills and start a successful career.</b>
                             <br /> <br />
 
-                            Come with your enthusiasm and we will put things into realistic perspective; we provide you effective curriculums, coaching, and guidance:
+                            Come with your enthusiasm and we will put things into realistic perspective.
                             <br /><br />
 
-                            You’ll learn more, you’ll get better faster, and you’ll fall in love with your progress.
+                            You’ll start strong and grow fast, and you’ll fall in love with your progress.
                             Plus you’ll have access to a library of hundreds of popular topics thought by experienced tutors.
                             <br /><br />
 
-                            These are short, fun lessons from world-class teachers.
-                            The real magic happens when you engage with with your teacher ONE-ON-ONE.
-
+                            The real magic happens when you engage with with your mentors ONE-ON-ONE.
                         </p>
                     </div>
                 </div>
@@ -177,9 +185,6 @@ const Home = () => {
                         <CourseCard />
                         <CourseCard />
                         <CourseCard />
-                        <CourseCard />
-                        <CourseCard />
-                        <CourseCard />
                     </div>
                 </div>
             </section>
@@ -205,7 +210,7 @@ const Home = () => {
             <section className="cta">
                 <div className="container">
                     <Link to={"#"} id='neon-button'>
-                        Enroll Now
+                        Get Started!
                     </Link>
                 </div>
             </section>

@@ -33,7 +33,7 @@
                 i {
                     color: $sec-color;
                     margin: 0 0.2rem;
-                    font-weight: bold;
+                    font-size: 1.8rem;
                 }
             }
         }
@@ -350,11 +350,11 @@
                 span {
                     i {
                         display: block;
-                        // color: $;
                     }
 
                     display: inline-block;
                     margin: 0 1rem;
+                    font-size: 1rem;
                 }
             }
 
@@ -376,12 +376,18 @@
             text-align: left;
 
             div {
-                margin: 1rem 1.5rem;
+                margin: 1rem 0.5rem;
+                display: flex;
 
                 i {
                     display: inline-block;
-                    margin: 0 0.4rem;
-                    font-size: 1.3rem;
+                    margin: 0 0.9rem;
+                    font-size: 1.7rem;
+                }
+
+                div {
+                    display: inline-block;
+                    margin: 0;
                 }
             }
         }
@@ -416,6 +422,8 @@
 
     .social {
         .social-box {
+            justify-content: space-between;
+
             i {
                 display: block;
                 font-size: 2.3em;

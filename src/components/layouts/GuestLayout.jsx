@@ -1,7 +1,7 @@
 import { Outlet } from "react-router-dom";
-import PrimaryBtn from "./PrimaryBtn";
+import PrimaryBtn from "../PrimaryBtn";
 
-import logo from '../assets/owena_logo.png'
+import logo from '../../assets/owena_logo.png'
 
 const GuestLayout = () => {
     return (
@@ -10,7 +10,7 @@ const GuestLayout = () => {
                 <nav className="">
                     <div id="nav-list">
                         <img src={logo} alt="_logo" style={{ width: '60px' }} />
-                        <h1>Owena Music</h1>
+                        <h1>OwenaHub</h1>
                     </div>
 
                     <div>
@@ -25,7 +25,7 @@ const GuestLayout = () => {
 
             <footer>
                 <div className="container">
-                    <h1>Owena</h1>
+                    <h1>The Owena Hub</h1>
                     <p>
                         <b> Email</b> <br />
                         owenacenter@gmail.com
