@@ -15,7 +15,7 @@ const Home = () => {
                         Welcome to The Learners Hub!
                     </h2>
                     <p>
-                        Personalized one-on-one online sessions: Empowering you to master any skill with expert guidance.
+                        Personalized one-on-one online sessions: Learn and grow for free with help from world-class mentors.
                     </p>
 
                     <div className="benefits">

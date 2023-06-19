@@ -26,15 +26,19 @@ const GuestLayout = () => {
             <footer>
                 <div className="container">
                     <h1>The Owena Hub</h1>
+                    <div id="footer-quote">
+                        <div>
+                            <img src={logo} alt="_logo" style={{ width: '60px' }} />
+                        </div>
+                        <p>To inspire powerful conversations and collaborations among members <br className="hidden" /> worldwide so together we can change the world with creativity.</p>
+                    </div>
+
+                    <hr />
+
                     <p>
-                        <b> Email</b> <br />
+                        <b> Contact Us</b> <br />
                         owenacenter@gmail.com
                     </p>
-                    <p>
-                        <b>Phone</b> <br />
-                        +2348 183 670 422
-                    </p>
-                    <hr />
                     <p>
                         <small>
                             Owenahub, &copy; 2023 - All rights reserved

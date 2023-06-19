@@ -29,7 +29,7 @@ body {
 header {
     position: sticky;
     top: 0px;
-    background: #000;
+    background: #211502;
     padding: 0 0.8rem;
     color: white;
     z-index: 2;
@@ -74,9 +74,17 @@ h3 {
 
 footer {
     background: #211502;
-    text-align: center;
     padding: 2rem 0 1rem;
     margin: 2rem 0 0;
+
+    #footer-quote {
+        display: flex;
+        align-items: center;
+
+        p {
+            color: $hover-color;
+        }
+    }
 
     p {
         color: #fff;
@@ -84,14 +92,10 @@ footer {
 
     hr {
         border: none;
-        height: 2px;
-        background: $primary-color;
+        height: 1px;
+        background: linear-gradient(50deg, $primary-color, $sec-color);
     }
 }
-
-
-
-
 
 
 // My Utilities --------------------
@@ -233,5 +237,17 @@ footer {
 
     .article-card {
         width: 100%;
+    }
+
+    footer {
+        #footer-quote {
+
+            div,
+            p {
+                margin: 0;
+            }
+
+            display: block;
+        }
     }
 }
