@@ -6,7 +6,7 @@ import ArticleCard from '../components/ArticleCard'
 const Home = () => {
     return (
         <div>
-            <section className="hero-section">
+            <section className="hero-section animated fadeInDown">
                 <div id="trailer">
 
                 </div>
@@ -19,23 +19,25 @@ const Home = () => {
                     </p>
 
                     <div className="benefits">
-                        <span><i class="bi bi-check-lg"></i>
+                        <span><i className="bi bi-check-lg"></i>
                             Improve your skills
                         </span>
-                        <span><i class="bi bi-check-lg"></i>
+                        <span><i className="bi bi-check-lg"></i>
                             Get realistic perspective
                         </span>
-                        <span><i class="bi bi-check-lg"></i>
+                        <span><i className="bi bi-check-lg"></i>
                             Personal support
                         </span>
                     </div>
 
-                    <button>
-                        Start for Free
-                    </button>
+                    <Link to="/auth/register">
+                        <button>
+                            Start for Free
+                        </button>
+                    </Link>
 
                     <small className='d-block'>
-                        <i class="bi bi-stars"></i>
+                        <i className="bi bi-stars"></i>
                         <i>Trusted by thousands of active learners</i>
                     </small>
                 </div>
@@ -46,7 +48,7 @@ const Home = () => {
                 <div className="container">
                     <div className="feature-box">
                         <div>
-                            <i class="bi bi-play-btn"></i>
+                            <i className="bi bi-play-btn"></i>
                             <div>
                                 <strong>Video Lessons</strong><br />
                                 <small>
@@ -56,7 +58,7 @@ const Home = () => {
                             </div>
                         </div>
                         <div>
-                            <i class="bi bi-person-workspace"></i>
+                            <i className="bi bi-person-workspace"></i>
                             <div>
                                 <strong>Expert Sessions</strong><br />
                                 <small>
@@ -66,7 +68,7 @@ const Home = () => {
                             </div>
                         </div>
                         <div>
-                            <i class="bi bi-journal-bookmark"></i>
+                            <i className="bi bi-journal-bookmark"></i>
                             <div>
                                 <strong>Enriching Repository</strong><br />
                                 <small>
@@ -76,7 +78,7 @@ const Home = () => {
                             </div>
                         </div>
                         <div>
-                            <i class="bi bi-people"></i>
+                            <i className="bi bi-people"></i>
                             <div>
                                 <strong>Private Session</strong><br />
                                 <small>
@@ -136,7 +138,7 @@ const Home = () => {
             <section className="video">
                 <div className="container">
                     <div className="video-box">
-                        <i class="bi bi-play-circle"></i>
+                        <i className="bi bi-play-circle"></i>
                     </div>
                 </div>
             </section>
@@ -149,21 +151,21 @@ const Home = () => {
                     </p>
                     <div className="social-box">
                         <div className="youtube">
-                            <i class="bi bi-youtube"></i>
+                            <i className="bi bi-youtube"></i>
                             <strong>
                                 1.2M
                             </strong>
                             <span>subscribers</span>
                         </div>
                         <div className="facebook">
-                            <i class="bi bi-facebook"></i>
+                            <i className="bi bi-facebook"></i>
                             <strong>
                                 422k
                             </strong>
                             <span>likes</span>
                         </div>
                         <div className="instagram">
-                            <i class="bi bi-instagram"></i>
+                            <i className="bi bi-instagram"></i>
                             <strong>
                                 123k
                             </strong>
@@ -209,7 +211,7 @@ const Home = () => {
 
             <section className="cta">
                 <div className="container">
-                    <Link to={"#"} id='neon-button'>
+                    <Link to="/auth/register" id='neon-button'>
                         Get Started!
                     </Link>
                 </div>
@@ -250,9 +252,11 @@ const Home = () => {
                                 With personalized instruction and tailored feedback, you can make significant progress in a shorter period.
                             </li>
                         </ol>
-                        <button>
-                            Book a session now
-                        </button>
+                        <Link to="/auth/login">
+                            <button>
+                                Book a session now
+                            </button>
+                        </Link>
                     </div>
                     <hr />
                     <div className='in-person'>
@@ -279,9 +283,11 @@ const Home = () => {
                                 Immerse yourself in the learning process, away from distractions, and create a focused environment that fosters deep understanding and growth.
                             </li>
                         </ol>
-                        <button>
-                            Book a session now
-                        </button>
+                        <Link to="/auth/login">
+                            <button>
+                                Book a session now
+                            </button>
+                        </Link>
                     </div>
                 </div>
             </section>

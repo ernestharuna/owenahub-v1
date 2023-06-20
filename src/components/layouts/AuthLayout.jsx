@@ -1,22 +1,21 @@
 import { Outlet, Link } from "react-router-dom";
-import PrimaryBtn from "../PrimaryBtn";
-
 import logo from '../../assets/owena_logo.png'
 
-const GuestLayout = () => {
+
+export default function AuthLayout() {
     return (
         <>
             <header>
-                <nav>
+                <nav className="">
                     <div id="nav-list">
                         <img src={logo} alt="_logo" style={{ width: '60px' }} />
-                        <Link>
+                        <Link to="/">
                             <h1>OwenaHub</h1>
                         </Link>
                     </div>
 
                     <div>
-                        <PrimaryBtn text="Start for free" link="/auth/register" />
+
                     </div>
                 </nav>
             </header>
@@ -25,7 +24,7 @@ const GuestLayout = () => {
                 <Outlet />
             </main>
 
-            <footer>
+            <footer style={margin}>
                 <div className="container">
                     <h1>OwenaHub</h1>
                     <div id="footer-quote">
@@ -52,4 +51,6 @@ const GuestLayout = () => {
     )
 }
 
-export default GuestLayout
+const margin = {
+    marginTop: 0
+}

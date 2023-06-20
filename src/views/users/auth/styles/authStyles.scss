@@ -1,0 +1,99 @@
+@use '../../../../styles/index.scss' as *;
+
+h4 {
+    font-size: 1.2rem;
+}
+
+.form-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.howto {
+    width: 50%;
+    height: 100dvh;
+    background: linear-gradient(45deg, $primary-color, $sec-color);
+
+    .howto-box {
+        background: #fff;
+        width: 60%;
+        margin: 0 auto;
+        position: relative;
+        top: 20%;
+        padding: 20px;
+        border-radius: 10px;
+        border-top: 2px solid $primary-color;
+        border-right: 2px solid $primary-color;
+        box-shadow: $box-shadow;
+
+        .howto-list {
+            margin: 2rem 0;
+            font-size: 1.3rem;
+        }
+
+        .li {
+            display: inline-block;
+            margin: 0 0.5rem;
+            padding: 5px 10px;
+            font-weight: 700;
+            border-radius: 100%;
+            background: linear-gradient(45deg, $primary-color, $hover-color);
+        }
+    }
+}
+
+form .form-control {
+    display: block;
+    outline: 0;
+    padding: 0 1.3rem;
+    font-size: 1.1rem;
+    width: 80%;
+    height: 40px;
+    margin: 1rem 0;
+    border: 2px solid #e6e6e6;
+    border-radius: 10px;
+    transition: all .3s;
+
+    &:hover {
+        border-color: $primary-color;
+    }
+}
+
+form #submit {
+    border: none;
+    width: 90%;
+
+    &:hover {
+        background: $primary-color;
+    }
+}
+
+@media screen and (max-width: 850px) {
+    .form-container {
+        display: block;
+
+        .form {
+            margin: 3rem 0;
+        }
+    }
+
+    form {
+        text-align: center;
+
+        .form-control {
+            display: inline-block;
+            margin: 0.5rem;
+        }
+    }
+
+    .howto {
+        width: auto;
+        height: fit-content;
+        padding: 10px;
+
+        .howto-box {
+            width: 80%;
+        }
+    }
+}
