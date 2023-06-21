@@ -22,7 +22,7 @@ $background: #F6F8FC;
 
 // shodow
 $text-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
-$box-shadow: 0 25px 50px -12px #BD34FE40;
+$box-shadow: 0 25px 50px -5px #BD34FE40;
 
 body {
     background: #fff;
@@ -83,6 +83,16 @@ h4 {
     margin: 0;
 }
 
+a {
+    text-decoration: none;
+}
+
+hr {
+    border: none;
+    height: 1px;
+    background: linear-gradient(50deg, $primary-color, $sec-color);
+}
+
 footer {
     background: #211502;
     padding: 2rem 0 1rem;
@@ -100,12 +110,6 @@ footer {
     p {
         color: #fff;
     }
-
-    hr {
-        border: none;
-        height: 1px;
-        background: linear-gradient(50deg, $primary-color, $sec-color);
-    }
 }
 
 
@@ -116,6 +120,10 @@ footer {
 
 .hidden {
     display: inline;
+}
+
+.error {
+    outline: 2px solid red !important;
 }
 
 .d-block {
@@ -138,6 +146,27 @@ footer {
 .fadeInDown {
     -webkit-animation-name: fadeInDown;
     animation-name: fadeInDown;
+}
+
+.loader {
+    width: 20px;
+    height: 20px;
+    margin: 0 auto;
+    border-radius: 100%;
+    display: inline-block;
+    animation: loader .5s linear infinite;
+    border-top: 1px solid $sec-color;
+    border-left: 1px solid $sec-color;
+}
+
+@keyframes loader {
+    0% {
+        transform: rotate(0deg);
+    }
+
+    100% {
+        transform: rotate(360deg);
+    }
 }
 
 @keyframes fadeInDown {
@@ -216,8 +245,6 @@ footer {
         box-shadow: 0 25px 50px -12px $primary-color;
     }
 }
-
-
 
 @media screen and (max-width: 860px) {
     header {

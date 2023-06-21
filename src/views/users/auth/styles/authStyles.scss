@@ -63,9 +63,12 @@ form .form-control {
 form #submit {
     border: none;
     width: 90%;
+    box-shadow: $box-shadow;
+    background: $primary-color;
+    cursor: pointer;
 
     &:hover {
-        background: $primary-color;
+        background: $hover-color;
     }
 }
 
