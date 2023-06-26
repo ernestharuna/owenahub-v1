@@ -2,22 +2,40 @@ import { useForm } from 'react-hook-form';
 import { Link } from 'react-router-dom';
 import axiosClient from '../../../axios-client.js'
 import './styles/authStyles.scss'
+import { useState } from 'react';
 
 export default function Register() {
+    const [error, setError] = useState(null);
     const { register, handleSubmit, formState: { errors, isSubmitting } } = useForm();
 
-    const onSubmit = (data) => {
-        axiosClient.post('/register', data)
-            .then((res) => {
-                console.log(res)
-            })
-            .catch((err) => {
-                const res = err.response;
-                if (res && res.status === 422) {
-                    console.log(res);
-                }
-            })
-    }
+    // const onSubmit = async (data) => {
+    //     axiosClient.post('/register', data)
+    //         .then((res) => {
+    //             console.log(res)
+    //         })
+    //         .catch((err) => {
+    //             const res = err.response;
+    //             if (res && res.status === 422) {
+    //                 console.log(res);
+    //                 setError(res.data.errors)
+    //             }
+    //         })
+    // }
+
+    const onSubmit = async (data) => {
+        setError(null);
+        try {
+            const res = await axiosClient.post('/register', data);
+            console.log(res);
+        } catch (err) {
+            const res = err.response;
+            if (res && res.status === 422) {
+                console.log(res);
+                setError(res.data.errors);
+            }
+        }
+    };
+
 
     return (
         <div className="animated fadeInDown">
@@ -28,6 +46,15 @@ export default function Register() {
                         Start making valuable connections with experienced mentors <br className='hidden' />
                         around the world.
                     </p>
+
+                    {
+                        error && <div className="form-error">
+                            {Object.keys(error).map(key => (
+                                <p key={key}>- {error[key][0]}</p>
+                            ))}
+                        </div>
+                    }
+
                     <form onSubmit={handleSubmit(onSubmit)}>
                         <input
                             {...register("first_name", { required: true })}
@@ -59,14 +86,15 @@ export default function Register() {
                             type="password" placeholder="Confirm Password"
                         />
 
-                        <button className='form-control' id='submit' disabled={isSubmitting}>
-                            {isSubmitting ? (<span className='loader' style={{ cursor: 'wait' }}></span>) : "Register"}
-                            {/* <span className='loader'></span> */}
+                        <button type='submit' className='form-control' id='submit' disabled={isSubmitting} style={isSubmitting ? { cursor: 'wait' } : { cursor: 'pointer' }}>
+                            {isSubmitting ? (<span className='loader'></span>) : "Register"}
+                            {/* <span className='loader' style={{ cursor: 'wait' }}></span> */}
                         </button>
                     </form>
                     <hr />
                     <p>
-                        Do you have an account with us? <Link to="/auth/login">
+                        Do you have an account with us? {" "}
+                        <Link to="/auth/login">
                             Login here
                         </Link>
                     </p>

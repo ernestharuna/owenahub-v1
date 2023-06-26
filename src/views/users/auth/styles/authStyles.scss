@@ -4,23 +4,35 @@ h4 {
     font-size: 1.2rem;
 }
 
+.form-error {
+    font-size: 11px;
+    padding: 0.01em 1em;
+    width: fit-content;
+    font-weight: 600;
+    color: #fff;
+    background-color: red;
+    border-radius: 4px;
+}
+
+.login {
+    margin-top: 3rem;
+}
+
 .form-container {
     display: flex;
-    align-items: center;
+    align-items: stretch;
     justify-content: space-between;
 }
 
 .howto {
     width: 50%;
-    height: 100dvh;
+    min-height: max-content;
     background: linear-gradient(45deg, $primary-color, $sec-color);
 
     .howto-box {
         background: #fff;
         width: 60%;
-        margin: 0 auto;
-        position: relative;
-        top: 20%;
+        margin: 5rem auto;
         padding: 20px;
         border-radius: 10px;
         border-top: 2px solid $primary-color;
@@ -73,6 +85,15 @@ form #submit {
 }
 
 @media screen and (max-width: 850px) {
+    .form-error {
+        font-size: 10px;
+        padding: 0.01em 1em;
+        width: auto;
+        text-align: center;
+        background-color: red;
+        border-radius: 4px;
+    }
+
     .form-container {
         display: block;
 
@@ -97,6 +118,7 @@ form #submit {
 
         .howto-box {
             width: 80%;
+            margin: 5rem auto;
         }
     }
 }
