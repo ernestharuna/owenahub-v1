@@ -1,0 +1,40 @@
+@use './index.scss' as *;
+
+.active {
+    background: linear-gradient(45deg, $primary-color, $hover-color);
+}
+
+#user-layout {
+    display: flex;
+    // background: red;
+
+    #user-navigation {
+        width: 10rem;
+        padding: 1rem 0.5rem 0;
+        height: 100vh;
+        position: fixed;
+        background: #F7FAFC;
+        border-right: 1px solid #e3e3e3;
+
+        a {
+            color: #000 !important;
+            padding: 0.4rem 0.5rem;
+            border-radius: 3px;
+            margin: 0.5rem 0;
+            width: 90%;
+            transition: all .3s ease;
+            display: inline-block;
+
+            &:hover {
+                background: #bbc7cf;
+            }
+        }
+    }
+
+
+    #outlet {
+        margin-left: 10rem;
+    }
+}
+
+@media screen and (max-width: 900px) {}

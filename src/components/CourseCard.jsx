@@ -12,8 +12,7 @@ const CourseCard = () => {
                         Introduction to Piano playing.
                     </h4>
                     <p>
-                        Develop your core skills, techniques,
-                        and musicality to play beautifully in any setting.
+                        Develop your core skills, techniques,..
                     </p>
                 </Link>
             </div>

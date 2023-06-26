@@ -51,40 +51,40 @@ const Home = () => {
                             <i className="bi bi-play-btn"></i>
                             <div>
                                 <strong>Video Lessons</strong><br />
-                                <small>
+                                <span>
                                     Step-by-step video <br className="hidden" />
                                     lessons on every topic.
-                                </small>
+                                </span>
                             </div>
                         </div>
                         <div>
                             <i className="bi bi-person-workspace"></i>
                             <div>
                                 <strong>Expert Sessions</strong><br />
-                                <small>
-                                    Connect with Inspiring Global Mentors and <br className="hidden" />
-                                    Book Your Personalized Sessions
-                                </small>
+                                <span>
+                                    Connect with Global Mentors <br className="hidden" />
+                                    that inspire you.
+                                </span>
                             </div>
                         </div>
                         <div>
                             <i className="bi bi-journal-bookmark"></i>
                             <div>
                                 <strong>Enriching Repository</strong><br />
-                                <small>
+                                <span>
                                     Access a Wealth of Informative Articles<br className="hidden" />
-                                    to Enhance Your Learning Journey.
-                                </small>
+                                    on Owena's Blogs
+                                </span>
                             </div>
                         </div>
                         <div>
                             <i className="bi bi-people"></i>
                             <div>
                                 <strong>Private Session</strong><br />
-                                <small>
+                                <span>
                                     Private Sessions tailored to <br className="hidden" />
                                     your individual needs and goals.
-                                </small>
+                                </span>
                             </div>
                         </div>
                     </div>

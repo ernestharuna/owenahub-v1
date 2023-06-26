@@ -1,7 +1,6 @@
 import { Outlet, Link } from "react-router-dom";
 import logo from '../../assets/owena_logo.png'
 
-
 export default function AuthLayout() {
     return (
         <>
