@@ -2,7 +2,7 @@ import React from 'react'
 
 export default function Slices() {
     return (
-        <div className="container-md">
+        <div className="container-md animated fadeInDown">
             <h4>
                 Slices
             </h4>

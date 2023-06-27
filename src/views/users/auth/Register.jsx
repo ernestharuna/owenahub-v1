@@ -1,41 +1,35 @@
 import { useForm } from 'react-hook-form';
-import { Link } from 'react-router-dom';
+import { Link, Navigate } from 'react-router-dom';
 import axiosClient from '../../../axios-client.js'
 import './styles/authStyles.scss'
 import { useState } from 'react';
+import { useDispatch, useSelector } from 'react-redux';
+import { setToken, setUser } from '../../../features/user/authUserSlice.js';
 
 export default function Register() {
+    const dispatch = useDispatch();
     const [error, setError] = useState(null);
     const { register, handleSubmit, formState: { errors, isSubmitting } } = useForm();
 
-    // const onSubmit = async (data) => {
-    //     axiosClient.post('/register', data)
-    //         .then((res) => {
-    //             console.log(res)
-    //         })
-    //         .catch((err) => {
-    //             const res = err.response;
-    //             if (res && res.status === 422) {
-    //                 console.log(res);
-    //                 setError(res.data.errors)
-    //             }
-    //         })
-    // }
+    const token = useSelector(state => state.authUser.token)
 
     const onSubmit = async (data) => {
         setError(null);
         try {
             const res = await axiosClient.post('/register', data);
-            console.log(res);
+            dispatch(setUser(res.data.user))
+            dispatch(setToken(res.data.token))
         } catch (err) {
             const res = err.response;
             if (res && res.status === 422) {
-                console.log(res);
                 setError(res.data.errors);
             }
         }
     };
 
+    if (token) {
+        return <Navigate to={"/user/dashboard"} />
+    }
 
     return (
         <div className="animated fadeInDown">

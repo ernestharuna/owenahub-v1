@@ -1,4 +1,4 @@
-import { createBrowserRouter, ScrollRestoration } from "react-router-dom";
+import { createBrowserRouter } from "react-router-dom";
 
 import GuestLayout from "./components/layouts/GuestLayout";
 import AuthLayout from "./components/layouts/AuthLayout";

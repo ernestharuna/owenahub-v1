@@ -1,8 +1,40 @@
-import { Outlet, Link, NavLink } from "react-router-dom";
+import { Outlet, Link, NavLink, Navigate } from "react-router-dom";
 import logo from '../../assets/owena_logo.png'
 import "../../styles/userLayout.scss"
+import axiosClient from "../../axios-client";
+
+import { useEffect } from "react";
+import { useDispatch, useSelector } from "react-redux";
+import { setUser, getUser, logoutUser } from "../../features/user/authUserSlice";
 
 export default function UserLayout() {
+    const dispatch = useDispatch();
+
+    const { token } = useSelector(state => state.authUser);
+    const { user } = useSelector(state => state.authUser);
+    const { loading } = useSelector(state => state.authUser);
+
+    if (!token) {
+        return <Navigate to={"/auth/login"} />
+    }
+
+    const onLogout = (e) => {
+        e.preventDefault();
+        axiosClient.post('/logout')
+            .then(() => {
+                dispatch(logoutUser())
+                window.location.href = "/";
+            });
+    }
+
+    useEffect(() => {
+        dispatch(getUser());
+        axiosClient.get('/user').then(({ data }) => {
+            console.log(data);
+            dispatch(setUser(data))
+        })
+    }, [])
+
     return (
         <>
             <header style={navStyle}>
@@ -17,28 +49,30 @@ export default function UserLayout() {
                         </Link>
                     </div>
 
-                    <div>
-
-                        <button>Logout</button>
+                    <div style={color}>
+                        {
+                            loading ? (". . .") : (<span>{user.first_name}</span>)
+                        }
+                        <button onClick={onLogout}>Logout</button>
                     </div>
                 </nav>
             </header>
 
             <main id="user-layout">
                 <div id="user-navigation">
-                    <NavLink to={"dashboard"}>
-                        <div className={({ isActive, isPending }) => isActive ? "active" : isPending ? "pending" : ""}>
-                            <i class="bi bi-bookmarks"></i> Dashboard
+                    <NavLink to={"dashboard"} className={({ isActive, isPending }) => isActive ? "active" : isPending ? "pending" : ""}>
+                        <div >
+                            <i className="bi bi-bookmarks"></i> Dashboard
                         </div>
                     </NavLink>
-                    <NavLink to={"slices"}>
-                        <div className={({ isActive, isPending }) => isActive ? "active" : isPending ? "pending" : ""}>
-                            <i class="bi bi-journal-bookmark-fill"></i> Slices
+                    <NavLink to={"slices"} className={({ isActive, isPending }) => isActive ? "active" : isPending ? "pending" : ""}>
+                        <div>
+                            <i className="bi bi-journal-bookmark-fill"></i> Slices
                         </div>
                     </NavLink>
-                    <NavLink to={"forum"}>
-                        <div className={({ isActive, isPending }) => isActive ? "active" : isPending ? "pending" : ""}>
-                            <i class="bi bi-calendar-week"></i> Forums
+                    <NavLink to={"forum"} className={({ isActive, isPending }) => isActive ? "active" : isPending ? "pending" : ""}>
+                        <div>
+                            <i className="bi bi-calendar-week"></i> Forums
                         </div>
                     </NavLink>
                 </div>

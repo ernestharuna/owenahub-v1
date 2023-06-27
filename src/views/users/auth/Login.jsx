@@ -1,22 +1,27 @@
 import { useForm } from 'react-hook-form';
-import { Link } from 'react-router-dom';
+import { Link, Navigate } from 'react-router-dom';
 import './styles/authStyles.scss'
 import { useState } from 'react';
 import axiosClient from '../../../axios-client.js'
+import { useDispatch, useSelector } from 'react-redux';
+import { setToken, setUser } from '../../../features/user/authUserSlice';
 
 
 export default function Register() {
     const { register, handleSubmit, formState: { errors, isSubmitting } } = useForm();
     const [error, setError] = useState(null);
+    const dispatch = useDispatch();
+
+    const token = useSelector(state => state.authUser.token)
 
     const onSubmit = async (data) => {
         setError(null);
         try {
             const res = await axiosClient.post('/login', data);
-            console.log(res);
+            dispatch(setUser(res.data.user));
+            dispatch(setToken(res.data.token))
         } catch (error) {
             const res = error.response;
-            console.log(res);
             if (res && res.status) {
                 if (res.data.errors) {
                     setError(res.data.errors)
@@ -27,6 +32,10 @@ export default function Register() {
                 }
             }
         }
+    }
+
+    if (token) {
+        return <Navigate to={"/user/dashboard"} />
     }
 
     return (

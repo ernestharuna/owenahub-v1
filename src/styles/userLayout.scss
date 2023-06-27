@@ -6,7 +6,6 @@
 
 #user-layout {
     display: flex;
-    // background: red;
 
     #user-navigation {
         width: 10rem;
@@ -20,13 +19,15 @@
             color: #000 !important;
             padding: 0.4rem 0.5rem;
             border-radius: 3px;
-            margin: 0.5rem 0;
+            margin: 0.2rem 0;
             width: 90%;
             transition: all .3s ease;
             display: inline-block;
 
             &:hover {
+                // background: linear-gradient(45deg, #bbc7cf, #d7e1e7);
                 background: #bbc7cf;
+                transition: all .3s ease;
             }
         }
     }

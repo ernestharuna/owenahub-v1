@@ -5,7 +5,7 @@ export async function loader() {
 
 export default function Dashboard() {
     return (
-        <div className="container-md">
+        <div className="container-md animated fadeInDown">
             <h4>
                 Dashboard
             </h4>
