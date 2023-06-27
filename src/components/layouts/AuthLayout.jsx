@@ -1,11 +1,18 @@
-import { Outlet, Link } from "react-router-dom";
+import { Outlet, Link, Navigate } from "react-router-dom";
 import logo from '../../assets/owena_logo.png'
+import { useSelector } from "react-redux";
 
 export default function AuthLayout() {
+    const { token } = useSelector(state => state.authUser);
+
+    if (token) {
+        return <Navigate to={"/user/dashboard"} />
+    }
+
     return (
         <>
             <header>
-                <nav className="">
+                <nav>
                     <div id="nav-list">
                         <img src={logo} alt="_logo" style={{ width: '60px' }} />
                         <Link to="/">

@@ -1,9 +1,9 @@
 import { useForm } from 'react-hook-form';
-import { Link, Navigate } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 import './styles/authStyles.scss'
 import { useState } from 'react';
 import axiosClient from '../../../axios-client.js'
-import { useDispatch, useSelector } from 'react-redux';
+import { useDispatch } from 'react-redux';
 import { setToken, setUser } from '../../../features/user/authUserSlice';
 
 
@@ -11,8 +11,6 @@ export default function Register() {
     const { register, handleSubmit, formState: { errors, isSubmitting } } = useForm();
     const [error, setError] = useState(null);
     const dispatch = useDispatch();
-
-    const token = useSelector(state => state.authUser.token)
 
     const onSubmit = async (data) => {
         setError(null);
@@ -32,10 +30,6 @@ export default function Register() {
                 }
             }
         }
-    }
-
-    if (token) {
-        return <Navigate to={"/user/dashboard"} />
     }
 
     return (

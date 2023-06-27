@@ -27,12 +27,16 @@ export default function UserLayout() {
             });
     }
 
-    useEffect(() => {
+    const init = () => {
         dispatch(getUser());
         axiosClient.get('/user').then(({ data }) => {
             console.log(data);
-            dispatch(setUser(data))
+            dispatch(setUser(data));
         })
+    }
+
+    useEffect(() => {
+        init(); //fetch logged in user details
     }, [])
 
     return (
