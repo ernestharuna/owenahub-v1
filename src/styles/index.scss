@@ -1,7 +1,7 @@
 // fonts
-// @import url('https://fonts.googleapis.com/css2?family=Nabla&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Alata&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Maven+Pro&display=swap');
+// @import url('https://fonts.googleapis.com/css2?family=Nabla&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Luckiest+Guy&family=Maven+Pro&display=swap');
 
 :root {
@@ -19,6 +19,7 @@ $hover-color: #ffc74e;
 $lighter: #ffefce;
 
 $sec-color: #BD34FE;
+$hover-color2: #E66D00;
 $dark: #211502;
 
 // Background
@@ -50,7 +51,7 @@ header {
     position: sticky;
     top: 0px;
     background: #211502;
-    padding: 0 0.8rem;
+    padding: 0 1rem;
     color: white;
     z-index: 2;
 
@@ -71,6 +72,27 @@ header {
         display: flex;
         align-items: center;
         justify-content: space-between;
+
+        .auth-btns {
+
+            .sign-in {
+                margin: 0 1rem;
+                color: #fff;
+            }
+
+            .register {
+                color: #fff;
+                padding: 0.4rem 0.8rem;
+                background: $primary-color;
+                border-radius: 5px;
+                font-weight: 600;
+                transition: all .2s ease;
+
+                &:hover {
+                    background: $hover-color2;
+                }
+            }
+        }
     }
 }
 
@@ -112,6 +134,7 @@ hr {
 footer {
     background: #211502;
     padding: 2rem 0 1rem;
+    bottom: -5px;
     margin: 2rem 0 0;
 
     #footer-quote {
@@ -127,85 +150,6 @@ footer {
         color: #fff;
     }
 }
-
-
-// My Utilities --------------------
-.container {
-    padding: 0 6rem;
-}
-
-.container-md {
-    padding: 1rem 4rem;
-}
-
-.hidden {
-    display: inline;
-}
-
-.error {
-    outline: 2px solid red !important;
-}
-
-.d-block {
-    display: block;
-}
-
-.time {
-    font-size: 10px;
-    color: #939393;
-    font-weight: 700;
-}
-
-.text-dark {
-    color: #000;
-}
-
-.animated {
-    -webkit-animation-duration: 0.3s;
-    animation-duration: 0.3s;
-    -webkit-animation-fill-mode: both;
-    animation-fill-mode: both;
-}
-
-.fadeInDown {
-    -webkit-animation-name: fadeInDown;
-    animation-name: fadeInDown;
-}
-
-.loader {
-    width: 20px;
-    height: 20px;
-    margin: 0 auto;
-    border-radius: 100%;
-    display: inline-block;
-    animation: loader .8s linear infinite;
-    border-top: 2px solid $sec-color;
-    border-left: 2px solid $sec-color;
-}
-
-@keyframes loader {
-    0% {
-        transform: rotate(0deg);
-    }
-
-    100% {
-        transform: rotate(360deg);
-    }
-}
-
-@keyframes fadeInDown {
-    0% {
-        opacity: 0;
-        transform: translateY(-20px);
-    }
-
-    100% {
-        opacity: 1;
-        transform: translateY(0);
-    }
-}
-
-
 
 // COMPONENT STYLES-----------------
 #primary-btn {
@@ -279,14 +223,25 @@ footer {
                 font-size: 18px;
             }
         }
-    }
 
-    .container {
-        padding: 0 2rem;
-    }
+        nav {
+            .auth-btns {
+                font-size: 0.8rem;
 
-    .hidden {
-        display: none;
+                .sign-in {
+                    margin: 0 0.5rem;
+                    color: #fff;
+                }
+
+                .register {
+                    color: #fff;
+                    padding: 0.3rem 0.6rem;
+                    background: $primary-color;
+                    border-radius: 5px;
+                    font-weight: 600;
+                }
+            }
+        }
     }
 
     #primary-btn {

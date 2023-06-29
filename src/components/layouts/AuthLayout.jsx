@@ -1,12 +1,18 @@
 import { Outlet, Link, Navigate } from "react-router-dom";
-import logo from '../../assets/owena_logo.png'
+import logo from '../../assets/owena_logo.png';
 import { useSelector } from "react-redux";
 
 export default function AuthLayout() {
     const { token } = useSelector(state => state.authUser);
+    const admin_token = useSelector(state => state.authAdmin.token);
 
     if (token) {
         return <Navigate to={"/user/dashboard"} />
+    }
+
+    if (admin_token) {
+        console.log(admin_token);
+        return <Navigate to={"/admin/dashboard"} />
     }
 
     return (

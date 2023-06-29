@@ -1,16 +1,31 @@
 import { createBrowserRouter } from "react-router-dom";
 
+// layouts import
 import GuestLayout from "./components/layouts/GuestLayout";
 import AuthLayout from "./components/layouts/AuthLayout";
 import UserLayout from "./components/layouts/UserLayout";
+import AdminLayout from "./components/layouts/AdminLayout"
 
-import Home from "./views/Home";
+// guest page imports
+import Home from "./views/guest/home/Home";
+import OnBoard from "./views/guest/onboard/OnBoard"
+
+// auth imports
 import Login from "./views/users/auth/Login";
 import Register from "./views/users/auth/Register";
-import Dashboard, { loader as dashboardLoader } from "./views/users/Dashboard";
-import Slices from "./views/users/Slices";
+
+// user page imports
+import Dashboard, { loader as dashboardLoader } from "./views/users/dashboard/Dashboard";
+import Slices from "./views/users/slices/Slices";
+
+// admin page imports
+import AdminDashboard from "./views/admin/dashboard/adminDashboard";
+import AdminLogin from "./views/admin/auth/AdminLogin";
+import AdminRegister from "./views/admin/auth/AdminRegister";
+
 
 const router = createBrowserRouter([
+    // Guest Layout
     {
         path: '/',
         element: <GuestLayout />,
@@ -18,10 +33,15 @@ const router = createBrowserRouter([
             {
                 path: '/',
                 element: <Home />
+            },
+            {
+                path: '/getstarted',
+                element: <OnBoard />
             }
         ]
     },
 
+    // Auth Layout
     {
         path: '/auth',
         element: <AuthLayout />,
@@ -33,10 +53,19 @@ const router = createBrowserRouter([
             {
                 path: 'register',
                 element: <Register />
+            },
+            {
+                path: 'admin/login',
+                element: <AdminLogin />
+            },
+            {
+                path: 'admin/register',
+                element: <AdminRegister />
             }
         ]
     },
 
+    // User Layout
     {
         path: '/user',
         element: <UserLayout />,
@@ -52,6 +81,19 @@ const router = createBrowserRouter([
             }
 
         ]
+    },
+
+    // Admin layout
+    {
+        path: '/admin',
+        element: <AdminLayout />,
+        children: [
+            {
+                path: 'dashboard',
+                element: <AdminDashboard />
+            }
+        ]
+
     }
 ])
 

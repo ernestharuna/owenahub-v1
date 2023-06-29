@@ -1,6 +1,6 @@
 import { useForm } from 'react-hook-form';
 import { Link } from 'react-router-dom';
-import './styles/authStyles.scss'
+import './authStyles.scss'
 import { useState } from 'react';
 import axiosClient from '../../../axios-client.js'
 import { useDispatch } from 'react-redux';
@@ -35,7 +35,7 @@ export default function Register() {
     return (
         <div className="animated fadeInDown">
             <div className='form-container'>
-                <div className="form login container">
+                <div className="form mt-3 container">
                     <h3>Login to OwenaHub!</h3>
                     <p>
                         Start making valuable connections with experienced mentors <br className='hidden' />

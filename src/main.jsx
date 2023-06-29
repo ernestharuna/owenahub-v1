@@ -2,7 +2,10 @@ import React from 'react'
 import ReactDOM from 'react-dom/client'
 import { RouterProvider } from 'react-router-dom'
 import router from './router'
+
 import './styles/index.scss'
+import './styles/utilities.scss'
+
 import { store } from './app/store'
 import { Provider } from 'react-redux'
 

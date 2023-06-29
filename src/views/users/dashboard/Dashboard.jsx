@@ -1,3 +1,5 @@
+import "./dashboard.scss"
+
 export async function loader() {
     // const slices
     return null

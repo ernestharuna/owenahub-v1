@@ -1,7 +1,7 @@
+import './home.scss'
 import { Link } from 'react-router-dom'
-import CourseCard from '../components/CourseCard'
-import '../styles/home.scss'
-import ArticleCard from '../components/ArticleCard'
+import CourseCard from '../../../components/CourseCard'
+import ArticleCard from '../../../components/ArticleCard'
 
 const Home = () => {
     return (
@@ -43,7 +43,6 @@ const Home = () => {
                 </div>
             </section>
 
-
             <section className="features">
                 <div className="container">
                     <div className="feature-box">
@@ -52,8 +51,8 @@ const Home = () => {
                             <div>
                                 <strong>Video Lessons</strong><br />
                                 <span>
-                                    Step-by-step video <br className="hidden" />
-                                    lessons on every topic.
+                                    Step-By-Step Video <br className="hidden" />
+                                    Lessons On Every Topic.
                                 </span>
                             </div>
                         </div>
@@ -62,8 +61,8 @@ const Home = () => {
                             <div>
                                 <strong>Expert Sessions</strong><br />
                                 <span>
-                                    Connect with Global Mentors <br className="hidden" />
-                                    that inspire you.
+                                    Connect With Global Mentors <br className="hidden" />
+                                    That Inspire You.
                                 </span>
                             </div>
                         </div>
@@ -252,7 +251,7 @@ const Home = () => {
                                 With personalized instruction and tailored feedback, you can make significant progress in a shorter period.
                             </li>
                         </ol>
-                        <Link to="/auth/login">
+                        <Link to="/user/dashboard">
                             <button>
                                 Book a session now
                             </button>
@@ -283,7 +282,7 @@ const Home = () => {
                                 Immerse yourself in the learning process, away from distractions, and create a focused environment that fosters deep understanding and growth.
                             </li>
                         </ol>
-                        <Link to="/auth/login">
+                        <Link to="/user/dashboard">
                             <button>
                                 Book a session now
                             </button>

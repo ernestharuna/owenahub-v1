@@ -1,4 +1,4 @@
-import React from 'react'
+import "./slices.scss"
 
 export default function Slices() {
     return (

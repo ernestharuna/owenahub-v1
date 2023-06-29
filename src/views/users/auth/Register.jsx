@@ -1,7 +1,8 @@
 import { useForm } from 'react-hook-form';
 import { Link } from 'react-router-dom';
-import axiosClient from '../../../axios-client.js'
-import './styles/authStyles.scss'
+import axiosClient from '../../../axios-client'
+import './authStyles.scss'
+
 import { useState } from 'react';
 import { useDispatch } from 'react-redux';
 import { setToken, setUser } from '../../../features/user/authUserSlice.js';
@@ -28,7 +29,7 @@ export default function Register() {
     return (
         <div className="animated fadeInDown">
             <div className='form-container'>
-                <div className="form container">
+                <div className="form mt-1 container">
                     <h3>Welcome to OwenaHub!</h3>
                     <p>
                         Start making valuable connections with experienced mentors <br className='hidden' />

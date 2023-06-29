@@ -1,4 +1,4 @@
-@use './index.scss' as *;
+@use '../../styles/index.scss' as *;
 
 .active {
     background: linear-gradient(45deg, $primary-color, $hover-color);
@@ -25,7 +25,6 @@
             display: inline-block;
 
             &:hover {
-                // background: linear-gradient(45deg, #bbc7cf, #d7e1e7);
                 background: #bbc7cf;
                 transition: all .3s ease;
             }
