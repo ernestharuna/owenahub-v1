@@ -1,6 +1,6 @@
 import { Outlet, Link, NavLink, Navigate } from "react-router-dom";
 import logo from '../../assets/owena_logo.png'
-import "./userLayout.scss"
+import "./layout.scss"
 import axiosClient from "../../axios-client";
 
 import { useEffect } from "react";
@@ -52,10 +52,10 @@ export default function AdminLayout() {
                         </Link>
                     </div>
 
-                    <div style={color}>
+                    <div className="user-icon">
                         <i className="bi bi-person-circle" style={userIcon}></i>
                         {
-                            loading ? (" ") : (<span>{admin.first_name}</span>)
+                            loading ? (" ") : (<span className="animated fadeInDown2">{admin.first_name}</span>)
                         }
                     </div>
                 </nav>
@@ -97,16 +97,6 @@ export default function AdminLayout() {
 
 const navStyle = {
     backgroundColor: "#F7FAFC",
-}
-
-const color = {
-    color: "#fff",
-    padding: "0.1rem 0.4rem",
-    backgroundColor: "#211502",
-    minWidth: "50px",
-    borderRadius: "15px",
-    transition: "all 1s ease"
-
 }
 
 const userIcon = {

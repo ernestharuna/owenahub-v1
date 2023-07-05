@@ -1,6 +1,4 @@
 import { Outlet, Link } from "react-router-dom";
-import PrimaryBtn from "../PrimaryBtn";
-
 import logo from '../../assets/owena_logo.png'
 
 const GuestLayout = () => {

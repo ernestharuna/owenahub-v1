@@ -4,6 +4,23 @@
     background: linear-gradient(45deg, $primary-color, $hover-color);
 }
 
+.user-icon {
+    color: #fff;
+    padding: 0.1rem 0.4rem;
+    background: #211502;
+    border-radius: 15px;
+    transition: width 1s ease-in;
+    text-overflow: ellipsis;
+    width: max-content;
+    height: 28px;
+
+    span {
+        position: relative;
+        top: -3px;
+        font-weight: 600;
+    }
+}
+
 #user-layout {
     display: flex;
     justify-content: space-between;

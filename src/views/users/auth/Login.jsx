@@ -45,25 +45,29 @@ export default function Login() {
                     {
                         error && <div className="form-error">
                             {Object.keys(error).map(key => (
-                                <p key={key}>- {error[key][0]}</p>
+                                <p key={key} className="animated fadeInDown2">- {error[key][0]}</p>
                             ))}
                         </div>
                     }
 
                     <form onSubmit={handleSubmit(onSubmit)}>
-                        <input
-                            {...register("email", { required: true })}
-                            className={errors.email ? 'error form-control' : 'form-control'}
-                            type="email" placeholder="owena@xyz.com"
-                        />
+                        <div className="form-control">
+                            <input
+                                {...register("email", { required: true })}
+                                className={errors.email ? 'error form-control' : 'form-control'}
+                                type="email" placeholder="owena@xyz.com"
+                            />
+                        </div>
 
-                        <input
-                            {...register("password", { required: true })}
-                            className={errors.password ? 'error form-control' : 'form-control'}
-                            type="password" placeholder="Password"
-                        />
+                        <div className="form-control">
+                            <input
+                                {...register("password", { required: true })}
+                                className={errors.password ? 'error form-control' : 'form-control'}
+                                type="password" placeholder="Password"
+                            />
+                        </div>
 
-                        <button type='submit' className='form-control' id='submit' disabled={isSubmitting} style={isSubmitting ? { cursor: 'wait' } : { cursor: 'pointer' }}>
+                        <button type='submit' className='form-control mt-1' id='submit' disabled={isSubmitting} style={isSubmitting ? { cursor: 'wait' } : { cursor: 'pointer' }}>
                             {isSubmitting ? (<span className='loader'></span>) : "Login"}
                         </button>
 

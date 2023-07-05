@@ -40,38 +40,48 @@ export default function AdminRegister() {
                     {
                         error && <div className="form-error">
                             {Object.keys(error).map(key => (
-                                <p key={key}>- {error[key][0]}</p>
+                                <p key={key} className="animated fadeInDown2">- {error[key][0]}</p>
                             ))}
                         </div>
                     }
 
                     <form onSubmit={handleSubmit(onSubmit)}>
-                        <input {...register("first_name", { required: true })}
-                            className={errors.first_name ? 'error form-control' : 'form-control'}
-                            type="text" placeholder="First Name"
-                        />
+                        <div className="form-control">
+                            <input {...register("first_name", { required: true })}
+                                className={errors.first_name ? 'error form-control' : 'form-control'}
+                                type="text" placeholder="First Name"
+                            />
+                        </div>
 
-                        <input {...register("last_name", { required: true })}
-                            className={errors.last_name ? 'error form-control' : 'form-control'}
-                            type="text" placeholder="Last Name"
-                        />
+                        <div className="form-control">
+                            <input {...register("last_name", { required: true })}
+                                className={errors.last_name ? 'error form-control' : 'form-control'}
+                                type="text" placeholder="Last Name"
+                            />
+                        </div>
 
-                        <input {...register("email", { required: true })}
-                            className={errors.email ? 'error form-control' : 'form-control'}
-                            type="text" placeholder="admin@owena.com"
-                        />
+                        <div className="form-control">
+                            <input {...register("email", { required: true })}
+                                className={errors.email ? 'error form-control' : 'form-control'}
+                                type="text" placeholder="admin@owena.com"
+                            />
+                        </div>
 
-                        <input {...register("password", { required: true })}
-                            className={errors.password ? 'error form-control' : 'form-control'}
-                            type="password" placeholder="Password"
-                        />
+                        <div className="form-control">
+                            <input {...register("password", { required: true })}
+                                className={errors.password ? 'error form-control' : 'form-control'}
+                                type="password" placeholder="Password"
+                            />
+                        </div>
 
-                        <input {...register("password_confirmation", { required: true })}
-                            className={errors.password_confirmation ? 'error form-control' : 'form-control'}
-                            type="password" placeholder="Password"
-                        />
+                        <div className="form-control">
+                            <input {...register("password_confirmation", { required: true })}
+                                className={errors.password_confirmation ? 'error form-control' : 'form-control'}
+                                type="password" placeholder="Password"
+                            />
+                        </div>
 
-                        <button type='submit' className='form-control' id='submit' disabled={isSubmitting} style={isSubmitting ? { cursor: 'wait' } : { cursor: 'pointer' }}>
+                        <button type='submit' className='form-control mt-1' id='submit' disabled={isSubmitting} style={isSubmitting ? { cursor: 'wait' } : { cursor: 'pointer' }}>
                             {isSubmitting ? (<span className='loader'></span>) : "Register"}
 
                         </button>
@@ -79,7 +89,7 @@ export default function AdminRegister() {
                     <hr />
                     <p>
                         Do you have an account with us? {" "}
-                        <Link to="/auth/login">
+                        <Link to="/auth/admin/login">
                             Login here
                         </Link>
                     </p>

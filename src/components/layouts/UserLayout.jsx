@@ -1,6 +1,6 @@
 import { Outlet, Link, NavLink, Navigate } from "react-router-dom";
 import logo from '../../assets/owena_logo.png'
-import "./userLayout.scss"
+import "./layout.scss"
 import axiosClient from "../../axios-client";
 
 import { useEffect } from "react";
@@ -13,6 +13,7 @@ export default function UserLayout() {
     const { token } = useSelector(state => state.authUser);
     const { user } = useSelector(state => state.authUser);
     const { loading } = useSelector(state => state.authUser);
+    console.log(loading);
 
     if (!token) {
         return <Navigate to={"/auth/login"} />
@@ -53,9 +54,10 @@ export default function UserLayout() {
                         </Link>
                     </div>
 
-                    <div style={color}>
+                    <div className="user-icon">
+                        <i className="bi bi-person-circle" style={userIcon}></i>
                         {
-                            loading ? (". . .") : (<span>{user.first_name}</span>)
+                            loading ? (" ") : (<span className="animated fadeInDown2">{user.first_name}</span>)
                         }
                     </div>
                 </nav>
@@ -79,7 +81,7 @@ export default function UserLayout() {
                         </div>
                     </NavLink>
                     <button onClick={onLogout} id="logout">
-                        Log Out
+                        <i className="bi bi-arrow-right-circle"></i> Log Out
                     </button>
                 </div>
                 <div id="outlet">
@@ -101,8 +103,14 @@ const color = {
     minWidth: "50px",
     borderRadius: "15px",
     transition: "all 1s ease"
-
 }
+
+const userIcon = {
+    color: "#F8AC0D",
+    marginRight: "0.3rem",
+    fontSize: "1.3rem"
+}
+
 const logo_bg = {
     backgroundColor: "#211502",
     margin: "2px 4px",
