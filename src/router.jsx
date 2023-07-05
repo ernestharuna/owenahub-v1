@@ -22,6 +22,9 @@ import Slices from "./views/users/slices/Slices";
 import AdminDashboard from "./views/admin/dashboard/adminDashboard";
 import AdminLogin from "./views/admin/auth/AdminLogin";
 import AdminRegister from "./views/admin/auth/AdminRegister";
+import Articles from "./views/admin/articles/Articles";
+import CreateArticle from "./views/admin/articles/CreateArticle";
+import AllArticles from "./views/admin/articles/AllArticles";
 
 
 const router = createBrowserRouter([
@@ -88,10 +91,24 @@ const router = createBrowserRouter([
         path: '/admin',
         element: <AdminLayout />,
         children: [
+            // Dashboard
             {
                 path: 'dashboard',
                 element: <AdminDashboard />
-            }
+            },
+
+            // Articles
+            {
+                path: 'articles',
+                element: <Articles />,
+                children: [
+                    { index: true, element: <AllArticles /> },
+                    {
+                        path: 'create',
+                        element: <CreateArticle />
+                    }
+                ]
+            },
         ]
 
     }

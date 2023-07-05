@@ -78,7 +78,7 @@ export default function UserLayout() {
                             <i className="bi bi-calendar-week"></i> Forums
                         </div>
                     </NavLink>
-                    <button onClick={onLogout}>
+                    <button onClick={onLogout} id="logout">
                         Log Out
                     </button>
                 </div>
@@ -96,12 +96,13 @@ const navStyle = {
 
 const color = {
     color: "#fff",
-    padding: "0.2rem 1rem",
+    padding: "0.1rem 0.4rem",
     backgroundColor: "#211502",
     minWidth: "50px",
-    borderRadius: "5px"
-}
+    borderRadius: "15px",
+    transition: "all 1s ease"
 
+}
 const logo_bg = {
     backgroundColor: "#211502",
     margin: "2px 4px",

@@ -53,8 +53,9 @@ export default function AdminLayout() {
                     </div>
 
                     <div style={color}>
+                        <i className="bi bi-person-circle" style={userIcon}></i>
                         {
-                            loading ? (". . . ") : (<span>{admin.first_name}</span>)
+                            loading ? (" ") : (<span>{admin.first_name}</span>)
                         }
                     </div>
                 </nav>
@@ -67,6 +68,11 @@ export default function AdminLayout() {
                             <i className="bi bi-bookmarks"></i> Dashboard
                         </div>
                     </NavLink>
+                    <NavLink to={"articles"} className={({ isActive, isPending }) => isActive ? "active" : isPending ? "pending" : ""}>
+                        <div>
+                            <i className="bi bi-vector-pen"></i> Articles
+                        </div>
+                    </NavLink>
                     <NavLink to={"slices"} className={({ isActive, isPending }) => isActive ? "active" : isPending ? "pending" : ""}>
                         <div>
                             <i className="bi bi-journal-bookmark-fill"></i> Slices
@@ -77,8 +83,8 @@ export default function AdminLayout() {
                             <i className="bi bi-calendar-week"></i> Forums
                         </div>
                     </NavLink>
-                    <button onClick={onLogout}>
-                        Log Out
+                    <button onClick={onLogout} id="logout">
+                        <i className="bi bi-arrow-right-circle"></i> Log Out
                     </button>
                 </div>
                 <div id="outlet">
@@ -95,11 +101,18 @@ const navStyle = {
 
 const color = {
     color: "#fff",
-    padding: "0.2rem 1rem",
+    padding: "0.1rem 0.4rem",
     backgroundColor: "#211502",
     minWidth: "50px",
-    borderRadius: "5px"
+    borderRadius: "15px",
+    transition: "all 1s ease"
 
+}
+
+const userIcon = {
+    color: "#F8AC0D",
+    marginRight: "0.3rem",
+    fontSize: "1.3rem"
 }
 
 const logo_bg = {

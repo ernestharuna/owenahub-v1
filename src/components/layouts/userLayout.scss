@@ -6,6 +6,7 @@
 
 #user-layout {
     display: flex;
+    justify-content: space-between;
 
     #user-navigation {
         width: 10rem;
@@ -28,15 +29,29 @@
             &:hover {
                 background: #bbc7cf;
                 transition: all .3s ease;
+                font-weight: 600;
             }
         }
 
-        #logout {}
+        #logout {
+            border-radius: 3px;
+            text-align: start;
+            margin: 0.2rem 0;
+            width: 100%;
+            transition: all .3s ease;
+            display: inline-block;
+            color: #fff;
+            padding: 0.5rem 0.5rem;
+            border: none;
+            cursor: pointer;
+            background: linear-gradient(45deg, #9BC0D9, #add7f2);
+        }
     }
 
 
     #outlet {
         margin-left: 10rem;
+        width: 100%;
     }
 }
 
@@ -46,7 +61,8 @@
             width: 0;
             padding: 0;
 
-            a {
+            a,
+            #logout {
                 display: none;
             }
         }
