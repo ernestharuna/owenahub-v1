@@ -7,7 +7,7 @@ import { useDispatch } from 'react-redux';
 import { setToken, setUser } from '../../../features/user/authUserSlice';
 
 
-export default function Register() {
+export default function Login() {
     const { register, handleSubmit, formState: { errors, isSubmitting } } = useForm();
     const [error, setError] = useState(null);
     const dispatch = useDispatch();
@@ -17,9 +17,9 @@ export default function Register() {
         try {
             const res = await axiosClient.post('/login', data);
             dispatch(setUser(res.data.user));
-            dispatch(setToken(res.data.token))
-        } catch (error) {
-            const res = error.response;
+            dispatch(setToken(res.data.token));
+        } catch (err) {
+            const res = err.response;
             if (res && res.status) {
                 if (res.data.errors) {
                     setError(res.data.errors)

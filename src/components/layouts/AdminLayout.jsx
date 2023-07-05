@@ -5,40 +5,38 @@ import axiosClient from "../../axios-client";
 
 import { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
+import { getAdmin, logoutAdmin, setAdmin } from "../../features/admin/authAdminSlice";
 
 export default function AdminLayout() {
     const dispatch = useDispatch();
 
-    // const { token } = useSelector(state => state.authUser);
-    // const { user } = useSelector(state => state.authUser);
+    const { token } = useSelector(state => state.authAdmin);
+    const { admin } = useSelector(state => state.authAdmin);
     const { loading } = useSelector(state => state.authAdmin);
 
-    // if (!token) {
-    //     return <Navigate to={"/auth/login"} />
-    // }
+    if (!token) {
+        return <Navigate to={"/auth/admin/login"} />
+    }
 
     const onLogout = (e) => {
         e.preventDefault();
-        axiosClient.post('/logout')
+        axiosClient.post('/admin/logout')
             .then(() => {
-                // dispatch(logoutUser())
+                dispatch(logoutAdmin());
                 window.location.href = "/";
             });
     }
 
-    // const init = () => {
-    //     dispatch(getUser());
-    //     axiosClient.get('/user').then(({ data }) => {
-    //         console.log(data);
-    //         dispatch(setUser(data));
-    //     })
-    // }
+    const init = () => {
+        dispatch(getAdmin());
+        axiosClient.get('/user').then(({ data }) => {
+            dispatch(setAdmin(data));
+        })
+    }
 
-    // useEffect(() => {
-    //     init(); //fetch logged in admin details
-    // }, [])
-
-    const user = "rne"
+    useEffect(() => {
+        init(); //fetch logged in admin details
+    }, [])
 
     return (
         <>
@@ -56,9 +54,8 @@ export default function AdminLayout() {
 
                     <div style={color}>
                         {
-                            loading ? (". . . ") : (<span>{user.first_name}</span>)
+                            loading ? (". . . ") : (<span>{admin.first_name}</span>)
                         }
-                        <button onClick={onLogout}>Logout</button>
                     </div>
                 </nav>
             </header>
@@ -80,6 +77,9 @@ export default function AdminLayout() {
                             <i className="bi bi-calendar-week"></i> Forums
                         </div>
                     </NavLink>
+                    <button onClick={onLogout}>
+                        Log Out
+                    </button>
                 </div>
                 <div id="outlet">
                     <Outlet />
@@ -94,7 +94,12 @@ const navStyle = {
 }
 
 const color = {
-    color: "#000"
+    color: "#fff",
+    padding: "0.2rem 1rem",
+    backgroundColor: "#211502",
+    minWidth: "50px",
+    borderRadius: "5px"
+
 }
 
 const logo_bg = {

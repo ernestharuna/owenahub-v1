@@ -1,23 +1,23 @@
 @use '../../../styles/index.scss' as *;
 
-.admin-form {
-    width: 40%;
-    // text-align: center;
-    // margin: 0 auto;
-}
+// .admin-form {
+//     width: 40%;
+//     // text-align: center;
+//     // margin: 0 auto;
+// }
 
-.submit-btn {
-    border: none;
-    padding: 10px;
-    border-radius: 5px;
-    color: #fff;
-    font-weight: 600;
-    background: $primary-color;
-}
+// .submit-btn {
+//     border: none;
+//     padding: 10px;
+//     border-radius: 5px;
+//     color: #fff;
+//     font-weight: 600;
+//     background: $primary-color;
+// }
 
-@media screen and (max-width: 800px) {
-    .admin-form {
-        text-align: center;
-        width: 100%;
-    }
-}
+// @media screen and (max-width: 800px) {
+//     .admin-form {
+//         text-align: center;
+//         width: 100%;
+//     }
+// }

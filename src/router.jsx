@@ -35,7 +35,7 @@ const router = createBrowserRouter([
                 element: <Home />
             },
             {
-                path: '/getstarted',
+                path: 'getstarted',
                 element: <OnBoard />
             }
         ]

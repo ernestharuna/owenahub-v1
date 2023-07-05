@@ -3,7 +3,7 @@ import { createSlice } from "@reduxjs/toolkit";
 const initialState = {
     admin: "",
     token: localStorage.getItem('ADMIN_TOKEN'),
-    loading: false
+    loading: false,
 }
 
 export const authAdminSlice = createSlice({
@@ -14,7 +14,7 @@ export const authAdminSlice = createSlice({
             state.loading = true
         },
 
-        setUser: (state, action) => {
+        setAdmin: (state, action) => {
             state.loading = false;
             state.admin = action.payload;
         },
@@ -25,12 +25,12 @@ export const authAdminSlice = createSlice({
         },
 
         logoutAdmin: (state) => {
-            state.admin = "",
-                localStorage.removeItem('ADMIN_TOKEN')
+            state.admin = "";
+            localStorage.removeItem('ADMIN_TOKEN');
         }
     }
 })
 
-export const { getAdmin, setUser, setToken, logoutAdmin } = authAdminSlice.actions
+export const { getAdmin, setAdmin, setToken, logoutAdmin } = authAdminSlice.actions
 
 export default authAdminSlice.reducer

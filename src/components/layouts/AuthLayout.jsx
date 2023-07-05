@@ -8,10 +8,7 @@ export default function AuthLayout() {
 
     if (token) {
         return <Navigate to={"/user/dashboard"} />
-    }
-
-    if (admin_token) {
-        console.log(admin_token);
+    } else if (admin_token) {
         return <Navigate to={"/admin/dashboard"} />
     }
 
