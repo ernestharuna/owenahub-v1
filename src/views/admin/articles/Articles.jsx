@@ -19,10 +19,10 @@ export default function Articles() {
                     {
                         location.pathname === "/admin/articles/create" ?
                             (<Link to={"/admin/articles"}>
-                                <button className="btn" type="submit">Back</button>
+                                <button className="btn mt-1" type="submit"><i className="bi bi-chevron-double-left"></i> Back</button>
                             </Link>) :
                             (<Form action="create">
-                                <button className="btn" type="submit"><i class="bi bi-plus-circle"></i> New Post</button>
+                                <button className="btn mt-1" type="submit"><i className="bi bi-plus-circle"></i> New Post</button>
                             </Form>)
                     }
                 </div>

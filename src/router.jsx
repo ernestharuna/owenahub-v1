@@ -105,7 +105,7 @@ const router = createBrowserRouter([
                     { index: true, element: <AllArticles /> },
                     {
                         path: 'create',
-                        element: <CreateArticle />
+                        element: <CreateArticle />,
                     }
                 ]
             },

@@ -83,7 +83,6 @@ export default function AdminRegister() {
 
                         <button type='submit' className='form-control mt-1' id='submit' disabled={isSubmitting} style={isSubmitting ? { cursor: 'wait' } : { cursor: 'pointer' }}>
                             {isSubmitting ? (<span className='loader'></span>) : "Register"}
-
                         </button>
                     </form>
                     <hr />

@@ -74,6 +74,19 @@ form {
             display: inline-block;
             width: 96%;
         }
+
+        textarea {
+            margin: 0.4rem 0;
+            padding: 0.2rem 0.4rem;
+            transition: all .1s;
+            border-radius: 10px;
+            border: 2px solid #e6e6e6;
+            font-size: 1.1rem;
+            outline: 0;
+            height: 250px;
+            display: inline-block;
+            width: 96%;
+        }
     }
 
     #submit {
