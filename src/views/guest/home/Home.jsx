@@ -1,9 +1,18 @@
-import './home.scss'
-import { Link } from 'react-router-dom'
-import CourseCard from '../../../components/CourseCard'
-import ArticleCard from '../../../components/ArticleCard'
+import './home.scss';
+import { Link } from 'react-router-dom';
+import CourseCard from '../../../components/CourseCard';
+import ArticleCard from '../../../components/ArticleCard';
+import axiosClient from '../../../axios-client';
+
+export async function loader() {
+    const res = await axiosClient.get('guest/articles');
+    const { data } = res.data;
+    console.log(data);
+    return data;
+}
 
 const Home = () => {
+
     return (
         <div>
             <section className="hero-section animated fadeInDown">

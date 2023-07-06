@@ -30,10 +30,15 @@ export default function UserLayout() {
 
     const init = () => {
         dispatch(getUser());
-        axiosClient.get('/user').then(({ data }) => {
-            console.log(data);
-            dispatch(setUser(data));
-        })
+        axiosClient.get('/user')
+            .then(({ data }) => {
+                dispatch(setUser(data));
+            }).catch((err) => {
+                if (err.response.status === 401) {
+                    dispatch(logoutUser());
+                    window.location.href = "/";
+                }
+            })
     }
 
     useEffect(() => {

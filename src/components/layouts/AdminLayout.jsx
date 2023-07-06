@@ -29,9 +29,15 @@ export default function AdminLayout() {
 
     const init = () => {
         dispatch(getAdmin());
-        axiosClient.get('/user').then(({ data }) => {
-            dispatch(setAdmin(data));
-        })
+        axiosClient.get('/user')
+            .then(({ data }) => {
+                dispatch(setAdmin(data));
+            }).catch((err) => {
+                if (err.response.status === 401) {
+                    dispatch(logoutAdmin());
+                    window.location.href = "/";
+                }
+            })
     }
 
     useEffect(() => {
@@ -96,7 +102,7 @@ export default function AdminLayout() {
 }
 
 const navStyle = {
-    backgroundColor: "#F7FAFC",
+    backgroundColor: "#DEEAF2",
 }
 
 const userIcon = {

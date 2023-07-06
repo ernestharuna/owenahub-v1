@@ -96,6 +96,34 @@
     text-align: end;
 }
 
+.fw-1 {
+    font-weight: 500;
+}
+
+.fw-2 {
+    font-weight: 600;
+}
+
+.fw-3 {
+    font-weight: 700;
+}
+
+.fw-4 {
+    font-weight: 800;
+}
+
+.fs-1 {
+    font-size: 1rem;
+}
+
+.fs-2 {
+    font-size: 1.5rem;
+}
+
+.fs-3 {
+    font-size: 2rem;
+}
+
 .btn {
     padding: 0.5rem 0.5rem;
     border-radius: 3px;
@@ -188,7 +216,7 @@
         display: none;
     }
 
-    .flex-items {
-        display: block;
-    }
+    // .flex-items {
+    //     display: block;
+    // }
 }

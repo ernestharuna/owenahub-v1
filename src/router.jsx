@@ -7,7 +7,7 @@ import UserLayout from "./components/layouts/UserLayout";
 import AdminLayout from "./components/layouts/AdminLayout"
 
 // guest page imports
-import Home from "./views/guest/home/Home";
+import Home, { loader as HomeLoader } from "./views/guest/home/Home";
 import OnBoard from "./views/guest/onboard/OnBoard"
 
 // auth imports
@@ -35,7 +35,8 @@ const router = createBrowserRouter([
         children: [
             {
                 path: '/',
-                element: <Home />
+                element: <Home />,
+                loader: HomeLoader,
             },
             {
                 path: 'getstarted',
