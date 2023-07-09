@@ -1,18 +1,9 @@
 import './home.scss';
+import bookIcon from '../../../assets/home/book.png';
 import { Link } from 'react-router-dom';
 import CourseCard from '../../../components/CourseCard';
-import ArticleCard from '../../../components/ArticleCard';
-import axiosClient from '../../../axios-client';
-
-export async function loader() {
-    const res = await axiosClient.get('guest/articles');
-    const { data } = res.data;
-    console.log(data);
-    return data;
-}
 
 const Home = () => {
-
     return (
         <div>
             <section className="hero-section animated fadeInDown">
@@ -24,7 +15,7 @@ const Home = () => {
                         Welcome to The Learners Hub!
                     </h2>
                     <p>
-                        Personalized one-on-one online sessions: Learn and grow for free with help from world-class mentors.
+                        Personalized one-on-one online sessions: Learn and grow with personalized mentorship.
                     </p>
 
                     <div className="benefits">
@@ -58,10 +49,10 @@ const Home = () => {
                         <div>
                             <i className="bi bi-play-btn"></i>
                             <div>
-                                <strong>Video Lessons</strong><br />
+                                <strong>Swift Sips</strong><br />
                                 <span>
-                                    Step-By-Step Video <br className="hidden" />
-                                    Lessons On Every Topic.
+                                    Get into our short courses; <br className='hidden' />
+                                    compact and focused.
                                 </span>
                             </div>
                         </div>
@@ -123,11 +114,10 @@ const Home = () => {
                             It is not impossible!
                             <br /> <br />
 
-                            All you need is proper guidance, and you'd will be unstopable. <br />
-                            Our mission at The Owena Hub is to address the common challenges faced by learners on their educational journey.
-                            We strive to provide comprehensive guidance and support, answering questions about where to begin, accessing essential learning resources, exploring available options, and understanding the necessary steps to embark on a chosen path.
+                            All you need is proper mentorship, and you'd will be unstopable. <br /> <br />
+                            OwenaHub serves as a bridge, connecting ambitious individuals like you with industry professionals who are passionate about sharing their knowledge and expertise.
                             <br /><br />
-                            <b>We are dedicated to offering expert advice, counsel, and guidance to learners seeking to acquire new skills and start a successful career.</b>
+                            <b>We are dedicated to offering expert advice, guidance and mentorship to learners seeking to acquire new skills and start a successful career.</b>
                             <br /> <br />
 
                             Come with your enthusiasm and we will put things into realistic perspective.
@@ -201,19 +191,29 @@ const Home = () => {
 
             <section className="articles">
                 <div className="container">
-                    <h3>
-                        Unlock the Power of Knowledge
-                    </h3>
-                    <p> Dive into Our Captivating Articles and Expand Your Horizons!</p>
-
-                    <div className="articles-box">
-                        <ArticleCard />
-                        <ArticleCard />
-                        <ArticleCard />
-                        <ArticleCard />
-                        <ArticleCard />
-                        <ArticleCard />
+                    <div className='flex-items'>
+                        <div className='mr-5'>
+                            <h3>
+                                Unlock the Power of Knowledge
+                            </h3>
+                            <p> Dive into Our Captivating Articles and Expand Your Horizons!</p>
+                            <p>
+                                From thought-provoking analyses to practical tips, our articles offer a wealth of information that will empower you to take your business to new heights.
+                                <br /> <br />
+                                Whether you're a seasoned entrepreneur or just starting out, these articles are your compass, guiding you towards growth and prosperity.
+                                So, grab a cup of coffee, sit back, and embark on a captivating journey through our carefully crafted words. Your next big idea awaits within these virtual pages.
+                                <br /> <br />
+                                Start reading and unlock the potential of your business today!
+                            </p>
+                        </div>
+                        <div >
+                            <img src={bookIcon} alt=".." width="500px" />
+                        </div>
                     </div>
+
+                    <button className="btn text-white fs-1 p-2">
+                        Get Started
+                    </button>
                 </div>
             </section>
 

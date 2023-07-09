@@ -1,5 +1,6 @@
 import { useForm } from "react-hook-form";
 import axiosClient from "../../../axios-client";
+import { redirect } from "react-router-dom";
 
 export default function CreateArticle() {
     const { register, handleSubmit, formState: { errors, isSubmitting } } = useForm();
@@ -9,6 +10,7 @@ export default function CreateArticle() {
         axiosClient.post('/articles', data)
             .then((res) => {
                 console.log(res);
+                return redirect(`/admin/articles`)
             })
             .catch((err) => {
                 console.log(err);

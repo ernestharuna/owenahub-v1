@@ -7,7 +7,7 @@ import UserLayout from "./components/layouts/UserLayout";
 import AdminLayout from "./components/layouts/AdminLayout"
 
 // guest page imports
-import Home, { loader as HomeLoader } from "./views/guest/home/Home";
+import Home from "./views/guest/home/Home";
 import OnBoard from "./views/guest/onboard/OnBoard"
 
 // auth imports
@@ -22,7 +22,7 @@ import Slices from "./views/users/slices/Slices";
 import AdminDashboard from "./views/admin/dashboard/adminDashboard";
 import AdminLogin from "./views/admin/auth/AdminLogin";
 import AdminRegister from "./views/admin/auth/AdminRegister";
-import Articles from "./views/admin/articles/Articles";
+import Articles, { loader as ArticlesLoader } from "./views/admin/articles/Articles";
 import CreateArticle from "./views/admin/articles/CreateArticle";
 import AllArticles from "./views/admin/articles/AllArticles";
 
@@ -36,7 +36,6 @@ const router = createBrowserRouter([
             {
                 path: '/',
                 element: <Home />,
-                loader: HomeLoader,
             },
             {
                 path: 'getstarted',
@@ -102,8 +101,13 @@ const router = createBrowserRouter([
             {
                 path: 'articles',
                 element: <Articles />,
+                loader: ArticlesLoader,
                 children: [
-                    { index: true, element: <AllArticles /> },
+                    {
+                        index: true,
+                        element: <AllArticles />,
+                        loader: ArticlesLoader,
+                    },
                     {
                         path: 'create',
                         element: <CreateArticle />,

@@ -7,7 +7,7 @@
     justify-content: space-between;
 
     #trailer {
-        width: 500px;
+        width: 800px;
         height: 90vh;
         background: linear-gradient(45deg, $primary-color, $hover-color);
         box-shadow: $box-shadow;
@@ -15,6 +15,10 @@
 
     #atf {
         padding: 0 2rem;
+
+        h2 {
+            margin-top: 2rem;
+        }
 
         p {
             font-weight: 700;

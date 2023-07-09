@@ -5,6 +5,8 @@
 // containers
 .container {
     padding: 0 6rem;
+    max-width: 1500px;
+    margin: 0 auto;
 }
 
 .container-md {
@@ -14,7 +16,6 @@
 .container-sm {
     padding: 0.5rem 1rem;
 }
-
 
 
 // margins
@@ -52,18 +53,39 @@
     margin-bottom: 2rem;
 }
 
+.mr-1 {
+    margin-right: 1rem;
+}
+
+.mr-2 {
+    margin-right: 2rem;
+}
+
+.mr-3 {
+    margin-right: 3rem;
+}
+
+.mr-4 {
+    margin-right: 4rem;
+}
+
+.mr-5 {
+    margin-right: 5rem;
+}
+
 .mx-3 {
     margin-top: 3rem;
     margin-bottom: 3rem;
 }
 
 .p-1 {
-    padding: 0.5rem 1rem !important;
+    padding: 0.2rem 0.8rem !important;
 }
 
 .p-2 {
-    padding: 0.2rem 0.8rem !important;
+    padding: 0.5rem 1rem !important;
 }
+
 
 // misc
 .hidden {
@@ -88,12 +110,20 @@
     color: #000;
 }
 
+.text-white {
+    color: #fff;
+}
+
 .text-start {
     text-align: start !important;
 }
 
-.text-emd {
+.text-end {
     text-align: end;
+}
+
+.text-shadow {
+    text-shadow: $text-shadow;
 }
 
 .fw-1 {
@@ -124,9 +154,14 @@
     font-size: 2rem;
 }
 
+.light-blue {
+    background: #DEEAF2;
+}
+
 .btn {
     padding: 0.5rem 0.5rem;
     border-radius: 3px;
+    box-shadow: 0 0px 1px hsla(0, 0%, 0%, 0.2), 0 1px 2px hsla(0, 0%, 0%, 0.2);
     background: $primary-color;
     border: none;
     transition: all .3s ease;
@@ -136,8 +171,14 @@
     }
 
     &:hover {
-        background: $hover-color;
+        background: $hover-color2;
+        box-shadow: 0 0px 1px hsla(0, 0%, 0%, 0.6), 0 1px 2px hsla(0, 0%, 0%, 0.2);
     }
+}
+
+.gradient {
+    background: linear-gradient(45deg, $primary-color, $sec-color);
+    transition: background-position 0.3s ease;
 }
 
 .flex-items {
@@ -145,6 +186,8 @@
     align-items: center;
     justify-content: space-between;
 }
+
+.no-flex {}
 
 .animated {
     -webkit-animation-duration: 0.3s;
@@ -216,7 +259,8 @@
         display: none;
     }
 
-    // .flex-items {
-    //     display: block;
-    // }
+    .no-flex {
+        display: block;
+    }
+
 }

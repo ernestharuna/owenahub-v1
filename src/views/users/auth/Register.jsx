@@ -37,9 +37,9 @@ export default function Register() {
                     </p>
 
                     {
-                        error && <div className="form-error">
+                        error && <div>
                             {Object.keys(error).map(key => (
-                                <p key={key} className="animated fadeInDown2">- {error[key][0]}</p>
+                                <p key={key} className="animated fadeInDown2 form-error">{error[key][0]}</p>
                             ))}
                         </div>
                     }

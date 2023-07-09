@@ -6,7 +6,7 @@ h4 {
 
 .form-error {
     font-size: 11px;
-    padding: 0.01em 1em;
+    padding: 0.3em 1em;
     width: fit-content;
     font-weight: 600;
     color: #fff;
@@ -108,11 +108,11 @@ form {
 @media screen and (max-width: 850px) {
     .form-error {
         font-size: 10px;
-        padding: 0.01em 1em;
         width: auto;
         text-align: center;
         background-color: red;
         border-radius: 4px;
+        text-align: start;
     }
 
     .form-container {
