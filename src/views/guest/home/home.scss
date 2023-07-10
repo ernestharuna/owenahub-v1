@@ -127,7 +127,7 @@
             border-radius: 0.5rem;
             box-shadow: $box-shadow;
             background: linear-gradient(45deg, $primary-color, $hover-color);
-            height: 200px;
+            height: 300px;
             width: 100%;
         }
     }
@@ -212,7 +212,6 @@
     .courses-box {
         display: flex;
         align-items: center;
-        // justify-content: center;
         flex-wrap: wrap;
     }
 }
@@ -221,10 +220,9 @@
     padding: 2rem 0;
     background: $background;
 
-    .articles-box {
-        display: flex;
-        align-items: center;
-        flex-wrap: wrap;
+    img {
+        width: 500px;
+        filter: drop-shadow(2px 2px 1px #999999);
     }
 }
 
@@ -239,29 +237,9 @@
         background: linear-gradient(45deg, $primary-color, $sec-color);
     }
 
-    button {
-        background: $primary-color;
-        border: none;
-        padding: 0.6rem 2rem;
-        margin: 1.5rem 0 0.4rem;
-        border-radius: 3rem;
-        width: auto;
-        text-transform: uppercase;
-        font-weight: 500;
-        font-size: 1rem;
-        transition: all .3s;
-
-        &:hover {
-            background: $sec-color;
-            color: #fff;
-        }
-    }
-
     .private-session {
         margin-bottom: 1rem;
     }
-
-    .in-person {}
 }
 
 .cta {
@@ -463,25 +441,37 @@
             }
 
             strong {
-                font-size: 2em;
+                font-size: 1.5em;
                 font-weight: 900;
             }
-        }
 
-
-        .articles {
-            padding: 2rem 0;
-            background: $background;
-
-            .articles-box {
-                display: block;
+            span {
+                font-size: 0.8rem;
             }
         }
+    }
 
-        .cta {
-            #neon-button {
-                font-size: 1rem;
-            }
+    .cta {
+        #neon-button {
+            font-size: 1.4rem;
+        }
+    }
+
+    .courses {
+        .courses-box {
+            display: block;
+        }
+    }
+
+    .articles {
+        display: block;
+        padding: 2rem 0;
+        background: $background;
+
+        img {
+            width: 300px;
+            display: block;
+            margin: 0 auto;
         }
     }
 }

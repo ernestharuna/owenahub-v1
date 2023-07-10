@@ -2,6 +2,11 @@
 
 .active {
     background: linear-gradient(45deg, $primary-color, $hover-color);
+    box-shadow: $box-shadow2;
+
+    &:hover {
+        box-shadow: $box-shadow3;
+    }
 }
 
 .user-icon {
@@ -57,6 +62,7 @@
             width: 100%;
             transition: all .3s ease;
             display: inline-block;
+            box-shadow: $box-shadow2;
             color: #fff;
             padding: 0.5rem 0.5rem;
             border: none;

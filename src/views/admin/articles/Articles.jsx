@@ -2,7 +2,7 @@ import { Form, Link, Outlet, useLocation } from "react-router-dom";
 import axiosClient from "../../../axios-client";
 
 export async function loader() {
-    const res = await axiosClient.get('guest/articles');
+    const res = await axiosClient.get('/articles');
     const articles = res.data.data;
     return articles;
 }

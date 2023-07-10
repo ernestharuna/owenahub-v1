@@ -1,20 +1,18 @@
 import { useForm } from "react-hook-form";
 import axiosClient from "../../../axios-client";
-import { redirect } from "react-router-dom";
+import { Navigate, useNavigate } from "react-router-dom";
 
 export default function CreateArticle() {
     const { register, handleSubmit, formState: { errors, isSubmitting } } = useForm();
+    const navigate = useNavigate();
 
     const onSubmit = async (data) => {
-        // console.log(data);
-        axiosClient.post('/articles', data)
-            .then((res) => {
-                console.log(res);
-                return redirect(`/admin/articles`)
-            })
-            .catch((err) => {
-                console.log(err);
-            });
+        try {
+            const res = await axiosClient.post('/articles', data);
+            navigate('/admin/articles');
+        } catch (err) {
+            console.log(err);
+        }
     }
 
     return (

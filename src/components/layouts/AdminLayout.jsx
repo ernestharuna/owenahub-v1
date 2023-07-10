@@ -1,4 +1,4 @@
-import { Outlet, Link, NavLink, Navigate } from "react-router-dom";
+import { Outlet, Link, NavLink, Navigate, useNavigation } from "react-router-dom";
 import logo from '../../assets/owena_logo.png'
 import "./layout.scss"
 import axiosClient from "../../axios-client";
@@ -9,6 +9,7 @@ import { getAdmin, logoutAdmin, setAdmin } from "../../features/admin/authAdminS
 
 export default function AdminLayout() {
     const dispatch = useDispatch();
+    const navigation = useNavigation();
 
     const { token } = useSelector(state => state.authAdmin);
     const { admin } = useSelector(state => state.authAdmin);
@@ -93,7 +94,8 @@ export default function AdminLayout() {
                         <i className="bi bi-arrow-right-circle"></i> Log Out
                     </button>
                 </div>
-                <div id="outlet">
+
+                <div id="outlet" className={navigation.state === "loading" ? " loading" : ""}>
                     <Outlet />
                 </div>
             </main>

@@ -27,7 +27,11 @@ $background: #F6F8FC;
 
 // shodow
 $text-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+
+
 $box-shadow: 0 25px 50px -5px #BD34FE40;
+$box-shadow2: 0 0px 1px hsla(0, 0%, 0%, 0.2), 0 1px 2px hsla(0, 0%, 0%, 0.2);
+$box-shadow3: 0 0px 1px hsla(0, 0%, 0%, 0.6), 0 1px 2px hsla(0, 0%, 0%, 0.2);
 
 body {
     background: #fff;
@@ -49,7 +53,7 @@ body::-webkit-scrollbar-thumb {
 
 header {
     position: sticky;
-    top: 0px;
+    top: 0;
     background: #211502;
     padding: 0 1rem;
     color: white;
@@ -189,24 +193,10 @@ footer {
 
     .course-detail {
         padding: 5px 10px;
-    }
 
-    &:hover {
-        box-shadow: 0 25px 50px -12px $primary-color;
-    }
-}
-
-.article-card {
-    background: #fff;
-    border-radius: 0.5rem;
-    width: 20%;
-    margin: 0.5rem;
-    padding: 0.4rem 1rem;
-    transition: all .3s;
-    box-shadow: $box-shadow;
-
-    h4 {
-        margin: 0;
+        p {
+            margin: 0 0;
+        }
     }
 
     &:hover {
@@ -255,7 +245,7 @@ footer {
     }
 
     h3 {
-        font-size: 1.8rem;
+        font-size: 1.5rem;
         font-weight: 700;
         color: #000;
         margin: 0;
@@ -263,19 +253,16 @@ footer {
 
     .course-card {
         display: flex;
+        justify-content: space-between;
         align-items: center;
         width: auto;
-        margin: 0.4rem;
+        margin: 0 0 1.5rem;
 
         .course-img {
             border-radius: 2px 0 0 2px;
-            min-width: 40%;
+            min-width: 10%;
             min-height: 100%;
         }
-    }
-
-    .article-card {
-        width: 100%;
     }
 
     footer {

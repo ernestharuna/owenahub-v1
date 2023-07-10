@@ -12,10 +12,10 @@ const Home = () => {
                 </div>
                 <div id="atf">
                     <h2>
-                        Welcome to The Learners Hub!
+                        Connect, Learn, and Thrive with OwenaHub<span className="text-purple">.</span>
                     </h2>
                     <p>
-                        Personalized one-on-one online sessions: Learn and grow with personalized mentorship.
+                        We provide a dynamic platform where passionate learners can seamlessly connect with experienced mentors
                     </p>
 
                     <div className="benefits">
@@ -145,7 +145,7 @@ const Home = () => {
                 <div className="container">
                     <h3>Trusted by learners everywhere.</h3>
                     <p>
-                        Rated 5 stars by musicians of all skill levels!
+                        Rated 5 stars by learners of all skill levels!
                     </p>
                     <div className="social-box">
                         <div className="youtube">
@@ -177,22 +177,25 @@ const Home = () => {
                 <div className="container">
                     <h3>Let your learning start here</h3>
                     <p>
-                        Always know exactly what to practice with an organized
-                        10-level curriculum and direct access to real teachers.
+                        We organise our <b>Courses as Slices</b> because we make them compact and focused on  <br className="hidden" />
+                        a particular topic suited to your learning needs.
+                    </p>
+                    <p>
+                        Take a look at these popular <b>Slices</b> . . .
                     </p>
 
                     <div className="courses-box">
-                        <CourseCard />
-                        <CourseCard />
-                        <CourseCard />
+                        <CourseCard title="Become a Web Developer" desc={"Develop your core skills, techniques,.."} />
+                        <CourseCard title="Basics of Data Sience" desc={"Develop your core skills, techniques,.."} />
+                        <CourseCard title="Get Started in Digital Marketing" desc={"Develop your core skills, techniques,.."} />
                     </div>
                 </div>
             </section>
 
             <section className="articles">
                 <div className="container">
-                    <div className='flex-items'>
-                        <div className='mr-5'>
+                    <div className='flex-items no-flex'>
+                        <div>
                             <h3>
                                 Unlock the Power of Knowledge
                             </h3>
@@ -206,8 +209,8 @@ const Home = () => {
                                 Start reading and unlock the potential of your business today!
                             </p>
                         </div>
-                        <div >
-                            <img src={bookIcon} alt=".." width="500px" />
+                        <div className=''>
+                            <img src={bookIcon} alt=".." />
                         </div>
                     </div>
 
@@ -261,7 +264,7 @@ const Home = () => {
                             </li>
                         </ol>
                         <Link to="/user/dashboard">
-                            <button>
+                            <button className='btn text-white p-2 fs-1'>
                                 Book a session now
                             </button>
                         </Link>
@@ -292,7 +295,7 @@ const Home = () => {
                             </li>
                         </ol>
                         <Link to="/user/dashboard">
-                            <button>
+                            <button className='btn text-white p-2 fs-1'>
                                 Book a session now
                             </button>
                         </Link>

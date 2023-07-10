@@ -13,6 +13,12 @@ const GuestLayout = () => {
                         </Link>
                     </div>
 
+                    {/* <div>
+                        <small>
+                            The Learner's Hub
+                        </small>
+                    </div> */}
+
                     <div className="auth-btns">
                         {/* <PrimaryBtn text="Start for free" link="/auth/register" /> */}
                         <Link to={"/auth/login"}>
