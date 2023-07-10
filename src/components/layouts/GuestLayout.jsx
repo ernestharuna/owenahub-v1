@@ -1,7 +1,9 @@
-import { Outlet, Link } from "react-router-dom";
+import { Outlet, Link, useNavigation } from "react-router-dom";
 import logo from '../../assets/owena_logo.png'
 
 const GuestLayout = () => {
+    const navigation = useNavigation();
+
     return (
         <>
             <header>
@@ -13,11 +15,11 @@ const GuestLayout = () => {
                         </Link>
                     </div>
 
-                    {/* <div>
+                    <div className="large-screen">
                         <small>
                             The Learner's Hub
                         </small>
-                    </div> */}
+                    </div>
 
                     <div className="auth-btns">
                         {/* <PrimaryBtn text="Start for free" link="/auth/register" /> */}
@@ -35,7 +37,7 @@ const GuestLayout = () => {
                 </nav>
             </header>
 
-            <main>
+            <main className={navigation.state === "loading" ? " loading" : ""}>
                 <Outlet />
             </main>
 

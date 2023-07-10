@@ -1,0 +1,26 @@
+@use '../../../styles/index.scss' as *;
+
+.guest-articles {
+    .outlet-box {
+        display: flex;
+        justify-content: center;
+        // gap: 2rem;
+
+        .outlet {
+            padding-right: 2rem;
+            width: 70%;
+            // border: 1px solid #000;
+        }
+
+        aside {
+            padding-left: 2rem;
+            width: 30%;
+            border-left: 1px solid #d4d4d4;
+
+            p {
+                font-weight: 600;
+            }
+        }
+
+    }
+}

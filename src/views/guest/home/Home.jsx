@@ -214,9 +214,11 @@ const Home = () => {
                         </div>
                     </div>
 
-                    <button className="btn text-white fs-1 p-2">
-                        Get Started
-                    </button>
+                    <Link to={"/articles"}>
+                        <button className="btn text-white fs-1 p-2">
+                            Get Started
+                        </button>
+                    </Link>
                 </div>
             </section>
 

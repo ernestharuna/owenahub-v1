@@ -4,16 +4,17 @@ import relativeTime from 'dayjs/plugin/relativeTime';
 
 dayjs.extend(relativeTime);
 
-const ArticleCard = ({ title, content, time }) => {
+const ArticleCard = ({ article }) => {
     return (
-        <div className="article-card">
-            <b className="time">{dayjs(time).fromNow()}</b>
-            <h4>{title}</h4>
-            <small>
-                {content.length > 45 ? `${content.substring(0, 45)}...` : content}
-                <br /><Link>Read more »</Link>
-            </small>
-        </div>
+        <Link>
+            <div className="article-card p-2">
+                <span className="category">Design</span> — <b className="time">Posted {dayjs(article.createdAt).fromNow()}</b>
+                <h4>{article.title}</h4>
+                <span>
+                    {article.content.length > 45 ? `${article.content.substring(0, 45)}...` : article.content}
+                </span>
+            </div>
+        </Link>
     )
 }
 

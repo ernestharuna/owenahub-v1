@@ -1,6 +1,6 @@
 import { useForm } from "react-hook-form";
 import axiosClient from "../../../axios-client";
-import { Navigate, useNavigate } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 
 export default function CreateArticle() {
     const { register, handleSubmit, formState: { errors, isSubmitting } } = useForm();

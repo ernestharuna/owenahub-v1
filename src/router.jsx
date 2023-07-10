@@ -8,7 +8,9 @@ import AdminLayout from "./components/layouts/AdminLayout"
 
 // guest page imports
 import Home from "./views/guest/home/Home";
-import OnBoard from "./views/guest/onboard/OnBoard"
+import OnBoard from "./views/guest/onboard/OnBoard";
+import GuestArticles, { loader as GuestArticlesLoader } from "./views/guest/articles/GuestArticles";
+import AllGuestArticles from "./views/guest/articles/AllGuestArticles";
 
 // auth imports
 import Login from "./views/users/auth/Login";
@@ -40,6 +42,18 @@ const router = createBrowserRouter([
             {
                 path: 'getstarted',
                 element: <OnBoard />
+            },
+            {
+                path: 'articles',
+                element: <GuestArticles />,
+                loader: GuestArticlesLoader,
+                children: [
+                    {
+                        index: true,
+                        element: <AllGuestArticles />,
+                        loader: GuestArticlesLoader
+                    }
+                ]
             }
         ]
     },
@@ -94,7 +108,8 @@ const router = createBrowserRouter([
             // Dashboard
             {
                 path: 'dashboard',
-                element: <AdminDashboard />
+                index: true,
+                element: <AdminDashboard />,
             },
 
             // Articles
