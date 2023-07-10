@@ -11,6 +11,7 @@ import Home from "./views/guest/home/Home";
 import OnBoard from "./views/guest/onboard/OnBoard";
 import GuestArticles, { loader as GuestArticlesLoader } from "./views/guest/articles/GuestArticles";
 import AllGuestArticles from "./views/guest/articles/AllGuestArticles";
+import ShowGuestArticle, { loader as ShowGuestArticleLoader } from "./views/guest/articles/ShowGuestArticle";
 
 // auth imports
 import Login from "./views/users/auth/Login";
@@ -52,6 +53,11 @@ const router = createBrowserRouter([
                         index: true,
                         element: <AllGuestArticles />,
                         loader: GuestArticlesLoader
+                    },
+                    {
+                        path: ':articleId',
+                        element: <ShowGuestArticle />,
+                        loader: ShowGuestArticleLoader,
                     }
                 ]
             }
@@ -134,4 +140,4 @@ const router = createBrowserRouter([
     }
 ])
 
-export default router;
+export default router

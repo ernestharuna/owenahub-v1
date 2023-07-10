@@ -16,7 +16,7 @@ const GuestLayout = () => {
                     </div>
 
                     <div className="large-screen">
-                        <small>
+                        <small className="cursive">
                             The Learner's Hub
                         </small>
                     </div>

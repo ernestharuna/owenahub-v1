@@ -44,7 +44,7 @@ export default function AdminLogin() {
                     {
                         error && <div>
                             {Object.keys(error).map(key => (
-                                <p key={key} className="animated fadeInDown2 form-error">- {error[key][0]}</p>
+                                <p key={key} className="animated fadeInDown2 form-error"> {error[key][0]}</p>
                             ))}
                         </div>
                     }
