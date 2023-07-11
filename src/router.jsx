@@ -33,19 +33,19 @@ import AllArticles from "./views/admin/articles/AllArticles";
 const router = createBrowserRouter([
     // Guest Layout
     {
-        path: '/',
+        path: "/",
         element: <GuestLayout />,
         children: [
             {
-                path: '/',
+                path: "/",
                 element: <Home />,
             },
             {
-                path: 'getstarted',
+                path: "getstarted",
                 element: <OnBoard />
             },
             {
-                path: 'articles',
+                path: "articles",
                 element: <GuestArticles />,
                 loader: GuestArticlesLoader,
                 children: [
@@ -55,34 +55,34 @@ const router = createBrowserRouter([
                         loader: GuestArticlesLoader
                     },
                     {
-                        path: ':articleId',
+                        path: ":articleId",
                         element: <ShowGuestArticle />,
                         loader: ShowGuestArticleLoader,
                     }
                 ]
-            }
+            },
         ]
     },
 
     // Auth Layout
     {
-        path: '/auth',
+        path: "/auth",
         element: <AuthLayout />,
         children: [
             {
-                path: 'login',
+                path: "login",
                 element: <Login />
             },
             {
-                path: 'register',
+                path: "register",
                 element: <Register />
             },
             {
-                path: 'admin/login',
+                path: "admin/login",
                 element: <AdminLogin />
             },
             {
-                path: 'admin/register',
+                path: "admin/register",
                 element: <AdminRegister />
             }
         ]
@@ -90,16 +90,16 @@ const router = createBrowserRouter([
 
     // User Layout
     {
-        path: '/user',
+        path: "/user",
         element: <UserLayout />,
         loader: dashboardLoader,
         children: [
             {
-                path: 'dashboard',
+                path: "dashboard",
                 element: <Dashboard />
             },
             {
-                path: 'slices',
+                path: "slices",
                 element: <Slices />
             }
 
@@ -108,19 +108,19 @@ const router = createBrowserRouter([
 
     // Admin layout
     {
-        path: '/admin',
+        path: "/admin",
         element: <AdminLayout />,
         children: [
             // Dashboard
             {
-                path: 'dashboard',
+                path: "dashboard",
                 index: true,
                 element: <AdminDashboard />,
             },
 
             // Articles
             {
-                path: 'articles',
+                path: "articles",
                 element: <Articles />,
                 loader: ArticlesLoader,
                 children: [
@@ -130,7 +130,7 @@ const router = createBrowserRouter([
                         loader: ArticlesLoader,
                     },
                     {
-                        path: 'create',
+                        path: "create",
                         element: <CreateArticle />,
                     }
                 ]

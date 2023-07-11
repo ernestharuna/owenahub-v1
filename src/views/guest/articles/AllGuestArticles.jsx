@@ -13,9 +13,10 @@ export default function AllGuestArticles() {
 
                 <div>
                     {
-                        articles.map((article) => (
-                            <ArticleCard key={article.id} article={article} />
-                        ))
+                        articles.length === 0 ? (<p>No articles . . .🤔</p>) :
+                            (articles.map((article) => (
+                                <ArticleCard key={article.id} article={article} />))
+                            )
                     }
                 </div>
             </section>

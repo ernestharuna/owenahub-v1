@@ -6,7 +6,7 @@ dayjs.extend(relativeTime);
 
 const ArticleCard = ({ article }) => {
     return (
-        <Link>
+        <Link to={`/articles/${article.id}`}>
             <div className="article-card p-2">
                 <span className="category">Design</span> — <b className="time">Posted {dayjs(article.createdAt).fromNow()}</b>
                 <h4>{article.title}</h4>

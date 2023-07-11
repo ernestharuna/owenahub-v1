@@ -1,9 +1,19 @@
 import { useLoaderData } from "react-router-dom";
-import axiosClient from "../../../axios-client"
+import axiosClient from "../../../axios-client";
+import dayjs from 'dayjs';
+import relativeTime from 'dayjs/plugin/relativeTime';
+
+dayjs.extend(relativeTime);
 
 export async function loader({ params }) {
-    const res = await axiosClient.get(`/articles/${params.articleId}`);
-    const article = res.data.data;
+    try {
+        const res = await axiosClient.get(`guest/articles/${params.articleId}`);
+        console.log(res.data);
+        const article = res.data;
+        return article;
+    } catch (err) {
+        console.log(err);
+    }
 }
 
 export default function ShowGuestArticle() {
@@ -11,7 +21,16 @@ export default function ShowGuestArticle() {
 
     return (
         <div>
-            ShowGuestArticle
+            <section className="animated fadeInDown2 show-guest-article">
+                <span className="category">Design</span> <br />
+                <b className="time">Posted {dayjs(article[0].createdAt).fromNow()}</b>
+                <h2 className="text-dark fw-1">{article[0].title}</h2>
+                <div className="body">
+                    {
+                        article[0].content
+                    }
+                </div>
+            </section>
         </div>
     )
 }
