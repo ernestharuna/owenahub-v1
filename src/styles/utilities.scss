@@ -311,6 +311,12 @@
     transition-delay: 200ms;
 }
 
+.loading2 {
+    opacity: 0.25;
+    transition: opacity 200ms;
+    transition-delay: 200ms;
+}
+
 @keyframes loader {
     0% {
         transform: rotate(0deg);

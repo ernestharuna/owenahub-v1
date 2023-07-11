@@ -2,25 +2,23 @@ import { useLoaderData } from "react-router-dom"
 
 export default function AllArticles() {
     const articles = useLoaderData();
+    console.log(articles);
 
     return (
         <div>
             <div className="articles-list p-2 fadeInDown animated light-blue" style={articlesList}>
                 <h4>All Articles</h4>
 
-                <div className="all-articles">
+                <div className="all-articles mt-1">
                     {
-                        articles.map((article, index) => (
+                        articles.map((article) => (
                             <div key={article.id} style={cardFlex} className="article-cards">
-                                <div>
-                                    {index + 1}
-                                </div>
                                 <div>
                                     <h5>{article.title}</h5>
                                 </div>
                                 <div>
                                     <span>
-                                        {article.is_allowed ? "published" : "unpublished"}
+                                        {article.published === '1' ? "published" : "unpublished"}
                                     </span>
                                 </div>
                             </div>

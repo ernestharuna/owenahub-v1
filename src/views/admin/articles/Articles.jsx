@@ -1,4 +1,4 @@
-import { Form, Link, Outlet, useLocation } from "react-router-dom";
+import { Form, Link, Outlet, useLocation, useNavigation } from "react-router-dom";
 import axiosClient from "../../../axios-client";
 
 export async function loader() {
@@ -9,6 +9,7 @@ export async function loader() {
 
 export default function Articles() {
     const location = useLocation();
+    const navigation = useNavigation();
 
     return (
         <div className="container-md animated fadeInDown">
@@ -20,6 +21,7 @@ export default function Articles() {
                 </div>
 
                 <div>
+                    {/* To change navigation button content */}
                     {
                         location.pathname === "/admin/articles/create" ?
                             (<Link to={"/admin/articles"}>
@@ -31,7 +33,9 @@ export default function Articles() {
                     }
                 </div>
             </div>
-            <Outlet />
+            <div className={navigation.state === "loading" ? "loading" : ""} >
+                <Outlet />
+            </div>
         </div>
     )
 }

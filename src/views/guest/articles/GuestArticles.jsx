@@ -1,4 +1,4 @@
-import { Outlet } from 'react-router-dom';
+import { Outlet, useNavigation } from 'react-router-dom';
 import './guestArticles.scss';
 import axiosClient from '../../../axios-client';
 import MentorsCard from '../../../components/MentorsCard';
@@ -10,6 +10,8 @@ export async function loader() {
 }
 
 export default function GuestArticles() {
+    const navigation = useNavigation();
+
     return (
         <div className='guest-articles'>
             <section className='animated fadeInDown px-1 flex-items mt-1'>
@@ -31,7 +33,7 @@ export default function GuestArticles() {
             </div>
 
             <div className='outlet-box mt-1 container-md'>
-                <div className="outlet">
+                <div className={navigation.state === "loading" ? "loading2 outlet" : "outlet"} >
                     <Outlet />
                 </div>
 

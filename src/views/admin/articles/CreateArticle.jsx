@@ -7,8 +7,9 @@ export default function CreateArticle() {
     const navigate = useNavigate();
 
     const onSubmit = async (data) => {
+        console.log(data);
         try {
-            const res = await axiosClient.post('/articles', data);
+            await axiosClient.post('/articles', data);
             navigate('/admin/articles');
         } catch (err) {
             console.log(err);
@@ -21,21 +22,49 @@ export default function CreateArticle() {
                 <h4>Create new post</h4>
 
                 <form className="mt-1" onSubmit={handleSubmit(onSubmit)}>
+
                     <div className="form-control">
-                        <input {...register("title", { required: true })}
-                            type="text" placeholder="Title"
+                        <label htmlFor="category">Category</label>
+                        <select id="category" className="form-control" {...register("category", { required: true })}>
+                            <option value="Web Development">Web Development</option>
+                            <option value="UX Design">UX Design</option>
+                            <option defaultValue={true} value="Career Advice">Career Advice</option>
+                            <option value="Product Management">Product Management</option>
+                        </select>
+                    </div>
+
+                    <div className="form-control">
+                        <label htmlFor="description">Description</label><br />
+                        <input {...register("description", { required: true })}
+                            type="text" id="description" placeholder="Short snippet of article"
                             className={errors.title ? 'error form-control' : 'form-control'}
                         />
                     </div>
 
                     <div className="form-control">
+                        <label htmlFor="title">Title</label><br />
+                        <input {...register("title", { required: true })}
+                            type="text" id="title" placeholder="The Interesting benefits of . . ."
+                            className={errors.title ? 'error form-control' : 'form-control'}
+                        />
+                    </div>
+
+                    <div className="form-control">
+                        <label htmlFor="content">Content</label><br />
                         <textarea {...register("content", { required: true })}
-                            placeholder="Article content..."
+                            placeholder="The most interesting fact about this is . . . " id="content"
                             className={errors.content ? 'error form-control' : 'form-control'}
                         ></textarea>
                     </div>
 
-                    <button className="btn" type="submit" disabled={isSubmitting} style={isSubmitting ? { cursor: 'wait' } : { cursor: 'pointer' }}>
+                    <div className="form-control">
+                        <label htmlFor="publish" className="fw-3">Publish Article?</label>
+                        <input type="checkbox" name="" id="publish"
+                            {...register("published")}
+                        />
+                    </div>
+
+                    <button className="btn mt-1" type="submit" disabled={isSubmitting} style={isSubmitting ? { cursor: 'wait' } : { cursor: 'pointer' }}>
                         {isSubmitting ? (<span className='loader'></span>) : "Create Post"}
                     </button>
                 </form>
