@@ -1,10 +1,19 @@
 import { useForm } from "react-hook-form";
 import axiosClient from "../../../axios-client";
 import { useNavigate } from "react-router-dom";
+import ReactQuill from "react-quill";
+import 'react-quill/dist/quill.snow.css';
+import { useState } from "react";
+
 
 export default function CreateArticle() {
     const { register, handleSubmit, formState: { errors, isSubmitting } } = useForm();
     const navigate = useNavigate();
+    const toolbarOptions = [
+        ['bold', 'italic', 'underline', 'strike'], // text formatting options
+        [{ align: [] }], // text alignment options
+        // ['link', 'image', 'video'], // other options
+    ];
 
     const onSubmit = async (data) => {
         console.log(data);
@@ -54,7 +63,16 @@ export default function CreateArticle() {
                         <textarea {...register("content", { required: true })}
                             placeholder="The most interesting fact about this is . . . " id="content"
                             className={errors.content ? 'error form-control' : 'form-control'}
-                        ></textarea>
+                        >
+                        </textarea>
+
+                        {/* <ReactQuill theme="snow" modules={{ toolbar: toolbarOptions }} style={{ height: 100 }}
+                            defaultValue={content}
+                            onChange={setContent}
+                            className={errors.content ? 'error form-control' : 'form-control'}
+                            {register()}
+                        /> */}
+
                     </div>
 
                     <div className="form-control">

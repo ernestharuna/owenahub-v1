@@ -33,7 +33,7 @@ export default function GuestArticles() {
             </div>
 
             <div className='outlet-box mt-1 container-md'>
-                <div className={navigation.state === "loading" ? "loading2 outlet" : "outlet"} >
+                <div className="outlet">
                     <Outlet />
                 </div>
 

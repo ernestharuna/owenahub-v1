@@ -28,6 +28,7 @@ import AdminRegister from "./views/admin/auth/AdminRegister";
 import Articles, { loader as ArticlesLoader } from "./views/admin/articles/Articles";
 import CreateArticle from "./views/admin/articles/CreateArticle";
 import AllArticles from "./views/admin/articles/AllArticles";
+import ShowArticle, { loader as ShowArticleLoader } from "./views/admin/articles/ShowArticle";
 
 
 const router = createBrowserRouter([
@@ -132,6 +133,11 @@ const router = createBrowserRouter([
                     {
                         path: "create",
                         element: <CreateArticle />,
+                    },
+                    {
+                        path: ":articleId",
+                        element: <ShowArticle />,
+                        loader: ShowArticleLoader,
                     }
                 ]
             },

@@ -11,7 +11,7 @@ const ArticleCard = ({ article }) => {
                 <span className="category">{article.category}</span> — <b className="time">Posted {dayjs(article.createdAt).fromNow()}</b>
                 <h4>{article.title}</h4>
                 <span className="description">
-                    {article.content.length > 45 ? `${article.content.substring(0, 45)}...` : article.content}
+                    {article.description.length > 45 ? `${article.description.substring(0, 45)}...` : article.description}
                 </span>
             </div>
         </Link>

@@ -1,8 +1,24 @@
-import { useLoaderData } from "react-router-dom"
+import { Link, useLoaderData, useNavigate } from "react-router-dom";
+import axiosClient from "../../../axios-client";
 
 export default function AllArticles() {
     const articles = useLoaderData();
-    console.log(articles);
+    const navigate = useNavigate();
+    // console.log(articles);
+
+    const onDelete = (article) => {
+        console.log(article.id);
+
+        if (window.confirm("Are you sure?")) {
+            axiosClient.delete(`/articles/${article.id}`)
+                .then(() => {
+                    navigate('/admin/articles');
+                }).catch(err => {
+                    console.log(err);
+                })
+        }
+        return
+    }
 
     return (
         <div>
@@ -12,13 +28,27 @@ export default function AllArticles() {
                 <div className="all-articles mt-1">
                     {
                         articles.map((article) => (
-                            <div key={article.id} style={cardFlex} className="article-cards">
+                            <div style={cardFlex} className="article-cards" key={article.id}>
                                 <div>
-                                    <h5>{article.title}</h5>
+                                    <h5>
+                                        {/* {article.title} */}
+                                        <Link to={`${article.id}`}>
+                                            <i className="bi bi-caret-right-fill" style={color}></i>  {article.title.length > 35 ? `${article.title.substring(0, 35)}...` : article.title}
+                                        </Link>
+                                    </h5>
                                 </div>
                                 <div>
                                     <span>
-                                        {article.published === '1' ? "published" : "unpublished"}
+                                        {
+                                            article.published === '1' ?
+                                                (<i className="bi bi-check-circle-fill" style={color}></i>) :
+                                                (<i className="bi bi-check-circle"></i>)
+                                        }
+                                    </span>
+                                    <br />
+                                    {/* <br /> */}
+                                    <span className="d-inline-block">
+                                        <i className="bi bi-trash" onClick={() => onDelete(article)}></i>
                                     </span>
                                 </div>
                             </div>
@@ -44,4 +74,8 @@ const cardFlex = {
     borderBottom: "1px solid #e3e3e3",
     justifyContent: "space-between",
     background: "#fff"
+}
+
+const color = {
+    color: "#F6A700",
 }

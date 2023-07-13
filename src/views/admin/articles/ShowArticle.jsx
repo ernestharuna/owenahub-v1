@@ -7,7 +7,7 @@ dayjs.extend(relativeTime);
 
 export async function loader({ params }) {
     try {
-        const res = await axiosClient.get(`guest/articles/${params.articleId}`);
+        const res = await axiosClient.get(`/articles/${params.articleId}`);
         const article = res.data;
         return article;
     } catch (err) {
@@ -15,17 +15,17 @@ export async function loader({ params }) {
     }
 }
 
-export default function ShowGuestArticle() {
+export default function ShowArticle() {
     const article = useLoaderData();
 
     const content = article[0].content.split('\n').map((line, index) => (
         <p key={index}>{line}</p>
     ))
 
+
     return (
         <div>
-            <section className="animated fadeInDown2 show-guest-article">
-
+            <section className="animated fadeInDown">
                 <span className="category">{article[0].category}</span> <br />
                 <b className="time">Posted {dayjs(article[0].createdAt).fromNow()}</b>
 
