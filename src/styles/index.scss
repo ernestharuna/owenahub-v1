@@ -262,6 +262,18 @@ a {
     }
 }
 
+.user-session-card {
+    padding: 0.3rem 0.6rem;
+    width: 300px;
+    border-radius: 3px;
+    background: #DEEAF2;
+    transition: all .3s;
+
+    &:hover {
+        box-shadow: $box-shadow2;
+    }
+}
+
 @media screen and (max-width: 860px) {
     header {
         padding: 0 0.4rem;

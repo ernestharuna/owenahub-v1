@@ -163,6 +163,10 @@
     color: #000 !important;
 }
 
+.text-secondary {
+    color: #7a7a7a !important;
+}
+
 .text-purple {
     color: $hover-color2;
 }
@@ -226,6 +230,9 @@
 
     i {
         font-weight: 900;
+        font-size: 1rem;
+        position: relative;
+        top: 2px;
     }
 
     &:hover {
@@ -235,18 +242,9 @@
 }
 
 .btn-dark {
-    padding: 0.5rem 0.5rem;
-    border-radius: 3px;
-    box-shadow: 0 0px 1px hsla(0, 0%, 0%, 0.2), 0 1px 2px hsla(0, 0%, 0%, 0.2);
     background: #000;
     color: #fff;
-    font-weight: 600;
     border: none;
-    transition: all .3s ease;
-
-    i {
-        font-weight: 900;
-    }
 
     &:hover {
         background: $sec-color;

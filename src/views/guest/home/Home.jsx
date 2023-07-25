@@ -20,17 +20,17 @@ const Home = () => {
 
                     <div className="benefits">
                         <span><i className="bi bi-check-lg"></i>
-                            Improve your skills
+                            Get realistic perspective
                         </span>
                         <span><i className="bi bi-check-lg"></i>
-                            Get realistic perspective
+                            Improve your skills
                         </span>
                         <span><i className="bi bi-check-lg"></i>
                             Personal support
                         </span>
                     </div>
 
-                    <Link to="/auth/register">
+                    <Link to="/getstarted">
                         <button>
                             Start for Free
                         </button>
@@ -105,7 +105,7 @@ const Home = () => {
 
             <section className="mission">
                 <div className="container">
-                    <h3>Get access to quality resources and instructors</h3>
+                    <h3>Get access to quality resources and mentors.</h3>
                     <div className="mission-box">
                         <div className="mission-img">
 
@@ -181,7 +181,7 @@ const Home = () => {
                         a particular topic suited to your learning needs.
                     </p>
                     <p>
-                        Take a look at these popular <b>Slices</b> . . .
+                        Take a look at these popular <b>Slices  . . .</b>
                     </p>
 
                     <div className="courses-box">
@@ -216,7 +216,7 @@ const Home = () => {
 
                     <Link to={"/articles"}>
                         <button className="btn text-white fs-1 p-2">
-                            Get Started
+                            <i className="bi bi-caret-right-fill"></i> Start Reading
                         </button>
                     </Link>
                 </div>
@@ -232,22 +232,23 @@ const Home = () => {
 
             <section className="sessions">
                 <div className="container">
-                    <h3>Exclusive sessions and<wbr /> In-person Classes</h3>
+                    <h3>Exclusive Learning</h3>
                     <p>
                         We believe in the power of personalized learning experiences and the value they bring to your growth and development.
-                        <br /> Whether you prefer one-on-one interactions or the energy of in-person gatherings, we have tailored sessions and classes that will cater to your unique needs and learning style.
+                        <br /> There are tailored sessions that will cater to your unique needs and learning style.
                     </p>
                     <div className='private-session'>
                         <h4>Private Sessions</h4>
                         <p>
-                            Our private sessions are designed to provide you with a customized and focused learning environment. You will have the undivided attention of our expert instructors,
+                            Our private sessions are designed to provide you with a customized and focused learning environment. <br />
+                            You will have the undivided attention of our expert mentors,
                             allowing for personalized instruction and guidance tailored specifically to your goals and aspirations. <br /> <br />
                             Whether you're looking to deepen your knowledge in a particular subject, refine your skills, or gain a competitive edge, our private sessions are the perfect opportunity to accelerate your learning journey.
                         </p>
                         <ol>
                             <li>
                                 <b>Personalized Attention:</b><br />
-                                Experience one-on-one guidance from our skilled instructors, who will adapt the content to suit your individual needs.
+                                Experience one-on-one guidance from our skilled mentors, who will adapt the content to suit your individual needs.
                             </li>
 
                             <li>
@@ -265,13 +266,13 @@ const Home = () => {
                                 With personalized instruction and tailored feedback, you can make significant progress in a shorter period.
                             </li>
                         </ol>
-                        <Link to="/user/dashboard">
+                        <Link to="/user/sessions">
                             <button className='btn text-white p-2 fs-1'>
-                                Book a session now
+                                <i className="bi bi-caret-right-fill"></i>  Create a Session
                             </button>
                         </Link>
                     </div>
-                    <hr />
+                    {/* <hr />
                     <div className='in-person'>
                         <h4>In-Person Classes</h4>
                         <p>
@@ -301,7 +302,7 @@ const Home = () => {
                                 Book a session now
                             </button>
                         </Link>
-                    </div>
+                    </div> */}
                 </div>
             </section>
 

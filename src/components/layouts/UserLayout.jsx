@@ -13,7 +13,6 @@ export default function UserLayout() {
     const { token } = useSelector(state => state.authUser);
     const { user } = useSelector(state => state.authUser);
     const { loading } = useSelector(state => state.authUser);
-    console.log(loading);
 
     if (!token) {
         return <Navigate to={"/auth/login"} />
@@ -80,9 +79,9 @@ export default function UserLayout() {
                             <i className="bi bi-journal-bookmark-fill"></i> Slices
                         </div>
                     </NavLink>
-                    <NavLink to={"forum"} className={({ isActive, isPending }) => isActive ? "active" : isPending ? "pending" : ""}>
+                    <NavLink to={"sessions"} className={({ isActive, isPending }) => isActive ? "active" : isPending ? "pending" : ""}>
                         <div>
-                            <i className="bi bi-calendar-week"></i> Forums
+                            <i className="bi bi-calendar-week"></i> Sessions
                         </div>
                     </NavLink>
                     <button onClick={onLogout} id="logout">

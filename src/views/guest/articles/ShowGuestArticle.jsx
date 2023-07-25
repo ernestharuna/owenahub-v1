@@ -30,6 +30,9 @@ export default function ShowGuestArticle() {
                 <b className="time">Posted {dayjs(article[0].createdAt).fromNow()}</b>
 
                 <h2 className="text-dark fw-1 mt-1">{article[0].title}</h2>
+                <p className="fw-3">
+                    {article[0].description}
+                </p>
 
                 <div className="body mt-1">
                     {/* <div dangerouslySetInnerHTML={{ __html: article[0].content }} /> */}

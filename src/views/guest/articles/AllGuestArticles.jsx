@@ -13,7 +13,7 @@ export default function AllGuestArticles() {
 
                 <div>
                     {
-                        articles.length === 0 ? (<p>No articles . . .🤔</p>) :
+                        articles.length === 0 ? (<p>No articles . . . 🤔</p>) :
                             (articles.map((article) => (
                                 <ArticleCard key={article.id} article={article} />))
                             )

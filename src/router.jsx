@@ -29,6 +29,8 @@ import Articles, { loader as ArticlesLoader } from "./views/admin/articles/Artic
 import CreateArticle from "./views/admin/articles/CreateArticle";
 import AllArticles from "./views/admin/articles/AllArticles";
 import ShowArticle, { loader as ShowArticleLoader } from "./views/admin/articles/ShowArticle";
+import AllUserSessions from "./views/users/sessions/AllUserSessions";
+import WaitList from "./views/guest/waitList/WaitList";
 
 
 const router = createBrowserRouter([
@@ -44,6 +46,10 @@ const router = createBrowserRouter([
             {
                 path: "getstarted",
                 element: <OnBoard />
+            },
+            {
+                path: "/waitlist",
+                element: <WaitList />
             },
             {
                 path: "articles",
@@ -102,6 +108,10 @@ const router = createBrowserRouter([
             {
                 path: "slices",
                 element: <Slices />
+            },
+            {
+                path: "sessions",
+                element: <AllUserSessions />
             }
 
         ]
