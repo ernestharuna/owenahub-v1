@@ -16,7 +16,7 @@ export default function CreateArticle() {
     ];
 
     const onSubmit = async (data) => {
-        console.log(data);
+        // console.log(data);
         try {
             await axiosClient.post('/articles', data);
             navigate('/admin/articles');

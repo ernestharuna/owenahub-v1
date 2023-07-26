@@ -1,13 +1,21 @@
 import { useState } from "react"
 import { useForm } from "react-hook-form";
 import { Link } from "react-router-dom";
+import axiosClient from "../../../axios-client";
 
 export default function WaitList() {
     const [error, setError] = useState(null);
     const { register, handleSubmit, formState: { errors, isSubmitting } } = useForm();
 
     const onSubmit = async (data) => {
-        console.log(data);
+        setError(null);
+        // console.log(data);
+        try {
+            await axiosClient.post('/waitlist/create', data)
+                .then(({ data }) => console.log(data));
+        } catch (err) {
+            console.log(err);
+        }
     }
 
     return (
@@ -59,15 +67,15 @@ export default function WaitList() {
 
 
                         <button type='submit' className='form-control mt-1' id='submit' disabled={isSubmitting} style={isSubmitting ? { cursor: 'wait' } : { cursor: 'pointer' }}>
-                            {isSubmitting ? (<span className='loader'></span>) : "Register"}
+                            {isSubmitting ? (<span className='loader'></span>) : "Join Waitlist"}
                             {/* <span className='loader' style={{ cursor: 'wait' }}></span> */}
                         </button>
                     </form>
                     <hr />
                     <p>
-                        Do you have an account with us? {" "}
-                        <Link to="/auth/login">
-                            Login here
+                        Want to join us? {" "}
+                        <Link to="/auth/register" className="fw-3">
+                            Create an account
                         </Link>
                     </p>
                 </div>

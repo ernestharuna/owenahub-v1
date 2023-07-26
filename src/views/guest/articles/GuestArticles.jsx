@@ -22,7 +22,7 @@ export default function GuestArticles() {
                 </div>
 
                 <div>
-                    <button className="btn-dark p-2">
+                    <button className="btn btn-dark p-2">
                         Submit Article <i className="bi bi-cursor"></i>
                     </button>
                 </div>

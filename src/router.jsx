@@ -12,6 +12,7 @@ import OnBoard from "./views/guest/onboard/OnBoard";
 import GuestArticles, { loader as GuestArticlesLoader } from "./views/guest/articles/GuestArticles";
 import AllGuestArticles from "./views/guest/articles/AllGuestArticles";
 import ShowGuestArticle, { loader as ShowGuestArticleLoader } from "./views/guest/articles/ShowGuestArticle";
+import WaitList from "./views/guest/waitList/WaitList";
 
 // auth imports
 import Login from "./views/users/auth/Login";
@@ -20,6 +21,8 @@ import Register from "./views/users/auth/Register";
 // user page imports
 import Dashboard, { loader as dashboardLoader } from "./views/users/dashboard/Dashboard";
 import Slices from "./views/users/slices/Slices";
+import UserSessions, { loader as UserSessionsLoader } from "./views/users/sessions/UserSessions";
+import AllUserSessions from "./views/users/sessions/AllUserSessions";
 
 // admin page imports
 import AdminDashboard from "./views/admin/dashboard/adminDashboard";
@@ -29,8 +32,7 @@ import Articles, { loader as ArticlesLoader } from "./views/admin/articles/Artic
 import CreateArticle from "./views/admin/articles/CreateArticle";
 import AllArticles from "./views/admin/articles/AllArticles";
 import ShowArticle, { loader as ShowArticleLoader } from "./views/admin/articles/ShowArticle";
-import AllUserSessions from "./views/users/sessions/AllUserSessions";
-import WaitList from "./views/guest/waitList/WaitList";
+import CreateSession from "./views/users/sessions/CreateSession";
 
 
 const router = createBrowserRouter([
@@ -48,7 +50,7 @@ const router = createBrowserRouter([
                 element: <OnBoard />
             },
             {
-                path: "/waitlist",
+                path: "waitlist",
                 element: <WaitList />
             },
             {
@@ -91,7 +93,7 @@ const router = createBrowserRouter([
             {
                 path: "admin/register",
                 element: <AdminRegister />
-            }
+            },
         ]
     },
 
@@ -111,7 +113,19 @@ const router = createBrowserRouter([
             },
             {
                 path: "sessions",
-                element: <AllUserSessions />
+                element: <UserSessions />,
+                loader: UserSessionsLoader,
+                children: [
+                    {
+                        index: true,
+                        element: <AllUserSessions />,
+                        loader: UserSessionsLoader,
+                    },
+                    {
+                        path: "create",
+                        element: <CreateSession />
+                    }
+                ]
             }
 
         ]

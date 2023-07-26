@@ -203,6 +203,10 @@
     font-weight: 800;
 }
 
+.fs-small {
+    font-size: 0.8rem;
+}
+
 .fs-1 {
     font-size: 1rem;
 }
@@ -229,10 +233,9 @@
     transition: all .3s ease;
 
     i {
-        font-weight: 900;
         font-size: 1rem;
-        position: relative;
-        top: 2px;
+        // position: relative;
+        // top: 2px;
     }
 
     &:hover {

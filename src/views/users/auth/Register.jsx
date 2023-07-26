@@ -94,10 +94,11 @@ export default function Register() {
                     <hr />
                     <p>
                         Do you have an account with us? {" "}
-                        <Link to="/auth/login">
+                        <Link to="/auth/login" className='fw-3'>
                             Login here
                         </Link>
                     </p>
+
                 </div>
 
                 <div className="howto">

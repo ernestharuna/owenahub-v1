@@ -4,13 +4,9 @@ import "./userSessionStyle.scss";
 
 export default function AllUserSessions() {
     return (
-        <div className="container-md animated fadeInDown">
-            <h4>
-                Sessions
-            </h4>
-
+        <div className="animated fadeInDown">
             <div className="mt-1">
-                <Link to="#">
+                <Link to="create">
                     <button className="btn btn-dark">
                         Create a Session ⇗
                     </button>
@@ -18,7 +14,7 @@ export default function AllUserSessions() {
             </div>
 
             <div className="mt-1 user-sessions-box">
-                <h5>
+                <h5 className="mt-1 mb-1">
                     On-going Sessions
                 </h5>
 

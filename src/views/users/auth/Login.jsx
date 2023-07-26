@@ -35,7 +35,7 @@ export default function Login() {
     return (
         <div className="animated fadeInDown">
             <div className='form-container'>
-                <div className="form mt-3 container">
+                <div className="form mt-2 container">
                     <h3>Login to OwenaHub!</h3>
                     <p>
                         Start making valuable connections with experienced mentors <br className='hidden' />
@@ -73,9 +73,12 @@ export default function Login() {
 
                         <hr />
 
-                        <Link to="/auth/register">
-                            Create an account
-                        </Link>
+                        <p>
+                            Want to join us? {" "}
+                            <Link to="/auth/register" className="fw-3">
+                                Create an account
+                            </Link>
+                        </p>
                     </form>
                 </div>
 
