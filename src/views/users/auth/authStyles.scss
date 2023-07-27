@@ -126,7 +126,15 @@ form {
             background: $hover-color;
         }
     }
+}
 
+#next-btn {
+    width: auto;
+    color: #fff;
+    border: none;
+    padding: 0.5rem 2rem;
+    border-radius: 10px;
+    background: #000;
 }
 
 @media screen and (max-width: 850px) {

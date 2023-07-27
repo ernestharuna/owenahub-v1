@@ -4,7 +4,6 @@ import axiosClient from "../../../axios-client";
 export default function AllArticles() {
     const articles = useLoaderData();
     const navigate = useNavigate();
-    // console.log(articles);
 
     const onDelete = (article) => {
         console.log(article.id);
@@ -33,16 +32,15 @@ export default function AllArticles() {
                                     <h5>
                                         {/* {article.title} */}
                                         <Link to={`${article.id}`}>
-                                            <i className="bi bi-caret-right-fill" style={color}></i>  {article.title.length > 35 ? `${article.title.substring(0, 35)}...` : article.title}
+                                            <i className="bi bi-caret-right-fill" style={color}></i> {article.title.length > 35 ? `${article.title.substring(0, 35)}...` : article.title}
                                         </Link>
                                     </h5>
                                 </div>
                                 <div>
                                     <span>
-                                        {
-                                            article.published === '1' ?
-                                                (<i className="bi bi-check-circle-fill" style={color}></i>) :
-                                                (<i className="bi bi-check-circle"></i>)
+                                        {article.published === '1' ?
+                                            (<i className="bi bi-check-circle-fill" style={color}></i>) :
+                                            (<i className="bi bi-check-circle"></i>)
                                         }
                                     </span>
                                     <br />

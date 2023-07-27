@@ -20,9 +20,11 @@ export default function OnBoard() {
                             <li>Mentor a plethora of people from different backgrounds.</li>
                             <li>Get paid for sharing your expertise, and growing talents.</li>
                         </ul>
-                        <button>
-                            Get Started
-                        </button>
+                        <Link to={"/auth/mentor/register"} >
+                            <button>
+                                Get Started
+                            </button>
+                        </Link>
                     </div>
 
                     <div className="onboard-card mb-1 fadeInDown2 animated2">

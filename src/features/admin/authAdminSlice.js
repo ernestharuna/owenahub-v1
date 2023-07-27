@@ -11,7 +11,7 @@ export const authAdminSlice = createSlice({
     initialState,
     reducers: {
         getAdmin: (state) => {
-            state.loading = true
+            state.loading = true;
         },
 
         setAdmin: (state, action) => {
@@ -21,7 +21,7 @@ export const authAdminSlice = createSlice({
 
         setToken: (state, action) => {
             state.token = action.payload;
-            localStorage.setItem('ADMIN_TOKEN', action.payload)
+            localStorage.setItem('ADMIN_TOKEN', action.payload);
         },
 
         logoutAdmin: (state) => {

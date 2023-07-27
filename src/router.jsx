@@ -14,15 +14,14 @@ import AllGuestArticles from "./views/guest/articles/AllGuestArticles";
 import ShowGuestArticle, { loader as ShowGuestArticleLoader } from "./views/guest/articles/ShowGuestArticle";
 import WaitList from "./views/guest/waitList/WaitList";
 
-// auth imports
+// user page imports
 import Login from "./views/users/auth/Login";
 import Register from "./views/users/auth/Register";
-
-// user page imports
 import Dashboard, { loader as dashboardLoader } from "./views/users/dashboard/Dashboard";
 import Slices from "./views/users/slices/Slices";
 import UserSessions, { loader as UserSessionsLoader } from "./views/users/sessions/UserSessions";
 import AllUserSessions from "./views/users/sessions/AllUserSessions";
+import CreateSession from "./views/users/sessions/CreateSession";
 
 // admin page imports
 import AdminDashboard from "./views/admin/dashboard/adminDashboard";
@@ -32,7 +31,8 @@ import Articles, { loader as ArticlesLoader } from "./views/admin/articles/Artic
 import CreateArticle from "./views/admin/articles/CreateArticle";
 import AllArticles from "./views/admin/articles/AllArticles";
 import ShowArticle, { loader as ShowArticleLoader } from "./views/admin/articles/ShowArticle";
-import CreateSession from "./views/users/sessions/CreateSession";
+import MentorLogin from "./views/mentors/auth/MentorLogin";
+import MentorRegister from "./views/mentors/auth/MentorRegister";
 
 
 const router = createBrowserRouter([
@@ -94,6 +94,14 @@ const router = createBrowserRouter([
                 path: "admin/register",
                 element: <AdminRegister />
             },
+            {
+                path: "mentor/login",
+                element: <MentorLogin />
+            },
+            {
+                path: "mentor/register",
+                element: <MentorRegister />
+            }
         ]
     },
 
@@ -129,6 +137,11 @@ const router = createBrowserRouter([
             }
 
         ]
+    },
+
+    // Mentor Layout 
+    {
+
     },
 
     // Admin layout

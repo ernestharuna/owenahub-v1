@@ -22,7 +22,6 @@ export default function ShowArticle() {
         <p key={index}>{line}</p>
     ))
 
-
     return (
         <div>
             <section className="animated fadeInDown">
