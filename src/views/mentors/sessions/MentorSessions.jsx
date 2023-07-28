@@ -4,7 +4,7 @@ export async function loader() {
     return null
 }
 
-export default function UserSessions() {
+export default function MentorSessions() {
     return (
         <div className="container-md animated fadeInDown">
             <h4>

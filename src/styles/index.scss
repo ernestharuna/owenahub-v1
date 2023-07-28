@@ -266,9 +266,9 @@ a {
     }
 }
 
-.user-session-card {
+.session-card {
     padding: 0.3rem 0.6rem;
-    width: 300px;
+    width: 200px;
     border-radius: 3px;
     background: #DEEAF2;
     transition: all .3s;
@@ -336,6 +336,18 @@ a {
             border-radius: 2px 0 0 2px;
             min-width: 10%;
             min-height: 100%;
+        }
+    }
+
+    .session-card {
+        padding: 0.3rem 0.6rem;
+        width: 100%;
+        border-radius: 3px;
+        background: #DEEAF2;
+        transition: all .3s;
+
+        &:hover {
+            box-shadow: $box-shadow2;
         }
     }
 

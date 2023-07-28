@@ -7,7 +7,7 @@ const CourseCard = ({ title, desc }) => {
                 {/* <img src={article.urlToImage ? article.urlToImage : "#"} alt="..." /> */}
             </div>
             <div className="course-detail">
-                <Link to="#">
+                <Link to="/waitlist">
                     <h4>
                         {title}
                     </h4>

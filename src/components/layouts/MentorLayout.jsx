@@ -5,34 +5,34 @@ import axiosClient from "../../axios-client";
 
 import { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { getAdmin, logoutAdmin, setAdmin } from "../../features/admin/authAdminSlice";
+import { getMentor, setMentor, logoutMentor } from "../../features/mentor/authMentorSlice";
 
-export default function AdminLayout() {
+export default function MentorLayout() {
     const dispatch = useDispatch();
     const navigation = useNavigation();
-    const { admin, token, loading } = useSelector(state => state.authAdmin);
+    const { mentor, token, loading } = useSelector(state => state.authMentor);
 
     if (!token) {
-        return <Navigate to={"/auth/admin/login"} />
+        return <Navigate to={"/auth/mentor/login"} />
     }
 
     const onLogout = (e) => {
         e.preventDefault();
-        axiosClient.post('/admin/logout')
+        axiosClient.post('/mentor/logout')
             .then(() => {
-                dispatch(logoutAdmin());
+                dispatch(logoutMentor());
                 window.location.href = "/";
             });
     }
 
     const init = () => {
-        dispatch(getAdmin());
+        dispatch(getMentor());
         axiosClient.get('/user')
             .then(({ data }) => {
-                dispatch(setAdmin(data));
+                dispatch(setMentor(data));
             }).catch((err) => {
                 if (err.response.status === 401) {
-                    dispatch(logoutAdmin());
+                    dispatch(logoutMentor());
                     window.location.href = "/";
                 }
             })
@@ -59,7 +59,7 @@ export default function AdminLayout() {
                     <div className="user-icon">
                         <i className="bi bi-person-circle" style={userIcon}></i>
                         {
-                            loading ? (" ") : (<span className="animated fadeInDown2">{admin.first_name}</span>)
+                            loading ? (" ") : (<span className="animated fadeInDown2">{mentor.first_name}</span>)
                         }
                     </div>
                 </nav>
@@ -77,14 +77,9 @@ export default function AdminLayout() {
                             <i className="bi bi-vector-pen"></i> Articles
                         </div>
                     </NavLink>
-                    <NavLink to={"slices"} className={({ isActive, isPending }) => isActive ? "active" : isPending ? "pending" : ""}>
+                    <NavLink to={"sessions"} className={({ isActive, isPending }) => isActive ? "active" : isPending ? "pending" : ""}>
                         <div>
-                            <i className="bi bi-journal-bookmark-fill"></i> Slices
-                        </div>
-                    </NavLink>
-                    <NavLink to={"forum"} className={({ isActive, isPending }) => isActive ? "active" : isPending ? "pending" : ""}>
-                        <div>
-                            <i className="bi bi-calendar-week"></i> Forums
+                            <i className="bi bi-calendar-week"></i> Sessions
                         </div>
                     </NavLink>
                     <button onClick={onLogout} id="logout">

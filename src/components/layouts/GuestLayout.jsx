@@ -57,6 +57,12 @@ const GuestLayout = () => {
                         <b> Contact Us</b> <br />
                         owenacenter@gmail.com
                     </p>
+
+                    <p>
+                        <b> Sign in </b> <br />
+                        <Link to={"/auth/login"}>Learner</Link> | <Link to={"/auth/mentor/login"}>Mentor</Link> | <Link to={"/auth/admin/login"}>Admin</Link>
+                    </p>
+
                     <p>
                         <small>
                             Owenahub, &copy; 2023 - All rights reserved

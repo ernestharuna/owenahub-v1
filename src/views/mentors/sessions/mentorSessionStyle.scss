@@ -1,0 +1,15 @@
+@use "/src/styles/index.scss" as *;
+
+.mentor-sessions-box {
+    background: #F7FAFC;
+    padding: 0.5rem 1rem;
+    box-shadow: $box-shadow2;
+}
+
+.mentor-sessions {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    flex-wrap: wrap;
+    gap: 1rem;
+}

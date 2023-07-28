@@ -9,10 +9,7 @@ import { setUser, getUser, logoutUser } from "../../features/user/authUserSlice"
 
 export default function UserLayout() {
     const dispatch = useDispatch();
-
-    const { token } = useSelector(state => state.authUser);
-    const { user } = useSelector(state => state.authUser);
-    const { loading } = useSelector(state => state.authUser);
+    const { user, token, loading } = useSelector(state => state.authUser);
 
     if (!token) {
         return <Navigate to={"/auth/login"} />

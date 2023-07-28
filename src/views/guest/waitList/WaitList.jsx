@@ -12,7 +12,7 @@ export default function WaitList() {
         // console.log(data);
         try {
             await axiosClient.post('/waitlist/create', data)
-                .then(({ data }) => console.log(data));
+                .then((data) => console.log(data));
         } catch (err) {
             console.log(err);
         }

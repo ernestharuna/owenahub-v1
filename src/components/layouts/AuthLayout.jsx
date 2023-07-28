@@ -3,13 +3,16 @@ import logo from '../../assets/owena_logo.png';
 import { useSelector } from "react-redux";
 
 export default function AuthLayout() {
-    const { token } = useSelector(state => state.authUser);
+    const user_token = useSelector(state => state.authUser.token);
     const admin_token = useSelector(state => state.authAdmin.token);
+    const mentor_token = useSelector(state => state.authMentor.token)
 
-    if (token) {
+    if (user_token) {
         return <Navigate to={"/user/dashboard"} />
     } else if (admin_token) {
         return <Navigate to={"/admin/dashboard"} />
+    } else if (mentor_token) {
+        return <Navigate to={"/mentor/dashboard"} />
     }
 
     return (
@@ -49,6 +52,12 @@ export default function AuthLayout() {
                         <b> Contact Us</b> <br />
                         owenacenter@gmail.com
                     </p>
+
+                    <p>
+                        <b> Sign in </b> <br />
+                        <Link to={"/auth/login"}>Learner</Link> | <Link to={"/auth/mentor/login"}>Mentor</Link> | <Link to={"/auth/admin/login"}>Admin</Link>
+                    </p>
+
                     <p>
                         <small>
                             Owenahub, &copy; 2023 - All rights reserved

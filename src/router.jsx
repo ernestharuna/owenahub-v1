@@ -4,7 +4,8 @@ import { createBrowserRouter } from "react-router-dom";
 import GuestLayout from "./components/layouts/GuestLayout";
 import AuthLayout from "./components/layouts/AuthLayout";
 import UserLayout from "./components/layouts/UserLayout";
-import AdminLayout from "./components/layouts/AdminLayout"
+import AdminLayout from "./components/layouts/AdminLayout";
+import MentorLayout from "./components/layouts/MentorLayout"
 
 // guest page imports
 import Home from "./views/guest/home/Home";
@@ -31,8 +32,13 @@ import Articles, { loader as ArticlesLoader } from "./views/admin/articles/Artic
 import CreateArticle from "./views/admin/articles/CreateArticle";
 import AllArticles from "./views/admin/articles/AllArticles";
 import ShowArticle, { loader as ShowArticleLoader } from "./views/admin/articles/ShowArticle";
+
+// Mentor page imports
 import MentorLogin from "./views/mentors/auth/MentorLogin";
 import MentorRegister from "./views/mentors/auth/MentorRegister";
+import MentorDashboard from "./views/mentors/dashboard/MentorDashboard";
+import MentorSessions, { loader as MentorSessionsLoader } from "./views/mentors/sessions/MentorSessions";
+import AllMentorSessions from "./views/mentors/sessions/AllMentorSessions";
 
 
 const router = createBrowserRouter([
@@ -141,7 +147,27 @@ const router = createBrowserRouter([
 
     // Mentor Layout 
     {
-
+        path: "/mentor",
+        element: <MentorLayout />,
+        children: [
+            {
+                path: "dashboard",
+                index: true,
+                element: <MentorDashboard />,
+            },
+            {
+                path: "sessions",
+                element: <MentorSessions />,
+                loader: MentorSessionsLoader,
+                children: [
+                    {
+                        index: true,
+                        element: <AllMentorSessions />,
+                        loader: MentorSessionsLoader,
+                    }
+                ]
+            }
+        ]
     },
 
     // Admin layout

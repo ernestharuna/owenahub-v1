@@ -2,42 +2,35 @@ import { useForm } from 'react-hook-form';
 import { Link } from 'react-router-dom';
 import axiosClient from '../../../axios-client'
 
-import { useEffect, useState } from 'react';
+import { useState } from 'react';
 import { useDispatch } from 'react-redux';
 import { setToken, setMentor } from '../../../features/mentor/authMentorSlice';
 
 export default function MentorRegister() {
-    const [error, setError] = useState(null);
     const [next, setNext] = useState(false); //controls what part of the form is displayed
+    const [error, setError] = useState(null);
     const dispatch = useDispatch();
-    const { register, handleSubmit, watch, formState: { errors, isSubmitting } } = useForm();
+    const { register, handleSubmit, formState: { errors, isSubmitting } } = useForm();
 
     const onSubmit = async (data) => {
-        if ((watch('email') || watch('first_name') || watch('last_name') || watch('field')) === "") {
-            setError({
-                error: ["Fill out all feilds"]
-            });
+        setError(null);
+        if (!data.first_name || !data.last_name || !data.email) {
             setNext(false);
         }
-        console.log(error);
-        setError(null);
+        try {
+            const res = await axiosClient.post('/mentor/register', data);
+            console.log(res.data);
+            dispatch(setMentor(res.data.mentor))
+            dispatch(setToken(res.data.token))
+        } catch (err) {
+            console.log(err);
+            const res = err.response;
+            if (res && res.status === 422) {
+                setError(res.data.errors);
+            }
+        }
 
-        // try {
-        //     const res = await axiosClient.post('/register', data);
-        //     dispatch(setMentor(res.data.mentor))
-        //     dispatch(setToken(res.data.token))
-        // } catch (err) {
-        //     const res = err.response;
-        //     if (res && res.status === 422) {
-        //         setError(res.data.errors);
-        //     }
-        // }
     };
-
-
-    useEffect(() => {
-
-    })
 
     return (
         <div className="animated fadeInDown">
@@ -79,16 +72,12 @@ export default function MentorRegister() {
                                     />
                                 </div>
 
+                                {/* Gender */}
                                 <div className="form-control">
-                                    <select className='form-control' {...register("field", { required: true })}>
-                                        <option value="" defaultChecked>Field of Experience</option>
-                                        <option value="Frontend Developer">Frontend Developer</option>
-                                        <option value="Backend Developer">Backend Developer</option>
-                                        <option value="UI/UX Designer">UI/UX Designer</option>
-                                        <option value="Software Engineer">Software Engineer</option>
-                                        <option value="Full-stack Developer">Full-stack Developer</option>
-                                        <option value="Career Coach">Career Coach</option>
-                                        <option value="Product Manager">Product Manager</option>
+                                    <select className='form-control' {...register("gender", { required: true })}>
+                                        <option value="Male" defaultChecked>Male</option>
+                                        <option value="Female">Female</option>
+                                        <option value="Other">Other</option>
                                     </select>
                                 </div>
 
@@ -107,21 +96,26 @@ export default function MentorRegister() {
                         {
                             next &&
                             (<div className='animated fadeInDown2'>
+                                {/* Field */}
+                                <div className="form-control">
+                                    <select className='form-control' {...register("field", { required: true })}>
+                                        <option value="" defaultChecked>Field of Experience</option>
+                                        <option value="Frontend Developer">Frontend Developer</option>
+                                        <option value="Backend Developer">Backend Developer</option>
+                                        <option value="UI/UX Designer">UI/UX Designer</option>
+                                        <option value="Software Engineer">Software Engineer</option>
+                                        <option value="Full-stack Developer">Full-stack Developer</option>
+                                        <option value="Career Coach">Career Coach</option>
+                                        <option value="Product Manager">Product Manager</option>
+                                    </select>
+                                </div>
+
                                 {/* Years of experience */}
                                 <div className="form-control">
                                     <input
                                         {...register("exp_years", { required: true, min: 0 })}
                                         className={errors.exp_years ? 'error form-control' : 'form-control'}
                                         type="number" placeholder="Years of experience"
-                                    />
-                                </div>
-
-                                {/* Date of birth */}
-                                <div className="form-control">
-                                    <input
-                                        {...register("date_of_birth", { required: true })}
-                                        className={errors.date_of_birth ? 'error form-control' : 'form-control'}
-                                        type="date" placeholder="Date of birth"
                                     />
                                 </div>
 
