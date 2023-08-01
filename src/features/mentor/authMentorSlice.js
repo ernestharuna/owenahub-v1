@@ -26,6 +26,7 @@ export const authMentorSlice = createSlice({
 
         logoutMentor: (state) => {
             state.mentor = "";
+            state.loading = true;
             localStorage.removeItem('MENTOR_TOKEN');
         }
     }
