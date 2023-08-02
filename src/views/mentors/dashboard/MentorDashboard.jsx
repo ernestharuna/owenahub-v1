@@ -14,12 +14,10 @@ export default function Dashboard() {
             </h4>
             <p>
                 Hello Mentor {" "}
-                {
-                    loading ?
-                        (" . . . ") :
-                        (<span className="animated fadeInDown2 fw-3">
-                            {`${mentor.first_name} ${mentor.last_name}`}
-                        </span>)
+                {loading ? (" . . . ") :
+                    (<span className="animated fadeInDown2 fw-3">
+                        {`${mentor.first_name} ${mentor.last_name}`}
+                    </span>)
                 }
             </p>
         </div>

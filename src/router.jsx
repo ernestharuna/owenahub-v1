@@ -1,11 +1,11 @@
 import { createBrowserRouter } from "react-router-dom";
 
 // layouts import
-import GuestLayout from "./components/layouts/GuestLayout";
-import AuthLayout from "./components/layouts/AuthLayout";
-import UserLayout from "./components/layouts/UserLayout";
-import AdminLayout from "./components/layouts/AdminLayout";
-import MentorLayout from "./components/layouts/MentorLayout"
+import GuestLayout from "./layouts/GuestLayout";
+import AuthLayout from "./layouts/AuthLayout";
+import UserLayout from "./layouts/UserLayout";
+import AdminLayout from "./layouts/AdminLayout";
+import MentorLayout from "./layouts/MentorLayout"
 
 // guest page imports
 import Home from "./views/guest/home/Home";

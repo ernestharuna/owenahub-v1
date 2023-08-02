@@ -1,11 +1,11 @@
 import { Outlet, Link, NavLink, Navigate, useNavigation } from "react-router-dom";
-import logo from '../../assets/owena_logo.png'
+import logo from '../assets/owena_logo.png'
 import "./layout.scss"
-import axiosClient from "../../axios-client";
+import axiosClient from "../axios-client";
 
 import { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { getMentor, setMentor, logoutMentor } from "../../features/mentor/authMentorSlice";
+import { getMentor, setMentor, logoutMentor } from "../features/mentor/authMentorSlice";
 
 export default function MentorLayout() {
     const dispatch = useDispatch();

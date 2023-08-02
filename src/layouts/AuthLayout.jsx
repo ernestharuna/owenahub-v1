@@ -1,8 +1,19 @@
-import { Outlet, Link, useNavigation } from "react-router-dom";
-import logo from '../../assets/owena_logo.png'
+import { Outlet, Link, Navigate } from "react-router-dom";
+import logo from '../assets/owena_logo.png'
+import { useSelector } from "react-redux";
 
-const GuestLayout = () => {
-    const navigation = useNavigation();
+export default function AuthLayout() {
+    const user_token = useSelector(state => state.authUser.token);
+    const admin_token = useSelector(state => state.authAdmin.token);
+    const mentor_token = useSelector(state => state.authMentor.token)
+
+    if (user_token) {
+        return <Navigate to={"/user/dashboard"} />
+    } else if (admin_token) {
+        return <Navigate to={"/admin/dashboard"} />
+    } else if (mentor_token) {
+        return <Navigate to={"/mentor/dashboard"} />
+    }
 
     return (
         <>
@@ -10,38 +21,22 @@ const GuestLayout = () => {
                 <nav>
                     <div id="nav-list">
                         <img src={logo} alt="_logo" style={{ width: '60px' }} />
-                        <Link>
+                        <Link to="/">
                             <h1>OwenaHub</h1>
                         </Link>
                     </div>
 
-                    <div className="large-screen">
-                        <small className="cursive">
-                            The Learner's Hub
-                        </small>
-                    </div>
+                    <div>
 
-                    <div className="auth-btns">
-                        {/* <PrimaryBtn text="Start for free" link="/auth/register" /> */}
-                        <Link to={"/auth/login"}>
-                            <span className="sign-in">
-                                Sign in
-                            </span>
-                        </Link>
-                        <Link to={"/getstarted"}>
-                            <span className="register">
-                                Register
-                            </span>
-                        </Link>
                     </div>
                 </nav>
             </header>
 
-            <main className={navigation.state === "loading" ? " loading" : ""}>
+            <main>
                 <Outlet />
             </main>
 
-            <footer>
+            <footer style={margin}>
                 <div className="container">
                     <h1>OwenaHub</h1>
                     <div id="footer-quote">
@@ -74,4 +69,6 @@ const GuestLayout = () => {
     )
 }
 
-export default GuestLayout
+const margin = {
+    marginTop: 0
+}

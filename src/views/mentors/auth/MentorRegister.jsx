@@ -51,8 +51,7 @@ export default function MentorRegister() {
                     }
 
                     <form onSubmit={handleSubmit(onSubmit)}>
-                        {
-                            !next &&
+                        {!next &&
                             (<div className='animated fadeInDown2'>
                                 {/* first name */}
                                 <div className="form-control">
@@ -93,8 +92,7 @@ export default function MentorRegister() {
                         }
 
                         {/* ------------- next */}
-                        {
-                            next &&
+                        {next &&
                             (<div className='animated fadeInDown2'>
                                 {/* Field */}
                                 <div className="form-control">

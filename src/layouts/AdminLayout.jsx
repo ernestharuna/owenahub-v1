@@ -1,44 +1,45 @@
-import { Outlet, Link, NavLink, Navigate } from "react-router-dom";
-import logo from '../../assets/owena_logo.png'
+import { Outlet, Link, NavLink, Navigate, useNavigation } from "react-router-dom";
+import logo from '../assets/owena_logo.png'
 import "./layout.scss"
-import axiosClient from "../../axios-client";
+import axiosClient from "../axios-client";
 
 import { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { setUser, getUser, logoutUser } from "../../features/user/authUserSlice";
+import { getAdmin, logoutAdmin, setAdmin } from "../features/admin/authAdminSlice";
 
-export default function UserLayout() {
+export default function AdminLayout() {
     const dispatch = useDispatch();
-    const { user, token, loading } = useSelector(state => state.authUser);
+    const navigation = useNavigation();
+    const { admin, token, loading } = useSelector(state => state.authAdmin);
 
     if (!token) {
-        return <Navigate to={"/auth/login"} />
+        return <Navigate to={"/auth/admin/login"} />
     }
 
     const onLogout = (e) => {
         e.preventDefault();
-        axiosClient.post('/logout')
+        axiosClient.post('/admin/logout')
             .then(() => {
-                dispatch(logoutUser())
+                dispatch(logoutAdmin());
                 window.location.href = "/";
             });
     }
 
     const init = () => {
-        dispatch(getUser());
+        dispatch(getAdmin());
         axiosClient.get('/user')
             .then(({ data }) => {
-                dispatch(setUser(data));
+                dispatch(setAdmin(data));
             }).catch((err) => {
                 if (err.response.status === 401) {
-                    dispatch(logoutUser());
+                    dispatch(logoutAdmin());
                     window.location.href = "/";
                 }
             })
     }
 
     useEffect(() => {
-        init(); //fetch logged in user details
+        init(); //fetch logged in admin details
     }, [])
 
     return (
@@ -58,7 +59,7 @@ export default function UserLayout() {
                     <div className="user-icon">
                         <i className="bi bi-person-circle" style={userIcon}></i>
                         {
-                            loading ? (" ") : (<span className="animated fadeInDown2">{user.first_name}</span>)
+                            loading ? (" ") : (<span className="animated fadeInDown2">{admin.first_name}</span>)
                         }
                     </div>
                 </nav>
@@ -69,6 +70,11 @@ export default function UserLayout() {
                     <NavLink to={"dashboard"} className={({ isActive, isPending }) => isActive ? "active" : isPending ? "pending" : ""}>
                         <div >
                             <i className="bi bi-bookmarks"></i> Dashboard
+                        </div>
+                    </NavLink>
+                    <NavLink to={"articles"} className={({ isActive, isPending }) => isActive ? "active" : isPending ? "pending" : ""}>
+                        <div>
+                            <i className="bi bi-vector-pen"></i> Articles
                         </div>
                     </NavLink>
                     <NavLink to={"slices"} className={({ isActive, isPending }) => isActive ? "active" : isPending ? "pending" : ""}>
@@ -85,7 +91,8 @@ export default function UserLayout() {
                         <i className="bi bi-arrow-right-circle"></i> Log Out
                     </button>
                 </div>
-                <div id="outlet">
+
+                <div id="outlet" className={navigation.state === "loading" ? " loading" : ""}>
                     <Outlet />
                 </div>
             </main>
@@ -94,16 +101,7 @@ export default function UserLayout() {
 }
 
 const navStyle = {
-    backgroundColor: "#F7FAFC",
-}
-
-const color = {
-    color: "#fff",
-    padding: "0.1rem 0.4rem",
-    backgroundColor: "#211502",
-    minWidth: "50px",
-    borderRadius: "15px",
-    transition: "all 1s ease"
+    backgroundColor: "#DEEAF2",
 }
 
 const userIcon = {
