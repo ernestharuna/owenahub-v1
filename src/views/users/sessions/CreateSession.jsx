@@ -7,14 +7,9 @@ export default function CreateSession() {
     return (
         <div className="animated fadeInDown">
             <hr />
-            <ul className="fs-small">
-                <li>
-                    Click the "+" icon to pick a mentor.
-                </li>
-                <li>
-                    You can only select one (1) mentor per session.
-                </li>
-            </ul>
+            <p>
+                OwenaHub works with professionals that have a wealth of experience and are enthusiastic to meet with you.
+            </p>
             <h5>
                 Available mentors
             </h5>
@@ -24,9 +19,12 @@ export default function CreateSession() {
                 <MentorsCard />
                 <MentorsCard />
                 <MentorsCard />
+                <MentorsCard />
+                <MentorsCard />
+                <MentorsCard />
             </div>
 
-            <div className="user-sessions-box mt-2">
+            {/* <div className="user-sessions-box mt-2">
                 <form className="mt-1">
                     <div className="form-control">
                         <label htmlFor="interest">Interest</label>
@@ -67,7 +65,7 @@ export default function CreateSession() {
                         {isSubmitting ? (<span className='loader'></span>) : (<span className="fs-1">Create Session</span>)}
                     </button>
                 </form>
-            </div>
+            </div> */}
         </div>
     )
 }

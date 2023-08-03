@@ -81,6 +81,11 @@ export default function UserLayout() {
                             <i className="bi bi-calendar-week"></i> Sessions
                         </div>
                     </NavLink>
+                    <NavLink to={"mentors"} className={({ isActive, isPending }) => isActive ? "active" : isPending ? "pending" : ""}>
+                        <div>
+                            <i className="bi bi-calendar-week"></i> Mentors
+                        </div>
+                    </NavLink>
                     <button onClick={onLogout} id="logout">
                         <i className="bi bi-arrow-right-circle"></i> Log Out
                     </button>
@@ -94,7 +99,7 @@ export default function UserLayout() {
 }
 
 const navStyle = {
-    backgroundColor: "#F7FAFC",
+    backgroundColor: "#DEEAF2",
 }
 
 const color = {

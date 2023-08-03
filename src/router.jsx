@@ -23,6 +23,8 @@ import Slices from "./views/users/slices/Slices";
 import UserSessions, { loader as UserSessionsLoader } from "./views/users/sessions/UserSessions";
 import AllUserSessions from "./views/users/sessions/AllUserSessions";
 import CreateSession from "./views/users/sessions/CreateSession";
+import UserMentors, { loader as UserMentorsLoader } from "./views/users/mentors/UserMentors";
+import AllUserMentors from "./views/users/mentors/AllUserMentors";
 
 // admin page imports
 import AdminDashboard from "./views/admin/dashboard/adminDashboard";
@@ -79,38 +81,6 @@ const router = createBrowserRouter([
         ]
     },
 
-    // Auth Layout
-    {
-        path: "/auth",
-        element: <AuthLayout />,
-        children: [
-            {
-                path: "login",
-                element: <Login />
-            },
-            {
-                path: "register",
-                element: <Register />
-            },
-            {
-                path: "admin/login",
-                element: <AdminLogin />
-            },
-            {
-                path: "admin/register",
-                element: <AdminRegister />
-            },
-            {
-                path: "mentor/login",
-                element: <MentorLogin />
-            },
-            {
-                path: "mentor/register",
-                element: <MentorRegister />
-            }
-        ]
-    },
-
     // User Layout
     {
         path: "/user",
@@ -138,10 +108,24 @@ const router = createBrowserRouter([
                     {
                         path: "create",
                         element: <CreateSession />
+                    },
+                ]
+            },
+            {
+                path: "mentors",
+                element: <UserMentors />,
+                loader: UserMentorsLoader,
+                children: [
+                    {
+                        index: true,
+                        element: <AllUserMentors />,
+                        loader: UserMentorsLoader,
+                    },
+                    {
+                        // path: ""
                     }
                 ]
-            }
-
+            },
         ]
     },
 
@@ -205,8 +189,39 @@ const router = createBrowserRouter([
                 ]
             },
         ]
+    },
 
-    }
+    // Auth Layout
+    {
+        path: "/auth",
+        element: <AuthLayout />,
+        children: [
+            {
+                path: "login",
+                element: <Login />
+            },
+            {
+                path: "register",
+                element: <Register />
+            },
+            {
+                path: "admin/login",
+                element: <AdminLogin />
+            },
+            {
+                path: "admin/register",
+                element: <AdminRegister />
+            },
+            {
+                path: "mentor/login",
+                element: <MentorLogin />
+            },
+            {
+                path: "mentor/register",
+                element: <MentorRegister />
+            }
+        ]
+    },
 ])
 
 export default router

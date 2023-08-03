@@ -22,15 +22,15 @@
 
 // margins
 .mt-1 {
-    margin-top: 1rem;
+    margin-top: 0.5rem;
 }
 
 .mt-2 {
-    margin-top: 2rem;
+    margin-top: 1rem;
 }
 
 .mt-3 {
-    margin-top: 3rem;
+    margin-top: 1.5rem;
 }
 
 .mb-1 {
@@ -139,7 +139,7 @@
 }
 
 .d-block {
-    display: block;
+    display: block !important;
 }
 
 .time {
@@ -250,7 +250,8 @@
     border: none;
 
     &:hover {
-        background: $sec-color;
+        background: $primary-color;
+        color: #000;
         box-shadow: 0 0px 1px hsla(0, 0%, 0%, 0.6), 0 1px 2px hsla(0, 0%, 0%, 0.2);
     }
 }
@@ -268,6 +269,22 @@
 
 .no-flex {
     display: flex;
+}
+
+.flex-wrap {
+    flex-wrap: wrap;
+}
+
+.g-1 {
+    gap: 1rem
+}
+
+.g-2 {
+    gap: 2rem
+}
+
+.g-3 {
+    gap: 3rem
 }
 
 .animated {
