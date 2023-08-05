@@ -3,7 +3,7 @@ import "./mentorSessionStyle.scss";
 
 export default function AllUserSessions() {
     return (
-        <div className="animated fadeInDown2">
+        <div className="animated2 fadeInDown">
             {/* <div className="mt-1">
                 <Link to="create">
                     <button className="btn btn-dark">

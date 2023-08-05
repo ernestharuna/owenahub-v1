@@ -52,7 +52,7 @@ export default function MentorRegister() {
 
                     <form onSubmit={handleSubmit(onSubmit)}>
                         {!next &&
-                            (<div className='animated fadeInDown2'>
+                            (<div className='animated2 fadeInDown'>
                                 {/* first name */}
                                 <div className="form-control">
                                     <input
@@ -93,7 +93,7 @@ export default function MentorRegister() {
 
                         {/* ------------- next */}
                         {next &&
-                            (<div className='animated fadeInDown2'>
+                            (<div className='animated2 fadeInDown'>
                                 {/* Field */}
                                 <div className="form-control">
                                     <select className='form-control' {...register("field", { required: true })}>

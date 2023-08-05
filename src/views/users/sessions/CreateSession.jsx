@@ -1,5 +1,4 @@
 import { useForm } from "react-hook-form";
-import MentorsCard from "../../../components/MentorsCard";
 
 export default function CreateSession() {
     const { register, handleSubmit, formState: { errors, isSubmitting } } = useForm()
@@ -13,19 +12,9 @@ export default function CreateSession() {
             <h5>
                 Available mentors
             </h5>
-            <div>
-                <MentorsCard />
-                <MentorsCard />
-                <MentorsCard />
-                <MentorsCard />
-                <MentorsCard />
-                <MentorsCard />
-                <MentorsCard />
-                <MentorsCard />
-            </div>
 
-            {/* <div className="user-sessions-box mt-2">
-                <form className="mt-1">
+            <div className="user-sessions-box mt-2">
+                <form className="mt-1" onSubmit={handleSubmit}>
                     <div className="form-control">
                         <label htmlFor="interest">Interest</label>
                         <select id="interest" className="form-control" {...register("interest", { required: true })}>
@@ -65,7 +54,7 @@ export default function CreateSession() {
                         {isSubmitting ? (<span className='loader'></span>) : (<span className="fs-1">Create Session</span>)}
                     </button>
                 </form>
-            </div> */}
+            </div>
         </div>
     )
 }

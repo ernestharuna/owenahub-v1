@@ -1,16 +1,19 @@
-import { Outlet, useNavigation } from 'react-router-dom';
+import { Outlet, useLoaderData, useNavigation } from 'react-router-dom';
 import './guestArticles.scss';
 import axiosClient from '../../../axios-client';
 import MentorsCard from '../../../components/MentorsCard';
 
 export async function loader() {
-    const res = await axiosClient.get('guest/articles');
-    const articles = res.data.data;
-    return articles;
+    const res = await axiosClient.get('guest/articles'); //list of aritcles
+    const res2 = await axiosClient.get('/mentors'); // list of mentors
+    return {
+        articles: res.data.data,
+        mentors: res2.data.data,
+    }
 }
 
 export default function GuestArticles() {
-    const navigation = useNavigation();
+    const { mentors } = useLoaderData();
 
     return (
         <div className='guest-articles'>
@@ -52,12 +55,14 @@ export default function GuestArticles() {
                         Top Writers
                     </h3>
 
-                    <MentorsCard />
-                    <MentorsCard />
-                    <MentorsCard />
-                    <MentorsCard />
-                    <MentorsCard />
-                    <MentorsCard />
+                    <div>
+                        {mentors.length === 0 ?
+                            (<p>There are no mentors available at the moment</p>) :
+                            (mentors.map((mentor) =>
+                                (<MentorsCard key={mentor.id} mentor={mentor} />)
+                            ))
+                        }
+                    </div>
                 </aside>
             </div>
         </div>

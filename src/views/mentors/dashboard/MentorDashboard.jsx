@@ -15,7 +15,7 @@ export default function Dashboard() {
             <p>
                 Hello Mentor {" "}
                 {loading ? (" . . . ") :
-                    (<span className="animated fadeInDown2 fw-3">
+                    (<span className="animated2 fadeInDown fw-3">
                         {`${mentor.first_name} ${mentor.last_name}`}
                     </span>)
                 }

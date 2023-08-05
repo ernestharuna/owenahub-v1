@@ -1,4 +1,4 @@
-import { Outlet, Link, NavLink, Navigate } from "react-router-dom";
+import { Outlet, Link, NavLink, Navigate, useNavigation } from "react-router-dom";
 import logo from '../assets/owena_logo.png'
 import "./layout.scss"
 import axiosClient from "../axios-client";
@@ -9,6 +9,7 @@ import { setUser, getUser, logoutUser } from "../features/user/authUserSlice";
 
 export default function UserLayout() {
     const dispatch = useDispatch();
+    const navigation = useNavigation();
     const { user, token, loading } = useSelector(state => state.authUser);
 
     if (!token) {
@@ -58,7 +59,7 @@ export default function UserLayout() {
                     <div className="user-icon">
                         <i className="bi bi-person-circle" style={userIcon}></i>
                         {
-                            loading ? (" ") : (<span className="animated fadeInDown2">{user.first_name}</span>)
+                            loading ? (" ") : (<span className="animated2 fadeInDown">{user.first_name}</span>)
                         }
                     </div>
                 </nav>
@@ -90,7 +91,7 @@ export default function UserLayout() {
                         <i className="bi bi-arrow-right-circle"></i> Log Out
                     </button>
                 </div>
-                <div id="outlet">
+                <div id="outlet" className={navigation.state === "loading" ? " loading" : ""}>
                     <Outlet />
                 </div>
             </main>

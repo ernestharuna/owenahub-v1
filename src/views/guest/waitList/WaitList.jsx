@@ -2,19 +2,27 @@ import { useState } from "react"
 import { useForm } from "react-hook-form";
 import { Link } from "react-router-dom";
 import axiosClient from "../../../axios-client";
+import { addMessage, removeMessage } from "../../../features/notification/notificationSlice";
+import { useDispatch } from "react-redux";
 
 export default function WaitList() {
     const [error, setError] = useState(null);
+    const dispatch = useDispatch();
     const { register, handleSubmit, formState: { errors, isSubmitting } } = useForm();
 
     const onSubmit = async (data) => {
         setError(null);
-        // console.log(data);
         try {
-            await axiosClient.post('/waitlist/create', data)
-                .then((data) => console.log(data));
+            await axiosClient.post('/guest/waitlist/create', data)
+                .then(({ data }) => {
+                    dispatch(addMessage(data.message));
+                    setTimeout(() => dispatch(removeMessage()), 5000);
+                });
         } catch (err) {
-            console.log(err);
+            const res = err.response;
+            if (res && res.status === 422) {
+                setError(res.data.errors);
+            }
         }
     }
 
@@ -38,7 +46,6 @@ export default function WaitList() {
 
                     <form onSubmit={handleSubmit(onSubmit)}>
                         <div className="form-control">
-                            {/* <label htmlFor="category">Category</label> */}
                             <select id="category" className={errors.interest ? 'error form-control' : 'form-control'} {...register("interest", { required: true })}>
                                 <option value={null} disabled={true}>Select your interest</option>
                                 <option value="Web Development">Web Development</option>
@@ -103,8 +110,7 @@ export default function WaitList() {
                             <div className='howto-list'>
                                 <span className="li">3</span>
                                 <span>
-                                    <b>Help Shape the Product:</b>
-                                    Your input matters! We value feedback from our waitlist community and will consider your suggestions as we refine and improve OwenaHub.
+                                    <b>Help Shape the Product:</b> Your input matters! We value feedback from our waitlist community and will consider your suggestions as we refine and improve OwenaHub.
                                 </span>
                             </div>
                         </div>

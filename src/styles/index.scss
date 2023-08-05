@@ -162,6 +162,18 @@ footer {
     }
 }
 
+#notification {
+    background: #00a457e1;
+    position: absolute;
+    padding: 0.4rem 0.8rem;
+    box-shadow: $box-shadow3;
+    border-radius: 5px;
+    color: #fff;
+    top: 80vh;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
 // COMPONENT STYLES-----------------
 #primary-btn {
     padding: 0.8rem 2rem;
@@ -289,7 +301,7 @@ a {
 
 .session-card {
     padding: 0.3rem 0.6rem;
-    width: 200px;
+    width: 300px;
     border-radius: 3px;
     background: #DEEAF2;
     transition: all .3s;
@@ -361,7 +373,7 @@ a {
     }
 
     .session-card {
-        padding: 0.3rem 0.6rem;
+        padding: 0 0.6rem;
         width: 100%;
         border-radius: 3px;
         background: #DEEAF2;

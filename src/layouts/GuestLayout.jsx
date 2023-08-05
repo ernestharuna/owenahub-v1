@@ -1,8 +1,10 @@
 import { Outlet, Link, useNavigation } from "react-router-dom";
 import logo from '../assets/owena_logo.png'
+import { useSelector } from "react-redux";
 
 const GuestLayout = () => {
     const navigation = useNavigation();
+    const { message } = useSelector(state => state.notification);
 
     return (
         <>
@@ -70,6 +72,12 @@ const GuestLayout = () => {
                     </p>
                 </div>
             </footer>
+
+            {message &&
+                (<div id="notification">
+                    {message}
+                </div>)
+            }
         </>
     )
 }

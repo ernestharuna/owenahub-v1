@@ -59,7 +59,7 @@ export default function MentorLayout() {
                     <div className="user-icon">
                         <i className="bi bi-person-circle" style={userIcon}></i>
                         {
-                            loading ? (" ") : (<span className="animated fadeInDown2">{mentor.first_name}</span>)
+                            loading ? (" ") : (<span className="animated2 fadeInDown">{mentor.first_name}</span>)
                         }
                     </div>
                 </nav>

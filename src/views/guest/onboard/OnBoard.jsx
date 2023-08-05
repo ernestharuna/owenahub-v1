@@ -7,7 +7,7 @@ export default function OnBoard() {
             <div className="container">
                 <h3 className='mt-2'>How do you want to join?</h3>
 
-                <div className="onboard">
+                <div className="onboard mb-2">
                     <div className="onboard-card mb-1 fadeInDown animated">
                         <h4>As Mentor</h4>
                         <hr />
@@ -27,7 +27,7 @@ export default function OnBoard() {
                         </Link>
                     </div>
 
-                    <div className="onboard-card mb-1 fadeInDown2 animated2">
+                    <div className="onboard-card mb-1 animated2 fadeInDown">
                         <h4>As Learner</h4>
                         <hr />
                         <p>

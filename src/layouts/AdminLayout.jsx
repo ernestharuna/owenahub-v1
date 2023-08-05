@@ -59,7 +59,7 @@ export default function AdminLayout() {
                     <div className="user-icon">
                         <i className="bi bi-person-circle" style={userIcon}></i>
                         {
-                            loading ? (" ") : (<span className="animated fadeInDown2">{admin.first_name}</span>)
+                            loading ? (" ") : (<span className="animated2 fadeInDown">{admin.first_name}</span>)
                         }
                     </div>
                 </nav>
