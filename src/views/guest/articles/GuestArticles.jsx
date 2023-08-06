@@ -1,14 +1,21 @@
-import { Outlet, useLoaderData, useNavigation } from 'react-router-dom';
+import { Outlet, useLoaderData } from 'react-router-dom';
 import './guestArticles.scss';
 import axiosClient from '../../../axios-client';
 import MentorsCard from '../../../components/MentorsCard';
 
 export async function loader() {
-    const res = await axiosClient.get('guest/articles'); //list of aritcles
-    const res2 = await axiosClient.get('/mentors'); // list of mentors
-    return {
-        articles: res.data.data,
-        mentors: res2.data.data,
+    try {
+        const [res1, res2] = await Promise.all([
+            axiosClient.get('/guest/articles'),
+            axiosClient.get('/guest/mentors'),
+        ]);
+
+        return {
+            articles: res1.data.data,
+            mentors: res2.data.data,
+        }
+    } catch (error) {
+        console.log(error);
     }
 }
 

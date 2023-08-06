@@ -20,7 +20,7 @@ axiosClient.interceptors.response.use((response) => {
             // localStorage.removeItem('MENTOR_TOKEN');
             // localStorage.removeItem('ADMIN_TOKEN');
             localStorage.clear()
-            window.location.reload();
+            window.location.href = "/";
         }
     } catch (error) {
         console.log(error);

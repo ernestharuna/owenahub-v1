@@ -84,9 +84,10 @@ export default function UserLayout() {
                     </NavLink>
                     <NavLink to={"mentors"} className={({ isActive, isPending }) => isActive ? "active" : isPending ? "pending" : ""}>
                         <div>
-                            <i className="bi bi-calendar-week"></i> Mentors
+                            <i className="bi bi-person-square"></i> Mentors
                         </div>
                     </NavLink>
+
                     <button onClick={onLogout} id="logout">
                         <i className="bi bi-arrow-right-circle"></i> Log Out
                     </button>
