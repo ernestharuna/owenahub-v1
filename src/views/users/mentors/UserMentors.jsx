@@ -5,7 +5,6 @@ import axiosClient from "../../../axios-client";
 export async function loader() {
     const res = await axiosClient.get('mentors');
     const mentors = res.data.data;
-    console.log(mentors);
     return mentors;
 }
 

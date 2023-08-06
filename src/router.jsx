@@ -25,6 +25,7 @@ import AllUserSessions from "./views/users/sessions/AllUserSessions";
 import CreateSession from "./views/users/sessions/CreateSession";
 import UserMentors, { loader as UserMentorsLoader } from "./views/users/mentors/UserMentors";
 import AllUserMentors from "./views/users/mentors/AllUserMentors";
+import ShowUserMentor, { loader as ShowUserMentorLoader } from "./views/users/mentors/ShowUserMentor";
 
 // admin page imports
 import AdminDashboard from "./views/admin/dashboard/adminDashboard";
@@ -122,7 +123,9 @@ const router = createBrowserRouter([
                         loader: UserMentorsLoader,
                     },
                     {
-                        // path: ""
+                        path: "show/:mentorId/:mentorName",
+                        element: <ShowUserMentor />,
+                        loader: ShowUserMentorLoader,
                     }
                 ]
             },

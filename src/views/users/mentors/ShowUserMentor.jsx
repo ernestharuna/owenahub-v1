@@ -1,5 +1,14 @@
+import axiosClient from "../../../axios-client"
+
 export async function loader({ params }) {
-    return null
+    try {
+        const res = await axiosClient.get(`/mentors/${params.mentorId}`);
+        const mentor = res.data;
+        console.log(mentor);
+        return null
+    } catch (err) {
+
+    }
 }
 
 export default function ShowUserMentor() {
