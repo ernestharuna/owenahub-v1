@@ -22,7 +22,7 @@ import Dashboard, { loader as dashboardLoader } from "./views/users/dashboard/Da
 import Slices from "./views/users/slices/Slices";
 import UserSessions, { loader as UserSessionsLoader } from "./views/users/sessions/UserSessions";
 import AllUserSessions from "./views/users/sessions/AllUserSessions";
-import CreateSession from "./views/users/sessions/CreateSession";
+import CreateSession, { loader as CreateSessionLoader } from "./views/users/sessions/CreateSession";
 import UserMentors, { loader as UserMentorsLoader } from "./views/users/mentors/UserMentors";
 import AllUserMentors from "./views/users/mentors/AllUserMentors";
 import ShowUserMentor, { loader as ShowUserMentorLoader } from "./views/users/mentors/ShowUserMentor";
@@ -125,7 +125,8 @@ const router = createBrowserRouter([
                     },
                     {
                         path: "show/:mentorId/:mentorName/create",
-                        element: <CreateSession />
+                        element: <CreateSession />,
+                        loader: CreateSessionLoader,
                     },
                 ]
             },

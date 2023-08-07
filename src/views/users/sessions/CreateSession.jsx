@@ -1,11 +1,19 @@
 import { useForm } from "react-hook-form";
 import axiosClient from "../../../axios-client";
+import { useLoaderData } from "react-router-dom";
+
+export async function loader({ params }) {
+    // console.log(params.mentorId);
+    const id = params.mentorId;
+    return id;
+}
 
 export default function CreateSession() {
     const { register, handleSubmit, formState: { errors, isSubmitting } } = useForm();
+    const id = useLoaderData();
 
     const onSubmit = async (data) => {
-        data.mentor_id = 1;
+        data.mentor_id = id;
         try {
             const res = await axiosClient.post('sessions', data);
             console.log(res.data, "Succes");
