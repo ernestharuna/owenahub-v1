@@ -1,10 +1,12 @@
-import { Outlet, Link } from "react-router-dom";
+import { Outlet, Link, useLocation } from "react-router-dom";
 
 export async function loader() {
     return null
 }
 
 export default function UserSessions() {
+    const location = useLocation();
+
     return (
         <div className="container-md animated fadeInDown">
             <h4>
@@ -15,12 +17,16 @@ export default function UserSessions() {
                 <p className="text-secondary">
                     Create private sessions with mentors that best fit you caeere aspirations
                 </p>
-                <Link to="/user/mentors">
-                    <button className="btn btn-dark">
-                        Create a Session ⇗
-                    </button>
-                </Link>
+                {location.pathname === "/user/sessions/create" ?
+                    "" :
+                    (<Link to="/user/mentors">
+                        <button className="btn btn-dark">
+                            Create a Session ⇗
+                        </button>
+                    </Link>)
+                }
             </div>
+
             <div className="animated2 fadeInDown">
                 <Outlet />
             </div>

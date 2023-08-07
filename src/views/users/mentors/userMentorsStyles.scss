@@ -7,3 +7,13 @@
     box-shadow: $box-shadow2;
     padding: 1rem;
 }
+
+.show-user-mentor {
+    .display-pic {
+        width: 200px;
+        height: 200px;
+        border-radius: 3px;
+        box-shadow: $box-shadow2;
+        background: linear-gradient(45deg, $primary-color, $sec-color);
+    }
+}
