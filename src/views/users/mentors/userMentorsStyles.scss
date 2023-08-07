@@ -17,3 +17,44 @@
         background: linear-gradient(45deg, $primary-color, $sec-color);
     }
 }
+
+.socials {
+    span {
+        i {
+            font-size: 1.2rem;
+        }
+
+        a {
+            font-size: 0.8rem;
+            position: relative;
+            top: -2px;
+        }
+    }
+}
+
+.mentor-profile {
+    display: flex;
+    justify-content: space-between;
+    gap: 2rem;
+
+    aside {
+        width: 50%;
+        min-width: 45%;
+        padding: 1rem 2rem;
+        border: 1px solid #8c8c8c00;
+        background: #F4F6F8;
+        box-shadow: $box-shadow2;
+    }
+}
+
+@media screen and (max-width: 800px) {
+    .mentor-profile {
+        display: block;
+
+        aside {
+            width: auto;
+            margin: 2rem 0 1rem;
+            padding: 0.5rem 1rem;
+        }
+    }
+}

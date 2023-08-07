@@ -106,10 +106,6 @@ const router = createBrowserRouter([
                         element: <AllUserSessions />,
                         loader: UserSessionsLoader,
                     },
-                    {
-                        path: "create",
-                        element: <CreateSession />
-                    },
                 ]
             },
             {
@@ -126,7 +122,11 @@ const router = createBrowserRouter([
                         path: "show/:mentorId/:mentorName",
                         element: <ShowUserMentor />,
                         loader: ShowUserMentorLoader,
-                    }
+                    },
+                    {
+                        path: "show/:mentorId/:mentorName/create",
+                        element: <CreateSession />
+                    },
                 ]
             },
         ]

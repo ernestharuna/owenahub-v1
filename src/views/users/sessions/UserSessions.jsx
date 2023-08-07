@@ -13,7 +13,9 @@ export default function UserSessions() {
                 Sessions
             </h4>
             <div className="mt-1 user-sessions-banner">
-                <h4>Let's give you the essentials</h4>
+                <h4>
+                    Let&apos;s give you the essentials
+                </h4>
                 <p className="text-secondary">
                     Create private sessions with mentors that best fit you caeere aspirations
                 </p>
