@@ -1,7 +1,14 @@
 import { Outlet, Link, useLocation } from "react-router-dom";
+import axiosClient from "../../../axios-client";
 
 export async function loader() {
-    return null
+    try {
+        const res = await axiosClient.get('/sessions');
+        console.log(res.data.data);
+        return null
+    } catch (err) {
+        err.response;
+    }
 }
 
 export default function UserSessions() {

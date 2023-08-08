@@ -16,7 +16,3 @@ export default function MentorsCard({ mentor }) {
         </div>
     )
 }
-
-const pictureStyle = {
-
-}
