@@ -32,7 +32,7 @@ const Home = () => {
 
                     <Link to="/getstarted">
                         <button>
-                            Start for Free
+                            <i className="bi bi-caret-right-fill"></i> Register for Free
                         </button>
                     </Link>
 

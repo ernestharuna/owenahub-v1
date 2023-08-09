@@ -36,13 +36,11 @@ export default function WaitList() {
                         to OwenaHub.
                     </p>
 
-                    {
-                        error && <div>
-                            {Object.keys(error).map(key => (
-                                <p key={key} className="animated fadeInDown2 form-error">{error[key][0]}</p>
-                            ))}
-                        </div>
-                    }
+                    {error && <div>
+                        {Object.keys(error).map(key => (
+                            <p key={key} className="animated fadeInDown2 form-error">{error[key][0]}</p>
+                        ))}
+                    </div>}
 
                     <form onSubmit={handleSubmit(onSubmit)}>
                         <div className="form-control">

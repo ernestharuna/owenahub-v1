@@ -17,6 +17,7 @@ export async function loader({ params }) {
 
 export default function ShowGuestArticle() {
     const article = useLoaderData();
+    console.log(article);
 
     const content = article[0].content.split('\n').map((line, index) => (
         <p key={index}>{line}</p>
@@ -26,12 +27,20 @@ export default function ShowGuestArticle() {
         <div>
             <section className="animated fadeInDown2 show-guest-article">
 
-                <span className="category">{article[0].category}</span> <br />
-                <b className="time">Posted {dayjs(article[0].createdAt).fromNow()}</b>
+                <span className="category">{article[0].category}</span>
+                <br />
+                <small className="fw-2">
+                    <span>
+                        Posted {dayjs(article[0].createdAt).fromNow()} by {" "}
+                    </span>
+                    <span className="text-secondary">
+                        {article[0].admin && <>{article[0].admin.firstName} {article[0].admin.lastName}</>} {" "}
+                    </span>
+                </small>
 
                 <h2 className="text-dark fw-1 mt-1">{article[0].title}</h2>
-                <p className="fw-3">
-                    {article[0].description}
+                <p>
+                    <span className="fw-3">{article[0].description}</span>
                 </p>
 
                 <div className="body mt-1">

@@ -1,6 +1,9 @@
 import { useForm } from "react-hook-form";
 import axiosClient from "../../../axios-client";
 import { useLoaderData, useNavigate } from "react-router-dom";
+import { useDispatch } from "react-redux";
+import { addMessage, removeMessage } from "../../../features/notification/notificationSlice";
+import { useState } from "react";
 
 export async function loader({ params }) {
     const id = params.mentorId;
@@ -9,16 +12,26 @@ export async function loader({ params }) {
 
 export default function CreateSession() {
     const { register, handleSubmit, formState: { errors, isSubmitting } } = useForm();
+    const [error, setError] = useState(null);
     const id = useLoaderData();
     const navigate = useNavigate();
+    const dispatch = useDispatch();
 
     const onSubmit = async (data) => {
         data.mentor_id = id;
+        setError(null);
         try {
-            const res = await axiosClient.post('sessions', data);
-            navigate("/user/sessions");
+            await axiosClient.post('sessions', data)
+                .then(() => {
+                    navigate("/user/sessions");
+                    dispatch(addMessage('Session created!'));
+                    setTimeout(() => dispatch(removeMessage()), 5000);
+                });
         } catch (err) {
-            console.log(err, "error");
+            const res = err.response;
+            if (res && res.status === 422) {
+                setError(res.data.errors);
+            }
         }
     }
 

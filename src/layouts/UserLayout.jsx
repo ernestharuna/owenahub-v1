@@ -11,6 +11,7 @@ export default function UserLayout() {
     const dispatch = useDispatch();
     const navigation = useNavigation();
     const { user, token, loading } = useSelector(state => state.authUser);
+    const { message } = useSelector(state => state.notification);
 
     if (!token) {
         return <Navigate to={"/auth/login"} />
@@ -96,21 +97,18 @@ export default function UserLayout() {
                     <Outlet />
                 </div>
             </main>
+
+            {message &&
+                (<div id="notification">
+                    {message}
+                </div>)
+            }
         </>
     )
 }
 
 const navStyle = {
     backgroundColor: "#DEEAF2",
-}
-
-const color = {
-    color: "#fff",
-    padding: "0.1rem 0.4rem",
-    backgroundColor: "#211502",
-    minWidth: "50px",
-    borderRadius: "15px",
-    transition: "all 1s ease"
 }
 
 const userIcon = {
