@@ -1,11 +1,11 @@
-import { Outlet, Link, useLocation } from "react-router-dom";
+import { Outlet, Link, useLocation, useLoaderData } from "react-router-dom";
 import axiosClient from "../../../axios-client";
 
 export async function loader() {
     try {
         const res = await axiosClient.get('/sessions');
-        console.log(res.data.data);
-        return null
+        const allSessions = res.data.data;
+        return allSessions;
     } catch (err) {
         err.response;
     }

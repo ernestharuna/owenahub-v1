@@ -3,20 +3,13 @@ import axiosClient from "../../../axios-client";
 import { useNavigate } from "react-router-dom";
 import ReactQuill from "react-quill";
 import 'react-quill/dist/quill.snow.css';
-import { useState } from "react";
 
 
 export default function CreateArticle() {
     const { register, handleSubmit, formState: { errors, isSubmitting } } = useForm();
     const navigate = useNavigate();
-    const toolbarOptions = [
-        ['bold', 'italic', 'underline', 'strike'], // text formatting options
-        [{ align: [] }], // text alignment options
-        // ['link', 'image', 'video'], // other options
-    ];
 
     const onSubmit = async (data) => {
-        // console.log(data);
         try {
             await axiosClient.post('/articles', data);
             navigate('/admin/articles');

@@ -138,6 +138,29 @@
     outline: 2px solid red !important;
 }
 
+.pass {
+    text-transform: uppercase;
+    box-shadow: $box-shadow2;
+    border-radius: 3px;
+    background: green;
+    font-size: 0.7rem;
+    font-weight: 700;
+    color: #fff;
+    padding: 0.3rem 0.6rem;
+}
+
+.fail {
+    text-transform: uppercase;
+    box-shadow: $box-shadow2;
+    border-radius: 3px;
+    background: red;
+    font-size: 0.7rem;
+    font-weight: 700;
+    color: #fff;
+    padding: 0.3rem 0.6rem;
+}
+
+
 .d-block {
     display: block !important;
 }

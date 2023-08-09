@@ -53,10 +53,12 @@ export default function ShowUserMentor() {
                         <div className="socials">
                             <span className="fw-2">Socials</span> <br />
                             <span>
-                                <i className="bi bi-linkedin"></i> <Link to={`${mentor.linkedinHandle}`}>view profile ⇗</Link>
+                                <i className="bi bi-linkedin"></i>{" "}
+                                <a href={mentor.linkedinHandle ? `https://${mentor.linkedinHandle}` : ""} target="_blank">view profile ⇗</a>
                             </span> &nbsp;
                             <span>
-                                <i className="bi bi-twitter"></i> <Link to={mentor.twitterHandle ? mentor.twitterHandle : ""}>view profile ⇗</Link>
+                                <i className="bi bi-twitter"></i>{" "}
+                                <a href={mentor.twitterHandle ? `https://${mentor.twitterHandle}` : ""} target="_blank">view profile ⇗</a>
                             </span>
                         </div>
                     </div>

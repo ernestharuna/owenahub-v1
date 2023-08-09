@@ -26,6 +26,7 @@ import CreateSession, { loader as CreateSessionLoader } from "./views/users/sess
 import UserMentors, { loader as UserMentorsLoader } from "./views/users/mentors/UserMentors";
 import AllUserMentors from "./views/users/mentors/AllUserMentors";
 import ShowUserMentor, { loader as ShowUserMentorLoader } from "./views/users/mentors/ShowUserMentor";
+import ShowUserSession, { loader as ShowUserSessionLoader } from "./views/users/sessions/ShowUserSession";
 
 // admin page imports
 import AdminDashboard from "./views/admin/dashboard/adminDashboard";
@@ -106,6 +107,11 @@ const router = createBrowserRouter([
                         element: <AllUserSessions />,
                         loader: UserSessionsLoader,
                     },
+                    {
+                        path: ":sessionId",
+                        element: <ShowUserSession />,
+                        loader: ShowUserSessionLoader
+                    }
                 ]
             },
             {

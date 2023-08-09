@@ -1,12 +1,16 @@
-export default function UserSessionCard() {
+import { Link } from "react-router-dom";
+
+export default function UserSessionCard({ session }) {
     return (
-        <div className="session-card">
-            <p>
-                <small>
-                    <span className="text-secondary">Mentor:</span> Ernest Haruna <br />
-                    <span className="text-secondary">Name:</span> Starting a tech Career<br />
-                </small>
-            </p>
-        </div>
+        <Link to={`${session.id}`}>
+            <div className="session-card animated fadeInDown">
+                <p>
+                    <small>
+                        <span className="text-secondary">Mentor:</span> {session.mentor.firstName} {session.mentor.lastName} <br />
+                        <span className="text-secondary">Name:</span> {session.title}<br />
+                    </small>
+                </p>
+            </div>
+        </Link>
     )
 }
