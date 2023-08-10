@@ -173,7 +173,49 @@ const Home = () => {
                 </div>
             </section>
 
-            <section className="courses">
+            <section className="group-sessions">
+                <div className="container">
+                    <h3>Group mentorship sessions</h3>
+                    <p>
+                        Meet with other learners from around the world.
+                        <br /><br />
+                        Join our vibrant community of aspiring tech enthusiasts today, and unlock the doors to a world of endless possibilities <br />
+                        by our joining group sessions are organized by experienced mentors.
+                    </p>
+                    <p>
+                        <b>What to expect:</b>
+                        <ol>
+                            <li>
+                                <b>Q&A Sessions:</b> <br />
+                                Got questions? Our mentors have answers. <br /> Participate in dedicated Q&A sessions to
+                                clarify doubts and gain insights into tech nuances.
+                            </li>
+
+                            <li>
+                                <b>Networking Opportunities:</b> <br />
+                                Connect with like-minded beginners, mentors, and even potential collaborators. <br />
+                                The tech industry thrives on connections, and we're here to help you build your network.
+                            </li>
+
+                            <li>
+                                <b>Expert insights:</b> <br />
+                                Our sessions are led by industry veterans who've walked the path you're embarking on. <br />
+                                They bring real-world experiences, invaluable advice, and a deep understanding of the tech landscape.
+                            </li>
+                        </ol>
+                    </p>
+                    <p>
+                        Join us in shaping the future, one coder at a time. Let's embark on this exciting journey together!
+                    </p>
+                    <Link to={"/articles"}>
+                        <button className="btn text-white fs-1 p-2">
+                            <i className="bi bi-caret-right-fill"></i> See Upcoming Sessions
+                        </button>
+                    </Link>
+                </div>
+            </section>
+
+            <section className="courses mt-3">
                 <div className="container">
                     <h3>Let your learning start here</h3>
                     <p>
