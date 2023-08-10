@@ -207,7 +207,7 @@ const Home = () => {
                     <p>
                         Join us in shaping the future, one coder at a time. Let's embark on this exciting journey together!
                     </p>
-                    <Link to={"/articles"}>
+                    <Link to="/user/sessions">
                         <button className="btn text-white fs-1 p-2">
                             <i className="bi bi-caret-right-fill"></i> See Upcoming Sessions
                         </button>
@@ -258,7 +258,7 @@ const Home = () => {
 
                     <Link to={"/articles"}>
                         <button className="btn text-white fs-1 p-2">
-                            <i className="bi bi-caret-right-fill"></i> Start Reading
+                            <i className="bi bi-caret-right-fill"></i> See Articles
                         </button>
                     </Link>
                 </div>

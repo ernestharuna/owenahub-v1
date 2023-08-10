@@ -61,7 +61,7 @@ header {
     position: sticky;
     top: 0;
     background: #000000cf;
-    // backdrop-filter: ;
+    backdrop-filter: blur(7px);
     padding: 0 1rem;
     color: white;
     z-index: 2;

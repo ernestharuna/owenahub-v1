@@ -43,7 +43,9 @@ export default function AuthLayout() {
                         <div>
                             <img src={logo} alt="_logo" style={{ width: '60px' }} />
                         </div>
-                        <p>To inspire powerful conversations and collaborations among members <br className="hidden" /> worldwide so together we can change the world with creativity.</p>
+                        <p>
+                            To cultivate meaningful interactions and partnerships within our global community, <br className="hidden" /> harnessing the collective expertise of tech professionals to empower eager learners through mentorship.
+                        </p>
                     </div>
 
                     <hr />
