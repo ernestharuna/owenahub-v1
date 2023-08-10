@@ -4,19 +4,16 @@ import axiosClient from '../../../axios-client';
 import MentorsCard from '../../../components/MentorsCard';
 
 export async function loader() {
-    try {
-        const [res1, res2] = await Promise.all([
-            axiosClient.get('/guest/articles'),
-            axiosClient.get('/guest/mentors'),
-        ]);
+    const [res1, res2] = await Promise.all([
+        axiosClient.get('/guest/articles'),
+        axiosClient.get('/guest/mentors'),
+    ]);
 
-        return {
-            articles: res1.data.data,
-            mentors: res2.data.data,
-        }
-    } catch (error) {
-        console.log(error);
+    return {
+        articles: res1.data.data,
+        mentors: res2.data.data,
     }
+
 }
 
 export default function GuestArticles() {

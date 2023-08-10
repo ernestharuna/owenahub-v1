@@ -272,20 +272,18 @@ const Home = () => {
                 </div>
             </section>
 
-            <section className="sessions">
+            <section className="sessions mb-2">
                 <div className="container">
-                    <h3>Exclusive Learning</h3>
+                    <h3>Private Sessions</h3>
                     <p>
                         We believe in the power of personalized learning experiences and the value they bring to your growth and development.
                         <br /> There are tailored sessions that will cater to your unique needs and learning style.
                     </p>
                     <div className='private-session'>
-                        <h4>Private Sessions</h4>
                         <p>
-                            Our private sessions are designed to provide you with a customized and focused learning environment. <br />
-                            You will have the undivided attention of our expert mentors,
-                            allowing for personalized instruction and guidance tailored specifically to your goals and aspirations. <br /> <br />
-                            Whether you're looking to deepen your knowledge in a particular subject, refine your skills, or gain a competitive edge, our private sessions are the perfect opportunity to accelerate your learning journey.
+                            Our private sessions offer a personalized and focused learning environment where expert mentors provide individualized instruction aligned with your unique goals.
+                            <br />
+                            Benefit from undivided attention and tailored guidance to achieve your aspirations effectively
                         </p>
                         <ol>
                             <li>
@@ -314,37 +312,6 @@ const Home = () => {
                             </button>
                         </Link>
                     </div>
-                    {/* <hr />
-                    <div className='in-person'>
-                        <h4>In-Person Classes</h4>
-                        <p>
-                            Nothing can replace the energy and connection that comes from being part of a vibrant learning community. <br /><br />
-                            Our in-person classes provide a collaborative environment where you can engage with like-minded individuals, share ideas, and benefit from the collective knowledge and experiences of your peers and instructors.
-                        </p>
-                        <ol>
-                            <li>
-                                <b>Community Building:</b> <br />
-                                Connect with a diverse community of learners who share your passion, fostering a sense of camaraderie and support.
-                            </li>
-                            <li>
-                                <b>Interactive Learning:</b> <br />
-                                Engage in group discussions, participate in hands-on activities, and benefit from real-time feedback and interaction.
-                            </li>
-                            <li>
-                                <b>Networking Opportunities:</b> <br />
-                                Expand your professional network and create lasting connections with fellow learners who may become valuable collaborators or mentors.
-                            </li>
-                            <li>
-                                <b>Immersive Experience:</b> <br />
-                                Immerse yourself in the learning process, away from distractions, and create a focused environment that fosters deep understanding and growth.
-                            </li>
-                        </ol>
-                        <Link to="/user/dashboard">
-                            <button className='btn text-white p-2 fs-1'>
-                                Book a session now
-                            </button>
-                        </Link>
-                    </div> */}
                 </div>
             </section>
 
