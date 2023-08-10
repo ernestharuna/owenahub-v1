@@ -173,7 +173,7 @@ const Home = () => {
                 </div>
             </section>
 
-            <section className="group-sessions">
+            <section className="group-sessions mt-3">
                 <div className="container">
                     <h3>Group mentorship sessions</h3>
                     <p>
@@ -266,7 +266,7 @@ const Home = () => {
 
             <section className="cta">
                 <div className="container">
-                    <Link to="/auth/register" id='neon-button'>
+                    <Link to="/getstarted" id='neon-button'>
                         Get Started!
                     </Link>
                 </div>

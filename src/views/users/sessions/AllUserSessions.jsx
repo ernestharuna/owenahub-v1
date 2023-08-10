@@ -24,7 +24,7 @@ export default function AllUserSessions() {
 
     return (
         <div className="animated fadeInDown">
-            <div className="mt-2 user-sessions-box">
+            <div className="mt-3 user-sessions-box">
                 <h5 className="mt-1 mb-1">
                     Pending Sessions
                 </h5>
@@ -37,7 +37,7 @@ export default function AllUserSessions() {
                 </div>
             </div>
 
-            <div className="mt-2 user-sessions-box">
+            <div className="mt-3 user-sessions-box">
                 <h5 className="mt-1 mb-1">
                     On-going Sessions
                 </h5>
@@ -57,11 +57,9 @@ export default function AllUserSessions() {
                 </h5>
 
                 <div className="user-sessions">
-                    <p>
-                        <small className="text-secondary">
-                            <i>No Pending Group-Sessions</i>
-                        </small>
-                    </p>
+                    <small className="text-secondary">
+                        <i>No Pending Group-Sessions</i>
+                    </small>
                 </div>
             </div>
         </div>

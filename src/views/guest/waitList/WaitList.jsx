@@ -1,11 +1,12 @@
 import { useState } from "react"
 import { useForm } from "react-hook-form";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import axiosClient from "../../../axios-client";
 import { addMessage, removeMessage } from "../../../features/notification/notificationSlice";
 import { useDispatch } from "react-redux";
 
 export default function WaitList() {
+    const navigate = useNavigate();
     const [error, setError] = useState(null);
     const dispatch = useDispatch();
     const { register, handleSubmit, formState: { errors, isSubmitting } } = useForm();
@@ -17,6 +18,7 @@ export default function WaitList() {
                 .then(({ data }) => {
                     dispatch(addMessage(data.message));
                     setTimeout(() => dispatch(removeMessage()), 5000);
+                    navigate("/");
                 });
         } catch (err) {
             const res = err.response;

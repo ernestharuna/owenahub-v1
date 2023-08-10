@@ -43,6 +43,7 @@ import MentorRegister from "./views/mentors/auth/MentorRegister";
 import MentorDashboard from "./views/mentors/dashboard/MentorDashboard";
 import MentorSessions, { loader as MentorSessionsLoader } from "./views/mentors/sessions/MentorSessions";
 import AllMentorSessions from "./views/mentors/sessions/AllMentorSessions";
+import ErrorPage from "./views/ErrorPage";
 
 
 const router = createBrowserRouter([
@@ -88,6 +89,7 @@ const router = createBrowserRouter([
         path: "/user",
         element: <UserLayout />,
         loader: dashboardLoader,
+        errorElement: <ErrorPage />,
         children: [
             {
                 path: "dashboard",
@@ -101,6 +103,7 @@ const router = createBrowserRouter([
                 path: "sessions",
                 element: <UserSessions />,
                 loader: UserSessionsLoader,
+                errorElement: <ErrorPage />,
                 children: [
                     {
                         index: true,
@@ -118,6 +121,8 @@ const router = createBrowserRouter([
                 path: "mentors",
                 element: <UserMentors />,
                 loader: UserMentorsLoader,
+                errorElement: <ErrorPage />,
+
                 children: [
                     {
                         index: true,
