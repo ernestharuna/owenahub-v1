@@ -113,22 +113,60 @@
     background: $background;
 
     .mission-box {
-        margin: 2rem 3rem 1rem;
+        margin: 2rem 0 1rem;
         display: flex;
+        gap: 5rem;
         justify-content: space-between;
         flex-direction: row-reverse;
 
         .mission-text {
-            margin: 0 2rem;
+            margin: 0 0 2rem;
         }
 
         .mission-img {
-            margin: 2rem;
+            margin: 0 0 2rem;
             border-radius: 0.5rem;
             box-shadow: $box-shadow;
             background: linear-gradient(45deg, $primary-color, $hover-color);
             height: 300px;
-            width: 100%;
+            width: 80%;
+        }
+    }
+}
+
+.group-sessions {
+    padding: 2rem 0;
+    background: #fff;
+
+    .group-session-box {
+        margin: 2rem 0 1rem;
+        display: flex;
+        gap: 5rem;
+        justify-content: space-between;
+
+        .group-session-text {
+            margin: 0 0 1rem;
+
+            span {
+                display: block;
+                padding: 0.6rem 1.2rem;
+                background: #F4F6F8;
+                box-shadow: $box-shadow2;
+                border-radius: 0.5rem;
+            }
+        }
+
+        .group-session-img {
+            margin: 0 0 2rem;
+            border-radius: 0.5rem;
+            box-shadow: $box-shadow;
+            background: linear-gradient(45deg, $primary-color, $hover-color);
+            height: 300px;
+            width: 80%;
+        }
+
+        li {
+            margin-bottom: 1rem;
         }
     }
 }
@@ -203,15 +241,6 @@
             font-size: 3em;
             font-weight: 900;
         }
-    }
-}
-
-.group-sessions {
-    padding: 2rem 0;
-    background: $background;
-
-    li {
-        margin-bottom: 1rem;
     }
 }
 
@@ -394,11 +423,29 @@
             display: block;
 
             .mission-text {
-                margin: 0 2rem;
+                margin: 0 0;
 
             }
 
             .mission-img {
+                background: linear-gradient(45deg, $primary-color, $hover-color);
+                height: 200px;
+                width: auto;
+            }
+        }
+    }
+
+
+    .group-sessions {
+        .group-session-box {
+            margin: 2rem 0 1rem;
+            display: block;
+
+            .group-session-text {
+                margin: 0 0;
+            }
+
+            .group-session-img {
                 background: linear-gradient(45deg, $primary-color, $hover-color);
                 height: 200px;
                 width: auto;

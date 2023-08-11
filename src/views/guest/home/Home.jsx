@@ -120,15 +120,43 @@ const Home = () => {
                             <b>We are dedicated to offering expert advice, guidance and mentorship to learners seeking to acquire new skills and start a successful career.</b>
                             <br /> <br />
 
-                            Come with your enthusiasm and we will put things into realistic perspective.
-                            <br /><br />
-
-                            You’ll start strong and grow fast, and you’ll fall in love with your progress.
-                            Plus you’ll have access to a library of hundreds of popular topics thought by experienced tutors.
-                            <br /><br />
-
-                            The real magic happens when you engage with with your mentors ONE-ON-ONE.
+                            <Link to="/user/sessions">
+                                <button className="btn text-white fs-1 p-3 mt-3">
+                                    <i className="bi bi-caret-right-fill"></i> Join OwenaHub
+                                </button>
+                            </Link>
                         </p>
+                    </div>
+                </div>
+            </section>
+
+            <section className="group-sessions mt-3">
+                <div className="container">
+                    <h3>Group mentorship sessions</h3>
+                    <div className="group-session-box">
+                        <div className="group-session-img">
+
+                        </div>
+                        <p className="group-session-text">
+                            Meet with other learners from around the world.
+                            <br /> <br />
+                            OwenaHub provides a platform to where mentors can reach a large audience of enthusiastic learners.
+
+                            <br /> <br />
+
+                            <span>
+                                Join our vibrant group sessions of aspiring tech enthusiasts today,
+                                and participate in our <b>Q&A</b>, <b>Networking</b>, and <b>Career Advice</b>, sessions.
+                            </span>
+                            <br /><br />
+
+                            <Link to="/user/sessions">
+                                <button className="btn text-white fs-1 p-3 mt-2">
+                                    <i className="bi bi-caret-right-fill"></i> Join OwenaHub
+                                </button>
+                            </Link>
+                        </p>
+
                     </div>
                 </div>
             </section>
@@ -173,48 +201,6 @@ const Home = () => {
                 </div>
             </section>
 
-            <section className="group-sessions mt-3">
-                <div className="container">
-                    <h3>Group mentorship sessions</h3>
-                    <p>
-                        Meet with other learners from around the world.
-                        <br /><br />
-                        Join our vibrant community of aspiring tech enthusiasts today, and unlock the doors to a world of endless possibilities <br />
-                        by our joining group sessions are organized by experienced mentors.
-                    </p>
-                    <p>
-                        <b>What to expect:</b>
-                        <ol>
-                            <li>
-                                <b>Q&A Sessions:</b> <br />
-                                Got questions? Our mentors have answers. <br /> Participate in dedicated Q&A sessions to
-                                clarify doubts and gain insights into tech nuances.
-                            </li>
-
-                            <li>
-                                <b>Networking Opportunities:</b> <br />
-                                Connect with like-minded beginners, mentors, and even potential collaborators. <br />
-                                The tech industry thrives on connections, and we're here to help you build your network.
-                            </li>
-
-                            <li>
-                                <b>Expert insights:</b> <br />
-                                Our sessions are led by industry veterans who've walked the path you're embarking on. <br />
-                                They bring real-world experiences, invaluable advice, and a deep understanding of the tech landscape.
-                            </li>
-                        </ol>
-                    </p>
-                    <p>
-                        Join us in shaping the future, one coder at a time. Let's embark on this exciting journey together!
-                    </p>
-                    <Link to="/user/sessions">
-                        <button className="btn text-white fs-1 p-2">
-                            <i className="bi bi-caret-right-fill"></i> See Upcoming Sessions
-                        </button>
-                    </Link>
-                </div>
-            </section>
-
             <section className="courses mt-3">
                 <div className="container">
                     <h3>Let your learning start here</h3>
@@ -236,28 +222,25 @@ const Home = () => {
 
             <section className="articles">
                 <div className="container">
-                    <div className='flex-items no-flex'>
+                    <div className='flex-items no-flex g-3'>
                         <div>
                             <h3>
                                 Unlock the Power of Knowledge
                             </h3>
                             <p> Dive into Our Captivating Articles and Expand Your Horizons!</p>
                             <p>
-                                From thought-provoking analyses to practical tips, our articles offer a wealth of information that will empower you to take your business to new heights.
-                                <br /> <br />
-                                Whether you're a seasoned entrepreneur or just starting out, these articles are your compass, guiding you towards growth and prosperity.
-                                So, grab a cup of coffee, sit back, and embark on a captivating journey through our carefully crafted words. Your next big idea awaits within these virtual pages.
-                                <br /> <br />
-                                Start reading and unlock the potential of your business today!
+                                Grab a cup of coffee, sit back, and embark on a captivating journey through our carefully crafted words.
+                                <br />
+                                Your next big idea awaits within these virtual pages.
                             </p>
                         </div>
                         <div className=''>
-                            <img src={bookIcon} alt=".." />
+                            {/* <img src={bookIcon} alt=".." /> */}
                         </div>
                     </div>
 
                     <Link to={"/articles"}>
-                        <button className="btn text-white fs-1 p-2">
+                        <button className="btn text-white fs-1 p-3 mt-2">
                             <i className="bi bi-caret-right-fill"></i> See Articles
                         </button>
                     </Link>
@@ -307,7 +290,7 @@ const Home = () => {
                             </li>
                         </ol>
                         <Link to="/user/sessions">
-                            <button className='btn text-white p-2 fs-1'>
+                            <button className='btn text-white p-3 fs-1 mt-2 mb-2'>
                                 <i className="bi bi-caret-right-fill"></i>  Create a Session
                             </button>
                         </Link>
