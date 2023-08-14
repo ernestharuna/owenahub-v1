@@ -1,10 +1,13 @@
-import { Outlet, Link, useLocation, useLoaderData } from "react-router-dom";
+import { Outlet, Link, useLocation } from "react-router-dom";
 import axiosClient from "../../../axios-client";
 
 export async function loader() {
     const res = await axiosClient.get('/sessions');
+    const res2 = await axiosClient.get("/group-sessions");
+
     const allSessions = res.data.data;
-    return allSessions;
+    const allGroupSessions = res2.data.data;
+    return { allSessions, allGroupSessions };
 }
 
 export default function UserSessions() {

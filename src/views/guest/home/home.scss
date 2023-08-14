@@ -1,5 +1,9 @@
 @use '../../../styles/index.scss' as *;
 
+p {
+    font-weight: 600;
+}
+
 .hero-section {
     margin: 0;
     display: flex;
@@ -116,6 +120,7 @@
         margin: 2rem 0 1rem;
         display: flex;
         gap: 5rem;
+        align-items: center;
         justify-content: space-between;
         flex-direction: row-reverse;
 
@@ -128,7 +133,7 @@
             border-radius: 0.5rem;
             box-shadow: $box-shadow;
             background: linear-gradient(45deg, $primary-color, $hover-color);
-            height: 300px;
+            height: 400px;
             width: 80%;
         }
     }
@@ -141,6 +146,7 @@
     .group-session-box {
         margin: 2rem 0 1rem;
         display: flex;
+        align-items: center;
         gap: 5rem;
         justify-content: space-between;
 
@@ -161,7 +167,7 @@
             border-radius: 0.5rem;
             box-shadow: $box-shadow;
             background: linear-gradient(45deg, $primary-color, $hover-color);
-            height: 300px;
+            height: 400px;
             width: 80%;
         }
 
@@ -429,7 +435,7 @@
 
             .mission-img {
                 background: linear-gradient(45deg, $primary-color, $hover-color);
-                height: 200px;
+                height: 300px;
                 width: auto;
             }
         }
@@ -447,7 +453,7 @@
 
             .group-session-img {
                 background: linear-gradient(45deg, $primary-color, $hover-color);
-                height: 200px;
+                height: 300px;
                 width: auto;
             }
         }
@@ -455,7 +461,7 @@
 
     .video {
         .video-box {
-            height: 200px;
+            height: 300px;
             border-radius: 0.5rem;
             box-shadow: $box-shadow;
         }

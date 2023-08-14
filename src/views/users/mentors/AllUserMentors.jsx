@@ -3,7 +3,6 @@ import { Link, useLoaderData } from "react-router-dom";
 
 export default function AllUserMentors() {
     const mentors = useLoaderData();
-
     return (
         <div className="mt-2">
             <h5>Your top matches</h5>

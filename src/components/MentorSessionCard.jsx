@@ -1,13 +1,15 @@
 import { Link } from "react-router-dom";
 
-export default function MentorSessionCard() {
+export default function MentorSessionCard({ session }) {
     return (
         <div className="session-card">
-            <p className="time">
-                Learner: Ernest Haruna <br />
-                Name: Starting my tech career
+            <p className="text-secondary m-0">
+                <small>
+                    Learner: <span className="text-dark">{session.mentee.firstName} {session.mentee.lastName} </span><br />
+                    Name: <span className="text-dark">{session.title}</span>
+                </small>
             </p>
-            <Link>
+            <Link className="d-block  mt-1" to={`${session.id}`}>
                 <small>View ⇗</small>
             </Link>
         </div>

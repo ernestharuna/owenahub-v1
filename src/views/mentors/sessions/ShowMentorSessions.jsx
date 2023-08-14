@@ -1,5 +1,4 @@
 import { useLoaderData } from "react-router-dom";
-import axiosClient from "../../../axios-client"
 
 export async function loader({ params }) {
     try {
@@ -9,11 +8,12 @@ export async function loader({ params }) {
         return session;
     }
     catch (err) {
-        // console.log(err);
+        console.log(err);
         return null;
     }
 }
-export default function ShowUserSession() {
+
+export default function ShowMentorSessions() {
     const session = useLoaderData();
 
     return (
@@ -25,7 +25,7 @@ export default function ShowUserSession() {
                 <small>
                     Session with {" "}
                     <span className="fw-3">
-                        {session.mentor.firstName} {session.mentor.lastName}
+                        {session.mentee.firstName} {session.mentee.lastName}
                     </span> • {" "}
                     <a href={session.meetingLink ? session.meetingLink : ""} className="text-secondary">Meeting Link ⇗</a>
                 </small>
@@ -42,11 +42,21 @@ export default function ShowUserSession() {
             </div>
 
             <hr />
+            <div>
+                <span>
+                    <b>Learning Objective:</b><br />
+                    <span className="text-secondary">{session.description}</span>
+                </span>
+            </div>
 
-            <div className="mt-1">
-                <h5>Session Tasks</h5>
+            <div className="mt-2">
+                <b>Learning Objective:</b><br />
                 <div>
                     <span className="text-secondary">No Tasks Here Yet</span>
+                    <br /><br />
+                    <button className="btn text-white">
+                        Add Task
+                    </button>
                 </div>
             </div>
         </div>

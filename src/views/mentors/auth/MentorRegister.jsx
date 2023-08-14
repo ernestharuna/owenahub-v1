@@ -19,7 +19,6 @@ export default function MentorRegister() {
         }
         try {
             const res = await axiosClient.post('/mentor/register', data);
-            console.log(res.data);
             dispatch(setMentor(res.data.mentor))
             dispatch(setToken(res.data.token))
         } catch (err) {

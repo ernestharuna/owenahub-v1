@@ -4,7 +4,7 @@ import UserSessionCard from "../../../components/UserSessionCard";
 import "./userSessionStyle.scss";
 
 export default function AllUserSessions() {
-    const allSessions = useLoaderData(); // All sessions in DB
+    const { allSessions } = useLoaderData(); // All sessions in DB
     const { user } = useSelector(state => state.authUser);
 
     // filters sessions based on user ID in redux store
@@ -48,7 +48,6 @@ export default function AllUserSessions() {
                         (<small className="text-secondary"><i>You have no sessions</i></small>)
                     }
                 </div>
-
             </div>
 
             <div className="mt-3 user-sessions-box">

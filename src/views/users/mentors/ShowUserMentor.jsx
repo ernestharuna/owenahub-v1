@@ -13,6 +13,7 @@ export async function loader({ params }) {
 
 export default function ShowUserMentor() {
     const mentor = useLoaderData();
+    console.log(mentor);
 
     return (
         <div className="show-user-mentor mt-2">
@@ -67,9 +68,21 @@ export default function ShowUserMentor() {
                             <p className="fs-2 fw-2 m-0">
                                 Group sessions
                             </p>
-                            <p className="text-secondary">
-                                No Upcoming Group Sessions
-                            </p>
+
+                            {mentor.groupSessions.length !== 0 ?
+                                (<>
+                                    <ul>
+                                        {mentor.groupSessions.map(gSes =>
+                                            (<li key={gSes.id}>{gSes.topic}</li>)
+                                        )}
+                                    </ul>
+                                </>) :
+                                <p className="text-secondary">
+                                    No Upcoming Group Sessions
+                                </p>
+                            }
+
+
                         </div>
                         <br />
                         <div>

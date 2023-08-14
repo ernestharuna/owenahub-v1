@@ -1,5 +1,4 @@
 import './home.scss';
-import bookIcon from '../../../assets/home/book.png';
 import { Link } from 'react-router-dom';
 import CourseCard from '../../../components/CourseCard';
 
@@ -105,58 +104,85 @@ const Home = () => {
 
             <section className="mission">
                 <div className="container">
-                    <h3>Get access to quality resources and mentors.</h3>
                     <div className="mission-box">
                         <div className="mission-img">
-
+                            {/* image goes here */}
                         </div>
-                        <p className="mission-text">
-                            It is not impossible!
-                            <br /> <br />
+                        <div>
+                            <h3 className='mb-1'>Get access to quality resources and mentors.</h3>
+                            <p className="mission-text">
+                                It is not impossible!
+                                <br /> <br />
 
-                            All you need is proper mentorship, and you'd will be unstopable. <br /> <br />
-                            OwenaHub serves as a bridge, connecting ambitious individuals like you with industry professionals who are passionate about sharing their knowledge and expertise.
-                            <br /><br />
-                            <b>We are dedicated to offering expert advice, guidance and mentorship to learners seeking to acquire new skills and start a successful career.</b>
-                            <br /> <br />
+                                What you need is proper mentorship, and you will be unstopable. <br /> <br />
+                                OwenaHub serves as a bridge, connecting ambitious individuals like you with industry professionals who are passionate about sharing their knowledge and expertise.
+                                <br /><br />
+                                <span className='fw-3'>
+                                    We are dedicated to offering expert advice, guidance and mentorship to learners seeking to acquire new skills and start a successful career.
+                                </span>
+                                <br /> <br />
 
-                            <Link to="/user/sessions">
-                                <button className="btn text-white fs-1 p-3 mt-3">
-                                    <i className="bi bi-caret-right-fill"></i> Join OwenaHub
-                                </button>
-                            </Link>
-                        </p>
+                                <Link to="/getstarted">
+                                    <button className="btn text-white fs-1 p-3 mt-3">
+                                        <i className="bi bi-caret-right-fill"></i> Join OwenaHub
+                                    </button>
+                                </Link>
+                            </p>
+                        </div>
                     </div>
                 </div>
             </section>
 
-            <section className="group-sessions mt-3">
+            <section className="group-sessions">
                 <div className="container">
-                    <h3>Group mentorship sessions</h3>
                     <div className="group-session-box">
                         <div className="group-session-img">
-
+                            {/* image goes here */}
                         </div>
-                        <p className="group-session-text">
-                            Meet with other learners from around the world.
-                            <br /> <br />
-                            OwenaHub provides a platform to where mentors can reach a large audience of enthusiastic learners.
+                        <div>
+                            <h3 className='mb-1'>Group mentorship sessions</h3>
+                            <p className="group-session-text">
+                                Meet with other learners from around the world.
+                                <br /> <br />
+                                OwenaHub provides a platform to where mentors can reach a large audience of enthusiastic learners.
 
-                            <br /> <br />
+                                <br /> <br />
 
-                            <span>
-                                Join our vibrant group sessions of aspiring tech enthusiasts today,
-                                and participate in our <b>Q&A</b>, <b>Networking</b>, and <b>Career Advice</b>, sessions.
-                            </span>
-                            <br /><br />
+                                <span>
+                                    Join our vibrant group sessions of aspiring tech enthusiasts today,
+                                    and participate in our <b>Q&A</b>, <b>Networking</b>, and <b>Career Advice</b>, sessions.
+                                </span>
+                                <br /><br />
 
-                            <Link to="/user/sessions">
-                                <button className="btn text-white fs-1 p-3 mt-2">
-                                    <i className="bi bi-caret-right-fill"></i> Join OwenaHub
-                                </button>
-                            </Link>
-                        </p>
+                                <Link to="/user/sessions">
+                                    <button className="btn text-white fs-1 p-3 mt-2">
+                                        <i className="bi bi-caret-right-fill"></i> See Sessions
+                                    </button>
+                                </Link>
+                            </p>
+                        </div>
 
+                    </div>
+                </div>
+            </section>
+
+            <section className="sessions mb-2">
+                <div className="container">
+                    <h3>Private Sessions</h3>
+                    <p>
+                        <b>
+                            Leap 10x career growth with iconic mentors
+                        </b>
+                        <br /><br />
+                        Designed for quick wins - check through our list of qualified mentors <br className="hidden" />
+                        and book a <i><u>Private Session</u></i> with the mentor of your choice.
+                    </p>
+                    <div className='private-session'>
+                        <Link to="/user/sessions">
+                            <button className='btn text-white p-3 fs-1 mt-2 mb-2'>
+                                <i className="bi bi-caret-right-fill"></i> Book Session
+                            </button>
+                        </Link>
                     </div>
                 </div>
             </section>
@@ -165,6 +191,7 @@ const Home = () => {
                 <div className="container">
                     <div className="video-box">
                         <i className="bi bi-play-circle"></i>
+                        {/* VIDEO GOES HERE */}
                     </div>
                 </div>
             </section>
@@ -252,49 +279,6 @@ const Home = () => {
                     <Link to="/getstarted" id='neon-button'>
                         Get Started!
                     </Link>
-                </div>
-            </section>
-
-            <section className="sessions mb-2">
-                <div className="container">
-                    <h3>Private Sessions</h3>
-                    <p>
-                        We believe in the power of personalized learning experiences and the value they bring to your growth and development.
-                        <br /> There are tailored sessions that will cater to your unique needs and learning style.
-                    </p>
-                    <div className='private-session'>
-                        <p>
-                            Our private sessions offer a personalized and focused learning environment where expert mentors provide individualized instruction aligned with your unique goals.
-                            <br />
-                            Benefit from undivided attention and tailored guidance to achieve your aspirations effectively
-                        </p>
-                        <ol>
-                            <li>
-                                <b>Personalized Attention:</b><br />
-                                Experience one-on-one guidance from our skilled mentors, who will adapt the content to suit your individual needs.
-                            </li>
-
-                            <li>
-                                <b>Flexible Scheduling:</b><br />
-                                We understand the importance of convenience, so we offer flexible scheduling options to accommodate your busy lifestyle.
-                            </li>
-
-                            <li>
-                                <b>Targeted Learning:</b><br />
-                                Focus on specific areas of interest, allowing you to delve deeper into subjects that matter most to you.
-                            </li>
-
-                            <li>
-                                <b>Rapid Progress:</b><br />
-                                With personalized instruction and tailored feedback, you can make significant progress in a shorter period.
-                            </li>
-                        </ol>
-                        <Link to="/user/sessions">
-                            <button className='btn text-white p-3 fs-1 mt-2 mb-2'>
-                                <i className="bi bi-caret-right-fill"></i>  Create a Session
-                            </button>
-                        </Link>
-                    </div>
                 </div>
             </section>
 

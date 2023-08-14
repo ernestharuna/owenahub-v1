@@ -1,5 +1,7 @@
 import { createBrowserRouter } from "react-router-dom";
 
+import ErrorPage from "./views/ErrorPage";
+
 // layouts import
 import GuestLayout from "./layouts/GuestLayout";
 import AuthLayout from "./layouts/AuthLayout";
@@ -41,9 +43,12 @@ import ShowArticle, { loader as ShowArticleLoader } from "./views/admin/articles
 import MentorLogin from "./views/mentors/auth/MentorLogin";
 import MentorRegister from "./views/mentors/auth/MentorRegister";
 import MentorDashboard from "./views/mentors/dashboard/MentorDashboard";
-import MentorSessions, { loader as MentorSessionsLoader } from "./views/mentors/sessions/MentorSessions";
+import MentorSessions from "./views/mentors/sessions/MentorSessions";
 import AllMentorSessions from "./views/mentors/sessions/AllMentorSessions";
-import ErrorPage from "./views/ErrorPage";
+import ShowMentorSessions from "./views/mentors/sessions/ShowMentorSessions";
+import CreateGroupSession from "./views/mentors/sessions/CreateGroupSession";
+import ShowGroupSession, { loader as ShowGroupSessionLoader } from "./views/mentors/sessions/ShowGroupSession";
+import MentorArticles from "./views/mentors/articles/MentorArticles";
 
 
 const router = createBrowserRouter([
@@ -149,22 +154,42 @@ const router = createBrowserRouter([
     {
         path: "/mentor",
         element: <MentorLayout />,
+        errorElement: <ErrorPage />,
         children: [
             {
                 path: "dashboard",
                 index: true,
                 element: <MentorDashboard />,
+                errorElement: <ErrorPage />,
+            },
+            {
+                path: "articles",
+                element: <MentorArticles />
             },
             {
                 path: "sessions",
                 element: <MentorSessions />,
-                loader: MentorSessionsLoader,
+                errorElement: <ErrorPage />,
                 children: [
                     {
                         index: true,
                         element: <AllMentorSessions />,
-                        loader: MentorSessionsLoader,
-                    }
+                        loader: UserSessionsLoader,
+                    },
+                    {
+                        path: ":sessionId",
+                        element: <ShowMentorSessions />,
+                        loader: ShowUserSessionLoader,
+                    },
+                    {
+                        path: "group-sessions/:groupSessionId",
+                        element: <ShowGroupSession />,
+                        loader: ShowGroupSessionLoader,
+                    },
+                    {
+                        path: "group-sessions/create",
+                        element: <CreateGroupSession />
+                    },
                 ]
             }
         ]
