@@ -44,7 +44,7 @@ export default function ShowGuestArticle() {
                 </small>
 
                 <h2 className="text-dark fw-1 mt-1">{article[0].title}</h2>
-                <p className="fw-3 text-secondary mb-2">
+                <p className="article-description fw-3 text-secondary mb-2">
                     {article[0].description}
                 </p>
 
