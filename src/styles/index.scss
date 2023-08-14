@@ -1,8 +1,8 @@
 // fonts
 @import url('https://fonts.googleapis.com/css2?family=Alata&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Maven+Pro&display=swap');
-// @import url('https://fonts.googleapis.com/css2?family=Nabla&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Luckiest+Guy&family=Maven+Pro&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap'); // for huge CTA
+@import url('https://fonts.googleapis.com/css2?family=Abril+Fatface&display=swap'); //cursive
 
 :root {
     font-size: 16px;
@@ -11,7 +11,8 @@
 // $font: 'Nabla', cursive;
 $font: 'Alata', sans-serif;
 $font2: 'Maven Pro', sans-serif;
-$font3: 'Luckiest Guy', cursive;
+$font3: 'Press Start 2P', cursive;
+$cursive: 'Abril Fatface', cursive;
 
 // colors
 $primary-color: #F6A700;
@@ -26,9 +27,8 @@ $dark: #211502;
 // Background
 $background: #F6F8FC;
 
-// shodow
+// shadow
 $text-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
-
 
 $box-shadow: 0 25px 50px -5px #BD34FE40;
 $box-shadow2: 0 0px 1px hsla(0, 0%, 0%, 0.2), 0 1px 2px hsla(0, 0%, 0%, 0.2);
@@ -40,7 +40,6 @@ html {
 
 body {
     background: #fff;
-
     margin: 0;
     font-family: 'Optimistic Text', -apple-system, ui-sans-serif, system-ui, BlinkMacSystemFont, ' Segoe UI', Roboto, 'Helvetica Neue', Arial, 'Noto Sans', sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
 }
@@ -147,6 +146,11 @@ hr {
     background: linear-gradient(50deg, $primary-color, $sec-color);
 }
 
+p {
+    // margin: 0.5rem 0;
+    font-weight: 500;
+}
+
 footer {
     background: #000000;
     padding: 2rem 0 1rem;
@@ -181,6 +185,15 @@ footer {
     top: 90vh;
     left: 50%;
     transform: translateX(-50%);
+}
+
+.article-body {
+    p {
+        margin: 0;
+        font-size: 16px;
+        line-height: 160%;
+        padding: 0 6rem;
+    }
 }
 
 // COMPONENT STYLES-----------------
@@ -256,7 +269,7 @@ a {
 }
 
 .mentor-card {
-    border-radius: 5px;
+    border-radius: 0.5rem;
     background: #F4F6F8;
     box-shadow: $box-shadow2;
     transition: all .3s ease;
@@ -320,6 +333,22 @@ a {
     }
 }
 
+.share-icons {
+    div {
+        color: #fff;
+        font-size: 1.2rem;
+        margin-right: 0.4rem;
+        display: inline-block;
+        border-radius: 0.5rem;
+        box-shadow: $box-shadow2;
+
+        i {
+            position: relative;
+            top: -1px;
+        }
+    }
+}
+
 @media screen and (max-width: 860px) {
     header {
         padding: 0 0.4rem;
@@ -347,6 +376,12 @@ a {
                     font-weight: 600;
                 }
             }
+        }
+    }
+
+    .article-body {
+        p {
+            padding: 0;
         }
     }
 

@@ -31,9 +31,9 @@ export default function WaitList() {
     return (
         <div className="animated fadeInDown">
             <div className='form-container'>
-                <div className="form mt-2 container">
+                <div className="form mt-3 container">
                     <h3>Join the Waitlist!</h3>
-                    <p>
+                    <p className="text-secondary">
                         Be the first to be notified when new features are introduced<br className='hidden' />
                         to OwenaHub.
                     </p>

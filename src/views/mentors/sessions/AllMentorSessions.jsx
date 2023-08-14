@@ -33,7 +33,7 @@ export default function AllUserSessions() {
         <div className="animated2 fadeInDown">
             <div className="mt-1 mentor-sessions-box">
                 <h5 className="mt-1 mb-1">
-                    On-going Sessions <i className="bi bi-tags"></i>
+                    <i className="bi bi-tags"></i> On-going Sessions
                 </h5>
 
                 <div className="mentor-sessions">
@@ -46,7 +46,7 @@ export default function AllUserSessions() {
 
             <div className="mt-3 mentor-sessions-box">
                 <h5 className="mt-1 mb-1">
-                    Pending Sessions <i className="bi bi-arrow-clockwise"></i>
+                    <i className="bi bi-arrow-clockwise"></i> Pending Sessions
                 </h5>
 
                 <div className="mentor-sessions">
@@ -59,7 +59,7 @@ export default function AllUserSessions() {
 
             <div className="mt-3 mentor-sessions-box">
                 <h5 className="mt-1 mb-1">
-                    Group Sessions <i className="bi bi-arrow-clockwise"></i>
+                    <i className="fs-1 bi bi-people"></i> Group Sessions
                 </h5>
 
                 <div className="mentor-sessions">

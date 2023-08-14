@@ -171,7 +171,7 @@ const Home = () => {
                     <h3>Private Sessions</h3>
                     <p>
                         <b>
-                            Leap 10x career growth with iconic mentors
+                            "Unleash 10x Career Growth with Legendary Mentors!"
                         </b>
                         <br /><br />
                         Designed for quick wins - check through our list of qualified mentors <br className="hidden" />
@@ -242,7 +242,7 @@ const Home = () => {
                     <div className="courses-box">
                         <CourseCard title="Become a Web Developer" desc={"Develop your core skills, techniques,.."} />
                         <CourseCard title="Basics of Data Sience" desc={"Develop your core skills, techniques,.."} />
-                        <CourseCard title="Get Started in Digital Marketing" desc={"Develop your core skills, techniques,.."} />
+                        <CourseCard title="Get Started in UX Design" desc={"Develop your core skills, techniques,.."} />
                     </div>
                 </div>
             </section>

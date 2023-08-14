@@ -7,13 +7,16 @@ export default function AllGuestArticles() {
     return (
         <div>
             <section className='animated fadeInDown2'>
-                <h3 className='fw-2 fs-2'>
+                <h3 className='fw-2 fs-2' id="top">
                     Latest blog posts
                 </h3>
 
                 <div>
                     {articles.length === 0 ?
-                        (<p>No articles . . . 🤔</p>) :
+                        (<p className="text-secondary">
+                            <i className="fs-2 bi bi-emoji-dizzy"></i> {" "}  . . .
+                            No articles
+                        </p>) :
                         (articles.map((article) =>
                             (<ArticleCard key={article.id} article={article} />)
                         ))

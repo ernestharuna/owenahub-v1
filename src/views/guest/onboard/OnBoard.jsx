@@ -9,7 +9,7 @@ export default function OnBoard() {
 
                 <div className="onboard mb-3">
                     <div className="onboard-card mb-1 fadeInDown animated">
-                        <h4>As Mentor</h4>
+                        <h4 className='fw-3'>As Mentor</h4>
                         <hr />
                         <p>
                             Join OwenaHub's community of mentors in shaping the career of <br />
@@ -28,7 +28,7 @@ export default function OnBoard() {
                     </div>
 
                     <div className="onboard-card mb-1 animated2 fadeInDown">
-                        <h4>As Learner</h4>
+                        <h4 className='fw-3'>As Learner</h4>
                         <hr />
                         <p>
                             Open the door to meeting mentors that inspire your creativity <br />

@@ -1,6 +1,8 @@
 import { useForm } from "react-hook-form";
 import axiosClient from "../../../axios-client";
 import { useNavigate } from "react-router-dom";
+import { useState } from "react";
+// React-Quill imports
 import ReactQuill from "react-quill";
 import 'react-quill/dist/quill.snow.css';
 
@@ -8,8 +10,11 @@ import 'react-quill/dist/quill.snow.css';
 export default function CreateArticle() {
     const { register, handleSubmit, formState: { errors, isSubmitting } } = useForm();
     const navigate = useNavigate();
+    const [content, setContent] = useState('');
 
     const onSubmit = async (data) => {
+        data.content = content;
+        console.log(data);
         try {
             await axiosClient.post('/articles', data);
             navigate('/admin/articles');
@@ -17,6 +22,14 @@ export default function CreateArticle() {
             console.log(err);
         }
     }
+
+    const toolbarOptions = [
+        [{ 'header': [3, false] }],
+        ['bold', 'italic', 'underline', 'strike', 'blockquote'], // text formatting options
+        [{ 'list': 'ordered' }, { 'list': 'bullet' }, { 'indent': '-1' }, { 'indent': '+1' }],
+        ['link', 'image'],
+        ['clean']
+    ];
 
     return (
         <div className="fadeInDown animated">
@@ -53,22 +66,18 @@ export default function CreateArticle() {
 
                     <div className="form-control">
                         <label htmlFor="content">Content</label><br />
-                        <textarea {...register("content", { required: true })}
+                        {/* <textarea {...register("content", { required: true })}
                             placeholder="The most interesting fact about this is . . . " id="content"
                             className={errors.content ? 'error form-control' : 'form-control'}
                         >
-                        </textarea>
+                        </textarea> */}
 
-                        {/* <ReactQuill theme="snow" modules={{ toolbar: toolbarOptions }} style={{ height: 100 }}
-                            defaultValue={content}
-                            onChange={setContent}
-                            className={errors.content ? 'error form-control' : 'form-control'}
-                            {register()}
-                        /> */}
-
+                        <ReactQuill theme="snow" value={content} onChange={setContent} modules={{ toolbar: toolbarOptions }}
+                            style={{ width: "97%", background: "white", borderRadius: "0.5rem" }}
+                        />
                     </div>
 
-                    <div className="form-control">
+                    <div className="form-control mt-3">
                         <label htmlFor="publish" className="fw-3">Publish Article?</label>
                         <input type="checkbox" name="" id="publish"
                             {...register("published")}
@@ -87,7 +96,6 @@ export default function CreateArticle() {
 const style = {
     background: "#DEEAF2",
     borderRadius: "5px",
-    // boxShadow: "0 25px 50px 0px #BD34FE40",
     paddingTop: "1rem",
     paddingBottom: "1rem"
 }

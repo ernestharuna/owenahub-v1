@@ -1,9 +1,5 @@
 @use '../../../styles/index.scss' as *;
 
-p {
-    font-weight: 600;
-}
-
 .hero-section {
     margin: 0;
     display: flex;
@@ -299,7 +295,7 @@ p {
         font-weight: 700;
         text-decoration: none;
         font-size: 2.5rem;
-        font-family: $font3;
+        font-family: $font2;
         border: 0.1253em solid $primary-color;
         padding: .25em 1em;
         border-radius: .25em;

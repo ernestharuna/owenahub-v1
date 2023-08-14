@@ -179,7 +179,9 @@
 }
 
 .cursive {
-    font-family: cursive;
+    font-family: $cursive;
+    letter-spacing: 2px;
+    font-size: 14px;
 }
 
 .text-dark {

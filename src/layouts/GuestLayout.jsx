@@ -26,7 +26,7 @@ const GuestLayout = () => {
                     <div className="auth-btns">
                         {/* <PrimaryBtn text="Start for free" link="/auth/register" /> */}
                         <Link to={"/auth/login"}>
-                            <span className="sign-in">
+                            <span className="sign-in fw-2">
                                 Sign in
                             </span>
                         </Link>

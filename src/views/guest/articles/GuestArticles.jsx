@@ -1,7 +1,8 @@
-import { Outlet, useLoaderData } from 'react-router-dom';
+import { Link, Outlet, useLoaderData } from 'react-router-dom';
 import './guestArticles.scss';
 import axiosClient from '../../../axios-client';
 import MentorsCard from '../../../components/MentorsCard';
+import SIdeArticle from '../../../components/SIdeArticle';
 
 export async function loader() {
     const [res1, res2] = await Promise.all([
@@ -13,25 +14,26 @@ export async function loader() {
         articles: res1.data.data,
         mentors: res2.data.data,
     }
-
 }
 
 export default function GuestArticles() {
-    const { mentors } = useLoaderData();
+    const { mentors, articles } = useLoaderData();
 
     return (
         <div className='guest-articles'>
             <section className='animated fadeInDown px-1 flex-items mt-1'>
                 <div>
                     <h3 className='fw-3 fs-2 ml-1'>
-                        Blog
+                        <Link to={"/articles"}>Blog</Link>
                     </h3>
                 </div>
 
                 <div>
-                    <button className="btn btn-dark p-2">
-                        Submit Article <i className="bi bi-cursor"></i>
-                    </button>
+                    <Link to={"/waitlist"}>
+                        <button className="btn btn-dark p-2">
+                            Submit Article <i className="bi bi-cursor"></i>
+                        </button>
+                    </Link>
                 </div>
             </section>
 
@@ -45,27 +47,59 @@ export default function GuestArticles() {
                 </div>
 
                 <aside className='animated fadeInDown2'>
-                    <h3 className="fw-2 fs-2">
-                        Owena Resources
-                    </h3>
-                    <p>Software Engineering</p>
-                    <p>Data science</p>
-                    <p>Accounting</p>
-                    <p>Career Advice</p>
+                    <div>
+                        <h3 className="fw-2 fs-2">
+                            Owena Resources
+                        </h3>
+                        <div className="resource-types">
+                            <p>
+                                Web Development
+                                <i className="bi bi-link-45deg"></i>
+                            </p>
+                            <p>
+                                UX Design
+                                <i className="bi bi-link-45deg"></i>
+                            </p>
+                            <p>
+                                Career Advice
+                                <i className="bi bi-link-45deg"></i>
+                            </p>
+                            <p>
+                                Product Management
+                                <i className="bi bi-link-45deg"></i>
+                            </p>
+                        </div>
+                    </div>
 
                     <hr />
 
-                    <h3 className="fw-2 fs-2">
-                        Top Writers
-                    </h3>
+                    <div>
+                        <h3 className="fw-2 fs-2">
+                            Top Writers
+                        </h3>
+                        <div>
+                            {mentors.length === 0 ?
+                                (<p className='text-secondary'>There are no mentors available at the moment</p>) :
+                                (mentors.slice(0, 5).map((mentor) => (
+                                    <MentorsCard key={mentor.id} mentor={mentor} />))
+                                )
+                            }
+                        </div>
+                    </div>
+
+                    <br />
+                    <br />
 
                     <div>
-                        {mentors.length === 0 ?
-                            (<p>There are no mentors available at the moment</p>) :
-                            (mentors.map((mentor) =>
-                                (<MentorsCard key={mentor.id} mentor={mentor} />)
-                            ))
-                        }
+                        <h3 className='fw-2 fs-2 mb-1'>Editor's Choice</h3>
+                        <div>
+                            {articles.length === 0 ?
+                                (<p className='text-secondary'>No posts to show</p>) :
+                                (articles.slice(0, 5).map(article => (
+                                    <SIdeArticle key={article.id} article={article} />
+                                )))
+                            }
+                        </div>
                     </div>
                 </aside>
             </div>

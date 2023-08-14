@@ -18,9 +18,9 @@ export async function loader({ params }) {
 export default function ShowArticle() {
     const article = useLoaderData();
 
-    const content = article[0].content.split('\n').map((line, index) => (
-        <p key={index}>{line}</p>
-    ))
+    // const content = article[0].content.split('\n').map((line, index) => (
+    //     <p key={index}>{line}</p>
+    // ))
 
     return (
         <div>
@@ -30,9 +30,9 @@ export default function ShowArticle() {
 
                 <h2 className="text-dark fw-1 mt-1">{article[0].title}</h2>
 
-                <div className="body mt-1">
-                    {/* <div dangerouslySetInnerHTML={{ __html: article[0].content }} /> */}
-                    {content}
+                <div className="article-body mt-1">
+                    <div dangerouslySetInnerHTML={{ __html: article[0].content }} />
+                    {/* {content} */}
                 </div>
             </section>
         </div>

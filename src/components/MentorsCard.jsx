@@ -2,7 +2,7 @@ import { Link } from "react-router-dom";
 
 export default function MentorsCard({ mentor }) {
     let route;
-    if (localStorage.getItem('ADMIN_TOKEN') || localStorage.getItem('MENTOR_TOKEN') || localStorage.getItem('USER_TOKEN')) {
+    if (localStorage.getItem('USER_TOKEN')) {
         route = `/user/mentors/show/${mentor.id}/${mentor.firstName}${mentor.lastName}`;
     } else {
         route = "/auth/login";
