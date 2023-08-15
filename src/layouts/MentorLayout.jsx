@@ -31,10 +31,6 @@ export default function MentorLayout() {
             .then(({ data }) => {
                 dispatch(setMentor(data));
             }).catch((err) => {
-                // if (err.message === "Network Error") {
-                //     dispatch(logoutMentor());
-                //     window.location.href = "/";
-                // }
                 if (err.response.status === 401) {
                     dispatch(logoutMentor());
                     window.location.href = "/";

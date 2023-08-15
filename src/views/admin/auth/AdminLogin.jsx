@@ -72,9 +72,9 @@ export default function AdminLogin() {
 
                         <hr />
 
-                        <Link to="/auth/admin/register">
+                        {/* <Link to="/auth/admin/register">
                             Create an account
-                        </Link>
+                        </Link> */}
                     </form>
                 </div>
 

@@ -13,6 +13,9 @@ export default function Register() {
     const { register, handleSubmit, formState: { errors, isSubmitting } } = useForm();
 
     const onSubmit = async (data) => {
+        window.location.href = "/waitlist";
+        return;
+
         setError(null);
         try {
             const res = await axiosClient.post('/register', data);

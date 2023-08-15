@@ -11,6 +11,9 @@ export default function MentorLogin() {
     const dispatch = useDispatch();
 
     const onSubmit = async (data) => {
+        window.location.href = "/waitlist";
+        return;
+
         setError(null);
         try {
             const res = await axiosClient.post('/mentor/login', data);

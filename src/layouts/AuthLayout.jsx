@@ -3,11 +3,6 @@ import logo from '../assets/owena_logo.png'
 import { useSelector } from "react-redux";
 
 export default function AuthLayout() {
-
-    // --------------- for production
-    // return (<Navigate to={"/waitlist"} />);
-    // ---------------
-
     const user_token = useSelector(state => state.authUser.token);
     const admin_token = useSelector(state => state.authAdmin.token);
     const mentor_token = useSelector(state => state.authMentor.token)

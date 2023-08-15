@@ -13,6 +13,9 @@ export default function MentorRegister() {
     const { register, handleSubmit, formState: { errors, isSubmitting } } = useForm();
 
     const onSubmit = async (data) => {
+        window.location.href = "/waitlist";
+        return;
+
         setError(null);
         if (!data.first_name || !data.last_name || !data.email) {
             setNext(false);
