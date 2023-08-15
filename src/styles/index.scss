@@ -1,18 +1,19 @@
 // fonts
-@import url('https://fonts.googleapis.com/css2?family=Alata&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Maven+Pro&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap'); // for huge CTA
+@import url('https://fonts.googleapis.com/css2?family=Alata&display=swap'); // font
+@import url('https://fonts.googleapis.com/css2?family=Maven+Pro&display=swap'); // font2
+@import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap'); // font3
 @import url('https://fonts.googleapis.com/css2?family=Abril+Fatface&display=swap'); //cursive
+@import url('https://fonts.googleapis.com/css2?family=Barriecito&display=swap'); // roboto
 
 :root {
     font-size: 16px;
 }
 
-// $font: 'Nabla', cursive;
 $font: 'Alata', sans-serif;
 $font2: 'Maven Pro', sans-serif;
 $font3: 'Press Start 2P', cursive;
 $cursive: 'Abril Fatface', cursive;
+$roboto: 'Roboto Mono', monospace;
 
 // colors
 $primary-color: #F6A700;
@@ -94,7 +95,7 @@ header {
                 color: #fff;
                 padding: 0.4rem 0.8rem;
                 background: $primary-color;
-                border-radius: 5px;
+                border-radius: 0.5rem;
                 font-weight: 600;
                 transition: all .2s ease;
 
@@ -172,19 +173,17 @@ footer {
 }
 
 #notification {
-    background: #00a457e1;
-    position: absolute;
-    text-transform: uppercase;
+    background: linear-gradient(45deg, #008000ed, #55a555cd);
+    position: fixed;
     font-size: 0.8rem;
-    font-weight: 700;
+    font-weight: 600;
     padding: 0.4rem 0.6rem;
     box-shadow: $box-shadow3;
     border-left: 4px solid $primary-color;
     border-radius: 0 5px 5px 0;
     color: #fff;
-    top: 90vh;
-    left: 50%;
-    transform: translateX(-50%);
+    top: 10vh;
+    left: 0;
 }
 
 .article-body {
@@ -226,9 +225,33 @@ footer {
     margin: 1rem 0;
     box-shadow: $box-shadow2;
 
+    h4 {
+        font-size: 17px;
+    }
+
+    .article-desc {
+        font-family: $roboto;
+        text-transform: uppercase;
+
+        .category {
+            font-size: 12px;
+            color: #FB2723;
+            letter-spacing: 0;
+            font-weight: 600;
+        }
+
+        .time {
+            letter-spacing: 0px;
+            font-weight: 500;
+            font-size: 12px;
+        }
+    }
+
     .description {
         color: #5f5f5f;
+        font-size: 14px;
     }
+
 
     &:hover {
         box-shadow: $box-shadow3;
@@ -348,12 +371,17 @@ a {
         font-size: 1.2rem;
         margin-right: 0.4rem;
         display: inline-block;
-        border-radius: 0.5rem;
-        box-shadow: $box-shadow2;
+        padding: 0.2rem 0.4rem;
+        box-shadow: $box-shadow3;
+        transition: all .3s;
 
         i {
             position: relative;
             top: -1px;
+        }
+
+        &:hover {
+            transform: translateY(-3px);
         }
     }
 }
@@ -386,6 +414,11 @@ a {
                 }
             }
         }
+    }
+
+
+    #notification {
+        width: max-content;
     }
 
     .article-body {

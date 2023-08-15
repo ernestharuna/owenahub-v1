@@ -99,7 +99,7 @@ export default function UserLayout() {
             </main>
 
             {message &&
-                (<div id="notification">
+                (<div id="notification" className="animated2 sideBounce">
                     {message}
                 </div>)
             }

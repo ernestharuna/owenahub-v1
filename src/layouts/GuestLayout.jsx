@@ -51,7 +51,9 @@ const GuestLayout = () => {
                             <img src={logo} alt="_logo" style={{ width: '60px' }} />
                         </div>
                         <p>
-                            To cultivate meaningful interactions and partnerships within our global community, <br className="hidden" /> harnessing the collective expertise of tech professionals to empower eager learners through mentorship.
+                            <small>
+                                Fostering global connections, leveraging experts to empower learners through mentorship.
+                            </small>
                         </p>
                     </div>
 
@@ -69,14 +71,17 @@ const GuestLayout = () => {
 
                     <p>
                         <small>
-                            Owenahub, &copy; 2023 - All rights reserved
+                            Owenahub, &copy; 2023 - All rights reserved <br />
+                            <i>
+                                version 1.0.0
+                            </i>
                         </small>
                     </p>
                 </div>
             </footer>
 
             {message &&
-                (<div id="notification">
+                (<div id="notification" className="animated2 sideBounce">
                     {message}
                 </div>)
             }

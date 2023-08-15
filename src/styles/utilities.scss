@@ -168,12 +168,10 @@
 .time {
     font-size: 10px;
     color: #939393;
-    font-weight: 700;
 }
 
 .category {
-    font-family: 'Courier New', Courier, monospace;
-    color: $sec-color;
+    color: #FB2723;
     font-weight: 700;
     font-size: 15px;
 }
@@ -357,6 +355,11 @@
     transition-delay: 200ms;
 }
 
+.sideBounce {
+    -webkit-animation-name: sideBounce;
+    animation-name: sideBounce;
+}
+
 @keyframes loader {
     0% {
         transform: rotate(0deg);
@@ -376,6 +379,48 @@
     100% {
         opacity: 1;
         transform: translateY(0);
+    }
+}
+
+@keyframes sideBounce {
+    0% {
+        transform: translateX(0);
+    }
+
+    12% {
+        transform: translateX(20px);
+    }
+
+    24% {
+        transform: translateX(-18px);
+    }
+
+    36% {
+        transform: translateX(16px);
+    }
+
+    48% {
+        transform: translateX(-14px);
+    }
+
+    60% {
+        transform: translateX(12px);
+    }
+
+    72% {
+        transform: translateX(-10px);
+    }
+
+    84% {
+        transform: translateX(8px);
+    }
+
+    96% {
+        transform: translateX(-6px);
+    }
+
+    100% {
+        transform: translateX(0);
     }
 }
 

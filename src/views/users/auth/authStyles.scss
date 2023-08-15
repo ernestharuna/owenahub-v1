@@ -161,6 +161,19 @@ form {
         .form-control {
             display: inline-block;
             width: 94%;
+
+            select {
+                margin: 0.4rem 0;
+                padding: 0.2rem 0.4rem;
+                transition: all .1s;
+                border-radius: 10px;
+                border: 2px solid #e6e6e6;
+                font-size: 1.1rem;
+                outline: 0;
+                height: 40px;
+                display: inline-block;
+                width: 100%;
+            }
         }
 
         #submit {

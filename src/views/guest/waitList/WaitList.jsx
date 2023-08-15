@@ -1,4 +1,4 @@
-import { useState } from "react"
+import { useEffect, useState } from "react"
 import { useForm } from "react-hook-form";
 import { Link, useNavigate } from "react-router-dom";
 import axiosClient from "../../../axios-client";
@@ -11,14 +11,19 @@ export default function WaitList() {
     const dispatch = useDispatch();
     const { register, handleSubmit, formState: { errors, isSubmitting } } = useForm();
 
+    useEffect(() => {
+        dispatch(addMessage("The feeature you tried is still being built."));
+        setTimeout(() => dispatch(removeMessage()), 5000);
+    }, []);
+
     const onSubmit = async (data) => {
         setError(null);
         try {
             await axiosClient.post('/guest/waitlist/create', data)
                 .then(({ data }) => {
                     dispatch(addMessage(data.message));
-                    setTimeout(() => dispatch(removeMessage()), 5000);
-                    navigate("/");
+                    setTimeout(() => dispatch(removeMessage()), 8000);
+                    navigate("/articles");
                 });
         } catch (err) {
             const res = err.response;
@@ -34,7 +39,7 @@ export default function WaitList() {
                 <div className="form mt-3 container">
                     <h3>Join the Waitlist!</h3>
                     <p className="text-secondary">
-                        Be the first to be notified when new features are introduced<br className='hidden' />
+                        Be the first to be notified when new features are introduced <br className='hidden' />
                         to OwenaHub.
                     </p>
 
