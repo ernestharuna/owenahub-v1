@@ -199,31 +199,37 @@ const Home = () => {
             <section className="social">
                 <div className="container">
                     <h3>Trusted by learners everywhere.</h3>
-                    <p>
+                    <p className='text-secondary fs-small'>
                         Rated 5 stars by learners of all skill levels!
                     </p>
                     <div className="social-box">
-                        <div className="youtube">
-                            <i className="bi bi-youtube"></i>
-                            <strong>
-                                1.2M
-                            </strong>
-                            <span>subscribers</span>
-                        </div>
-                        <div className="facebook">
-                            <i className="bi bi-facebook"></i>
-                            <strong>
-                                422k
-                            </strong>
-                            <span>likes</span>
-                        </div>
-                        <div className="instagram">
-                            <i className="bi bi-instagram"></i>
-                            <strong>
-                                123k
-                            </strong>
-                            <span>followers</span>
-                        </div>
+                        <a href="http://" target="_blank" rel="noopener noreferrer">
+                            <div className="youtube">
+                                <i className="bi bi-youtube"></i>
+                                <strong>
+                                    1,340
+                                </strong>
+                                <span>subscribers</span>
+                            </div>
+                        </a>
+                        <a href="https://www.facebook.com/owenahub?mibextid=ZbWKwL" target="_blank" rel="noopener noreferrer">
+                            <div className="facebook">
+                                <i className="bi bi-facebook"></i>
+                                <strong>
+                                    800
+                                </strong>
+                                <span>likes</span>
+                            </div>
+                        </a>
+                        <a href="https://instagram.com/owenahub?utm_source=qr&igshid=MzNlNGNkZWQ4Mg%3D%3D" target="_blank" rel="noopener noreferrer">
+                            <div className="instagram">
+                                <i className="bi bi-instagram"></i>
+                                <strong>
+                                    15
+                                </strong>
+                                <span>followers</span>
+                            </div>
+                        </a>
                     </div>
                 </div>
             </section>

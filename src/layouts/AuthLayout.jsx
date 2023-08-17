@@ -40,7 +40,7 @@ export default function AuthLayout() {
                 <div className="container">
                     <h1>OwenaHub</h1>
                     <div id="footer-quote">
-                        <div>
+                        <div className="logo">
                             <img src={logo} alt="_logo" style={{ width: '60px' }} />
                         </div>
                         <p>
@@ -52,7 +52,7 @@ export default function AuthLayout() {
 
                     <p>
                         <b> Contact Us</b> <br />
-                        owenacenter@gmail.com
+                        hello@owenahub.com
                     </p>
 
                     <p>

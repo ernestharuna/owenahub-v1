@@ -473,6 +473,11 @@ a {
     footer {
         #footer-quote {
 
+            .logo {
+                position: relative;
+                left: -10px;
+            }
+
             div,
             p {
                 margin: 0;
