@@ -16,10 +16,10 @@ axiosClient.interceptors.response.use((response) => {
     try {
         const { response } = error;
         if (response.status === 401) {
-            // localStorage.removeItem('USER_TOKEN');
-            // localStorage.removeItem('MENTOR_TOKEN');
-            // localStorage.removeItem('ADMIN_TOKEN');
-            localStorage.clear()
+            localStorage.removeItem('USER_TOKEN');
+            localStorage.removeItem('MENTOR_TOKEN');
+            localStorage.removeItem('ADMIN_TOKEN');
+            // localStorage.clear()
             window.location.href = "/auth/login";
         }
     } catch (error) {
