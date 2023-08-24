@@ -59,24 +59,24 @@ const GuestLayout = () => {
 
                     <hr />
 
-                    <p>
-                        <b> Contact Us</b> <br />
-                        hello@owenahub.com
-                    </p>
+                    <div className="fs-small">
+                        <p className="fs-small">
+                            <b> Contact Us</b> <br />
+                            hello@owenahub.com
+                        </p>
 
-                    <p>
-                        <b> Sign in </b> <br />
-                        <Link to={"/auth/login"}>Learner</Link> | <Link to={"/auth/mentor/login"}>Mentor</Link> | <Link to={"/auth/admin/login"}>Admin</Link>
-                    </p>
+                        <p>
+                            <b> Sign in </b> <br />
+                            <Link to={"/auth/login"}>Learner</Link> | <Link to={"/auth/mentor/login"}>Mentor</Link> | <Link to={"/auth/admin/login"}>Admin</Link>
+                        </p>
 
-                    <p>
-                        <small>
+                        <p>
                             Owenahub, &copy; 2023 - All rights reserved <br />
                             <i>
-                                version 1.0.0
+                                version 1.0.1
                             </i>
-                        </small>
-                    </p>
+                        </p>
+                    </div>
                 </div>
             </footer>
 

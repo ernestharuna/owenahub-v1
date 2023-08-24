@@ -11,6 +11,10 @@ export default function ErrorPage() {
             <p className="text-secondary">
                 <i>{error.statusText || error.message}</i>
             </p>
+            <button className="btn btn-dark p-2"
+                onClick={() => window.location.reload()}>
+                reload
+            </button>
         </div>
     )
 }

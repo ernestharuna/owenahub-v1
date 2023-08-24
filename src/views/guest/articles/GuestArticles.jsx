@@ -5,14 +5,25 @@ import MentorsCard from '../../../components/MentorsCard';
 import SIdeArticle from '../../../components/SIdeArticle';
 
 export async function loader() {
-    const [res1, res2] = await Promise.all([
-        axiosClient.get('/guest/articles'),
-        axiosClient.get('/guest/mentors'),
-    ]);
+    try {
+        const [articlesResponse, mentorsResponse] = await Promise.all([
+            axiosClient.get('/guest/articles'),
+            axiosClient.get('/guest/mentors'),
+        ]);
 
-    return {
-        articles: res1.data.data,
-        mentors: res2.data.data,
+        const articlesData = articlesResponse.data.data;
+        const mentorsData = mentorsResponse.data.data;
+
+        return {
+            articles: articlesData,
+            mentors: mentorsData,
+        };
+    } catch (error) {
+        console.error("Error loading data:", error);
+        return {
+            articles: [],
+            mentors: [],
+        };
     }
 }
 

@@ -69,26 +69,26 @@ export default function AdminLayout() {
                 <div id="user-navigation">
                     <NavLink to={"dashboard"} className={({ isActive, isPending }) => isActive ? "active" : isPending ? "pending" : ""}>
                         <div >
-                            <i className="bi bi-bookmarks"></i> Dashboard
+                            <i className="bi bi-bookmarks"></i> <span>Dashboard</span>
                         </div>
                     </NavLink>
                     <NavLink to={"articles"} className={({ isActive, isPending }) => isActive ? "active" : isPending ? "pending" : ""}>
                         <div>
-                            <i className="bi bi-vector-pen"></i> Articles
+                            <i className="bi bi-vector-pen"></i> <span>Articles</span>
                         </div>
                     </NavLink>
                     <NavLink to={"slices"} className={({ isActive, isPending }) => isActive ? "active" : isPending ? "pending" : ""}>
                         <div>
-                            <i className="bi bi-journal-bookmark-fill"></i> Slices
+                            <i className="bi bi-journal-bookmark-fill"></i> <span>Slices</span>
                         </div>
                     </NavLink>
                     <NavLink to={"sessions"} className={({ isActive, isPending }) => isActive ? "active" : isPending ? "pending" : ""}>
                         <div>
-                            <i className="bi bi-calendar-week"></i> Sessions
+                            <i className="bi bi-calendar-week"></i> <span>Sessions</span>
                         </div>
                     </NavLink>
                     <button onClick={onLogout} id="logout">
-                        <i className="bi bi-arrow-right-circle"></i> Log Out
+                        <i className="bi bi-arrow-right-circle"></i> <span>Log Out</span>
                     </button>
                 </div>
 

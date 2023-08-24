@@ -199,6 +199,7 @@ const router = createBrowserRouter([
     {
         path: "/admin",
         element: <AdminLayout />,
+        errorElement: <ErrorPage />,
         children: [
             // Dashboard
             {
@@ -212,6 +213,7 @@ const router = createBrowserRouter([
                 path: "articles",
                 element: <Articles />,
                 loader: ArticlesLoader,
+                errorElement: <ErrorPage />,
                 children: [
                     {
                         index: true,

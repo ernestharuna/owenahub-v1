@@ -66,12 +66,6 @@ export default function CreateArticle() {
 
                     <div className="form-control">
                         <label htmlFor="content">Content</label><br />
-                        {/* <textarea {...register("content", { required: true })}
-                            placeholder="The most interesting fact about this is . . . " id="content"
-                            className={errors.content ? 'error form-control' : 'form-control'}
-                        >
-                        </textarea> */}
-
                         <ReactQuill theme="snow" value={content} onChange={setContent} modules={{ toolbar: toolbarOptions }}
                             style={{ width: "97%", background: "white", borderRadius: "0.5rem" }}
                         />

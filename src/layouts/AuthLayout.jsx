@@ -50,21 +50,24 @@ export default function AuthLayout() {
 
                     <hr />
 
-                    <p>
-                        <b> Contact Us</b> <br />
-                        hello@owenahub.com
-                    </p>
+                    <div className="fs-small">
+                        <p className="fs-small">
+                            <b> Contact Us</b> <br />
+                            hello@owenahub.com
+                        </p>
 
-                    <p>
-                        <b> Sign in </b> <br />
-                        <Link to={"/auth/login"}>Learner</Link> | <Link to={"/auth/mentor/login"}>Mentor</Link> | <Link to={"/auth/admin/login"}>Admin</Link>
-                    </p>
+                        <p>
+                            <b> Sign in </b> <br />
+                            <Link to={"/auth/login"}>Learner</Link> | <Link to={"/auth/mentor/login"}>Mentor</Link> | <Link to={"/auth/admin/login"}>Admin</Link>
+                        </p>
 
-                    <p>
-                        <small>
-                            Owenahub, &copy; 2023 - All rights reserved
-                        </small>
-                    </p>
+                        <p>
+                            Owenahub, &copy; 2023 - All rights reserved <br />
+                            <i>
+                                version 1.0.1
+                            </i>
+                        </p>
+                    </div>
                 </div>
             </footer>
         </>

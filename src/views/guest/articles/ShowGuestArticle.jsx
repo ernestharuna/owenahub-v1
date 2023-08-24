@@ -31,7 +31,7 @@ export default function ShowGuestArticle() {
                 <br />
                 <small className="fw-2">
                     <span className="text-secondary">
-                        Posted {dayjs(article[0].createdAt).fromNow()}
+                        Published {dayjs(article[0].createdAt).fromNow()}
                     </span> {" "}
                     by {" "}
                     <span className="text-secondary">
