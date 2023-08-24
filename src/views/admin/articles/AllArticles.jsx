@@ -6,8 +6,6 @@ export default function AllArticles() {
     const navigate = useNavigate();
 
     const onDelete = (article) => {
-        console.log(article.id);
-
         if (window.confirm("Are you sure?")) {
             axiosClient.delete(`/articles/${article.id}`)
                 .then(() => {
