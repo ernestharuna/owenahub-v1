@@ -37,8 +37,8 @@ export default function AdminRegister() {
                         around the world.
                     </p>
 
-                    {
-                        error && <div>
+                    {error &&
+                        <div>
                             {Object.keys(error).map(key => (
                                 <p key={key} className="animated fadeInDown2 form-error">- {error[key][0]}</p>
                             ))}
@@ -86,6 +86,7 @@ export default function AdminRegister() {
                         </button>
                     </form>
                     <hr />
+
                     <p>
                         Do you have an account with us? {" "}
                         <Link to="/auth/admin/login">

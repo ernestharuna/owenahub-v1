@@ -7,6 +7,7 @@
 
 :root {
     font-size: 16px;
+    scroll-behavior: smooth;
 }
 
 $font: 'Alata', sans-serif;
@@ -18,10 +19,10 @@ $roboto: 'Roboto Mono', monospace;
 // colors
 $primary-color: #F6A700;
 $hover-color: #ffc74e;
+$hover-color2: #E66D00;
 $lighter: #ffefce;
 
 $sec-color: #BD34FE;
-$hover-color2: #E66D00;
 $blue: #bedaec;
 $dark: #211502;
 
@@ -34,10 +35,6 @@ $text-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
 $box-shadow: 0 25px 50px -5px #BD34FE40;
 $box-shadow2: 0 0px 1px hsla(0, 0%, 0%, 0.2), 0 1px 2px hsla(0, 0%, 0%, 0.2);
 $box-shadow3: 0 0px 1px hsla(0, 0%, 0%, 0.6), 0 1px 2px hsla(0, 0%, 0%, 0.2);
-
-html {
-    scroll-behavior: smooth;
-}
 
 body {
     background: #fff;
@@ -147,11 +144,6 @@ hr {
     background: linear-gradient(50deg, $primary-color, $sec-color);
 }
 
-p {
-    // margin: 0.5rem 0;
-    font-weight: 500;
-}
-
 footer {
     background: #000000;
     padding: 2rem 0 1rem;
@@ -169,6 +161,140 @@ footer {
 
     p {
         color: #fff;
+    }
+}
+
+// Form styles
+.form-error {
+    font-size: 11px;
+    padding: 0.3em 1em;
+    width: fit-content;
+    font-weight: 600;
+    color: #fff;
+    background-color: red;
+    border-radius: 4px;
+}
+
+.form-container {
+    display: flex;
+    align-items: stretch;
+    justify-content: space-between;
+}
+
+.howto {
+    width: 50%;
+    min-height: max-content;
+    background: linear-gradient(45deg, $primary-color, $sec-color);
+
+    .howto-box {
+        background: #fff;
+        width: 60%;
+        margin: 5rem auto;
+        padding: 20px;
+        box-shadow: $box-shadow;
+
+        .howto-list {
+            margin: 2rem 0;
+            font-size: 1rem;
+        }
+
+        .li {
+            display: inline-block;
+            margin: 0 0.5rem;
+            padding: 5px 10px;
+            font-weight: 700;
+            border-radius: 40%;
+            background: linear-gradient(45deg, $primary-color, $hover-color);
+        }
+    }
+}
+
+form {
+    // border: 1px solid green;
+
+    .form-control {
+        // border: 1px solid red;
+        display: block;
+
+        &:hover {
+            border-color: $primary-color;
+        }
+
+        input,
+        select,
+        textarea,
+        #submit {
+            width: 100%;
+            box-sizing: border-box;
+        }
+
+        input {
+            margin: 0.4rem 0;
+            padding: 0.2rem 0.4rem;
+            transition: all .1s;
+            border-radius: 10px;
+            border: 2px solid #e6e6e6;
+            font-size: 1.1rem;
+            outline: 0;
+            height: 50px;
+
+            display: inline-block;
+
+        }
+
+        #publish {
+            display: inline-block;
+            position: relative;
+            top: 0.3rem;
+            width: auto;
+            margin: 0 0.5rem;
+            padding: 0;
+            height: 20px;
+            width: 20px;
+        }
+
+        select {
+            margin: 0.4rem 0;
+            padding: 0.2rem 0.4rem;
+            transition: all .1s;
+            border-radius: 10px;
+            border: 2px solid #e6e6e6;
+            font-size: 1.1rem;
+            outline: 0;
+            height: 40px;
+            display: inline-block;
+        }
+
+        textarea {
+            margin: 0.4rem 0;
+            padding: 0.2rem 0.4rem;
+            transition: all .1s;
+            border-radius: 10px;
+            border: 2px solid #e6e6e6;
+            font-size: 1.1rem;
+            outline: 0;
+            height: 250px;
+            display: inline-block;
+        }
+    }
+
+    #submit {
+        border: none;
+        width: 100%;
+        cursor: pointer;
+        font-size: .9rem;
+        text-transform: uppercase;
+        font-weight: 600;
+        letter-spacing: 1px;
+        padding: 1rem 2rem;
+        border-radius: 10px;
+        background: $primary-color;
+        transition: .2s;
+
+        &:hover {
+            background: $hover-color2;
+            color: #fff;
+        }
     }
 }
 
@@ -204,183 +330,6 @@ footer {
     font-size: 0.8rem;
 }
 
-// COMPONENT STYLES-----------------
-#primary-btn {
-    padding: 0.8rem 2rem;
-    background: $primary-color;
-    border: none;
-    font-size: 1rem;
-    text-transform: uppercase;
-    font-weight: 600;
-    border-radius: 3rem;
-    transition: all .3s;
-
-    &:hover {
-        background: $hover-color;
-    }
-}
-
-.article-card {
-    border-radius: 5px;
-    margin: 1rem 0;
-    box-shadow: $box-shadow2;
-
-    h4 {
-        font-size: 17px;
-    }
-
-    .article-desc {
-        font-family: $roboto;
-        text-transform: uppercase;
-
-        .category {
-            font-size: 12px;
-            color: #FB2723;
-            letter-spacing: 0;
-            font-weight: 600;
-        }
-
-        .time {
-            letter-spacing: 0px;
-            font-weight: 500;
-            font-size: 12px;
-        }
-    }
-
-    .description {
-        color: #5f5f5f;
-        font-size: 14px;
-    }
-
-
-    &:hover {
-        box-shadow: $box-shadow3;
-    }
-}
-
-a {
-    color: inherit;
-    transition: all .2s ease;
-
-    &:hover {
-        color: #F6A700;
-    }
-}
-
-.course-card {
-    box-shadow: $box-shadow;
-    width: 30%;
-    margin: 1rem;
-    transition: all .3s;
-    border-radius: 0.5rem;
-
-    .course-img {
-        height: 150px;
-        width: 100%;
-        background: linear-gradient(45deg, $primary-color, $sec-color);
-        border-radius: 0.5rem 0.5rem 0 0;
-
-        img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-        }
-    }
-
-    .course-detail {
-        padding: 5px 10px;
-
-        p {
-            margin: 0 0;
-        }
-    }
-
-    &:hover {
-        box-shadow: 0 25px 50px -12px $primary-color;
-    }
-}
-
-.mentor-card {
-    border-radius: 0.5rem;
-    background: #F4F6F8;
-    box-shadow: $box-shadow2;
-    transition: all .3s ease;
-
-    .mentor-box {
-        display: flex;
-        gap: 0.5rem;
-
-        .detail {
-            small {
-                font-family: monospace;
-            }
-        }
-    }
-
-    .picture {
-        width: 50px;
-        height: 50px;
-        border-radius: 100%;
-        background: linear-gradient(45deg, $primary-color, $hover-color);
-    }
-
-    .badge {
-        color: $blue;
-    }
-
-    &:hover {
-        box-shadow: $box-shadow3;
-    }
-}
-
-.large-mentor-card {
-    width: max-content;
-    margin: 0.5rem 1rem;
-    padding: 0.3rem;
-    display: inline-block;
-    background: #F4F6F8;
-    box-shadow: $box-shadow2;
-
-    .large-mentor-card-box {
-        width: 250px;
-        height: 200px;
-        border-radius: 3px;
-        background: linear-gradient(45deg, $primary-color, $hover-color);
-    }
-
-    &:hover {
-        box-shadow: $box-shadow3;
-    }
-}
-
-.session-card {
-    padding: 0.3rem 0.6rem;
-    width: 300px;
-    border-radius: 3px;
-    background: #DEEAF2;
-    transition: all .3s;
-
-    &:hover {
-        box-shadow: $box-shadow2;
-    }
-}
-
-.share-icons {
-    div {
-        color: #fff;
-        font-size: 1.2rem;
-        margin-right: 0.4rem;
-        display: inline-block;
-        padding: 0.2rem 0.4rem;
-        box-shadow: $box-shadow3;
-        transition: all .3s;
-
-        &:hover {
-            transform: translateY(-3px);
-        }
-    }
-}
-
 @media screen and (max-width: 860px) {
     header {
         padding: 0 0.4rem;
@@ -411,6 +360,59 @@ a {
         }
     }
 
+    .form-error {
+        font-size: 10px;
+        width: auto;
+        text-align: center;
+        background-color: red;
+        border-radius: 4px;
+        text-align: start;
+    }
+
+    .form-container {
+        display: block;
+
+        .form {
+            margin: 3rem 0;
+        }
+    }
+
+    form {
+        text-align: center;
+
+        .form-control {
+            display: inline-block;
+            width: 94%;
+
+            select {
+                margin: 0.4rem 0;
+                padding: 0.2rem 0.4rem;
+                transition: all .1s;
+                border-radius: 10px;
+                border: 2px solid #e6e6e6;
+                font-size: 1.1rem;
+                outline: 0;
+                height: 40px;
+                display: inline-block;
+                width: 100%;
+            }
+        }
+
+        #submit {
+            width: 96%;
+        }
+    }
+
+    .howto {
+        width: auto;
+        height: fit-content;
+        padding: 10px;
+
+        .howto-box {
+            width: 80%;
+            margin: 5rem auto;
+        }
+    }
 
     #notification {
         width: max-content;
@@ -437,32 +439,6 @@ a {
         font-weight: 700;
         color: #000;
         margin: 0;
-    }
-
-    .course-card {
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        width: auto;
-        margin: 0 0 1.5rem;
-
-        .course-img {
-            border-radius: 2px 0 0 2px;
-            min-width: 10%;
-            min-height: 100%;
-        }
-    }
-
-    .session-card {
-        padding: 0 0.6rem;
-        width: 100%;
-        border-radius: 3px;
-        background: #DEEAF2;
-        transition: all .3s;
-
-        &:hover {
-            box-shadow: $box-shadow2;
-        }
     }
 
     footer {

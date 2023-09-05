@@ -67,7 +67,7 @@ export default function CreateArticle() {
                     <div className="form-control">
                         <label htmlFor="content">Content</label><br />
                         <ReactQuill theme="snow" value={content} onChange={setContent} modules={{ toolbar: toolbarOptions }}
-                            style={{ width: "97%", background: "white", borderRadius: "0.5rem" }}
+                            style={{ width: "100%", background: "white", borderRadius: "0.5rem" }}
                         />
                     </div>
 
