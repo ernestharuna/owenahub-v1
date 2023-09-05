@@ -225,7 +225,7 @@ const Home = () => {
                             <div className="instagram">
                                 <i className="bi bi-instagram"></i>
                                 <strong>
-                                    15
+                                    30
                                 </strong>
                                 <span>followers</span>
                             </div>
@@ -285,12 +285,6 @@ const Home = () => {
                     <Link to="/getstarted" id='neon-button'>
                         Get Started!
                     </Link>
-                </div>
-            </section>
-
-            <section className="faq">
-                <div className="container">
-
                 </div>
             </section>
         </div>

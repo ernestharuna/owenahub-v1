@@ -100,7 +100,7 @@ export default function ShowArticle() {
                         </div>
 
                         <button className="btn mt-1" type="submit" disabled={isSubmitting} style={isSubmitting ? { cursor: 'wait' } : { cursor: 'pointer' }}>
-                            {isSubmitting ? (<span className='loader'></span>) : "Create Post"}
+                            {isSubmitting ? (<span className='loader'></span>) : "Update Post"}
                         </button>
                     </form>
                 </div>

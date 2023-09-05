@@ -216,30 +216,37 @@ form {
         // border: 1px solid red;
         display: block;
 
-        &:hover {
-            border-color: $primary-color;
+        label {
+            font-style: oblique;
+            font-size: small;
         }
 
         input,
         select,
-        textarea,
-        #submit {
+        textarea {
             width: 100%;
             box-sizing: border-box;
+            margin: 0.4rem 0;
+            padding: 0.2rem 0.4rem;
+            transition: all .2s;
+
+            &:hover {
+                border-color: $primary-color;
+            }
+
+            &:focus {
+                border-color: $hover-color2;
+            }
         }
 
         input {
-            margin: 0.4rem 0;
-            padding: 0.2rem 0.4rem;
             transition: all .1s;
             border-radius: 10px;
             border: 2px solid #e6e6e6;
             font-size: 1.1rem;
             outline: 0;
             height: 50px;
-
             display: inline-block;
-
         }
 
         #publish {
@@ -254,20 +261,17 @@ form {
         }
 
         select {
-            margin: 0.4rem 0;
-            padding: 0.2rem 0.4rem;
             transition: all .1s;
             border-radius: 10px;
+            background: #fff;
             border: 2px solid #e6e6e6;
             font-size: 1.1rem;
             outline: 0;
-            height: 40px;
+            height: 50px;
             display: inline-block;
         }
 
         textarea {
-            margin: 0.4rem 0;
-            padding: 0.2rem 0.4rem;
             transition: all .1s;
             border-radius: 10px;
             border: 2px solid #e6e6e6;
@@ -279,6 +283,9 @@ form {
     }
 
     #submit {
+        width: 100%;
+        box-sizing: border-box;
+        margin: 0.4rem 0;
         border: none;
         width: 100%;
         cursor: pointer;
@@ -296,6 +303,15 @@ form {
             color: #fff;
         }
     }
+}
+
+#next-btn {
+    width: auto;
+    color: #fff;
+    border: none;
+    padding: 0.5rem 2rem;
+    border-radius: 10px;
+    background: #000;
 }
 
 #notification {
@@ -378,15 +394,8 @@ form {
     }
 
     form {
-        text-align: center;
-
         .form-control {
-            display: inline-block;
-            width: 94%;
-
             select {
-                margin: 0.4rem 0;
-                padding: 0.2rem 0.4rem;
                 transition: all .1s;
                 border-radius: 10px;
                 border: 2px solid #e6e6e6;
@@ -396,10 +405,6 @@ form {
                 display: inline-block;
                 width: 100%;
             }
-        }
-
-        #submit {
-            width: 96%;
         }
     }
 

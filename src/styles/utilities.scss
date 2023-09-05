@@ -331,6 +331,11 @@
     animation-name: fadeInDown;
 }
 
+.fadeInBg {
+    -webkit-animation-name: fadeInBg;
+    animation-name: fadeInBg;
+}
+
 .loader {
     width: 20px;
     height: 20px;
@@ -379,6 +384,16 @@
     100% {
         opacity: 1;
         transform: translateY(0);
+    }
+}
+
+@keyframes fadeInBg {
+    0% {
+        backdrop-filter: blur(0);
+    }
+
+    100% {
+        backdrop-filter: blur(7px);
     }
 }
 

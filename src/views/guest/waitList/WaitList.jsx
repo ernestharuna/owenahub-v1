@@ -23,6 +23,7 @@ export default function WaitList() {
                 .then(({ data }) => {
                     dispatch(addMessage(data.message));
                     setTimeout(() => dispatch(removeMessage()), 8000);
+                    localStorage.setItem('owenahub_newsletter', 'subscribed')
                     navigate("/articles");
                 });
         } catch (err) {

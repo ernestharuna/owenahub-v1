@@ -57,9 +57,11 @@ export default function AdminLayout() {
                     </div>
 
                     <div className="user-icon">
-                        <i className="bi bi-person-circle" style={userIcon}></i>
-                        {
-                            loading ? (" ") : (<span className="animated2 fadeInDown">{admin.first_name}</span>)
+                        <i className="bi bi-person-circle"></i>
+                        {loading ? (" ") :
+                            (<span className="animated2 fadeInDown">
+                                {admin.first_name}
+                            </span>)
                         }
                     </div>
                 </nav>
@@ -102,12 +104,6 @@ export default function AdminLayout() {
 
 const navStyle = {
     backgroundColor: "#DEEAF2",
-}
-
-const userIcon = {
-    color: "#F8AC0D",
-    marginRight: "0.3rem",
-    fontSize: "1.3rem"
 }
 
 const logo_bg = {

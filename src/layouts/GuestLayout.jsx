@@ -1,10 +1,56 @@
-import { Outlet, Link, useNavigation } from "react-router-dom";
+import { Outlet, Link, useNavigation, useNavigate } from "react-router-dom";
 import logo from '../assets/owena_logo.png'
-import { useSelector } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
+import { addMessage, removeMessage } from "../features/notification/notificationSlice";
+import { useEffect, useState } from "react";
+import Backdrop from "../components/Backdrop";
+import { useForm } from "react-hook-form";
+import axiosClient from "../axios-client";
 
 const GuestLayout = () => {
     const navigation = useNavigation();
     const { message } = useSelector(state => state.notification);
+    const [modal, setModal] = useState(false);
+    const dispatch = useDispatch();
+    const navigate = useNavigate();
+    const { register, handleSubmit, formState: { errors, isSubmitting } } = useForm();
+
+    useEffect(() => {
+        if (!localStorage.getItem('owenahub_newsletter')) {
+            document.body.style.overflow = 'hidden';
+            setTimeout(() => {
+                setModal(true);
+            }, 4000)
+        }
+    }, [])
+
+    const onSubmit = async (data) => {
+        // console.log(data);
+        await axiosClient.post('/guest/waitlist/create', data)
+            .then(({ data }) => {
+                dispatch(addMessage(data.message));
+                setTimeout(() => dispatch(removeMessage()), 8000);
+
+                setModal(false);
+
+                localStorage.setItem('owenahub_newsletter', 'subscribed');
+                document.body.style.overflow = 'auto';
+                navigate("/articles");
+            })
+            .catch((err) => {
+                const status = err.response.status;
+                if (status === 422) {
+                    dispatch(addMessage("Email exists | Continue exploring!"));
+                    setTimeout(() => dispatch(removeMessage()), 8000);
+
+                    setModal(false);
+
+                    localStorage.setItem('owenahub_newsletter', 'subscribed');
+                    document.body.style.overflow = 'auto';
+                    navigate("/articles");
+                }
+            })
+    }
 
     return (
         <>
@@ -84,6 +130,39 @@ const GuestLayout = () => {
                 (<div id="notification" className="animated2 sideBounce">
                     {message}
                 </div>)
+            }
+
+            {modal &&
+                <Backdrop>
+                    <div className="header p-3">
+                        <p className="text-center fw-3 text-white m-0">Subscribe to our Newsletter</p>
+                    </div>
+                    <div className="p-3">
+                        <p className="text-secondary">
+                            <b>Get notified for:</b> <br />
+                            🚀 Upcoming group sessions with mentors <br />
+                            🚀 Newly Published Articles
+                        </p>
+
+                        <form className="mt-2" onSubmit={handleSubmit(onSubmit)}>
+                            <div className="form-control">
+                                <input {...register("name", { required: true })}
+                                    className={errors.name ? 'error form-control' : 'form-control'}
+                                    type="text" placeholder="Scharzenneger Bjorn" />
+                            </div>
+
+                            <div className="form-control">
+                                <input {...register("email", { required: true })}
+                                    className={errors.name ? 'error form-control' : 'form-control'}
+                                    type="email" placeholder="bjorn@xyz.com" />
+                            </div>
+
+                            <button id="submit" disabled={isSubmitting} style={isSubmitting ? { cursor: 'wait' } : { cursor: 'pointer' }}>
+                                {isSubmitting ? (<span className='loader'></span>) : "subscribe"}
+                            </button>
+                        </form>
+                    </div>
+                </Backdrop>
             }
         </>
     )

@@ -177,6 +177,31 @@ a {
     }
 }
 
+#backdrop {
+    background: #000000cf;
+    backdrop-filter: blur(7px);
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100dvh;
+    width: 100vw;
+
+    .backdrop-content {
+        background: #fff;
+        border-radius: .5rem;
+        height: max-content;
+        width: 400px;
+        margin: 10rem auto 0;
+
+        .header {
+            width: auto;
+            border-radius: .5rem .5rem 0 0;
+            font-size: large;
+            background: linear-gradient(45deg, $primary-color, $hover-color)
+        }
+    }
+}
+
 @media screen and (max-width: 860px) {
     .course-card {
         display: flex;
@@ -201,6 +226,18 @@ a {
 
         &:hover {
             box-shadow: $box-shadow2;
+        }
+    }
+
+    #backdrop {
+        .backdrop-content {
+            background: #fff;
+            border-radius: .5rem;
+            height: max-content;
+            width: 350px;
+            margin: 10rem auto 0;
+
+            .header {}
         }
     }
 }
