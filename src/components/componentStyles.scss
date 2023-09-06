@@ -73,7 +73,11 @@ a {
     .course-img {
         height: 150px;
         width: 100%;
-        background: linear-gradient(45deg, $primary-color, $sec-color);
+        // background: linear-gradient(45deg, $primary-color, $sec-color);
+        // background-image: url('/src/assets/home/ux-design.jpg'), linear-gradient(45deg, #000000, #000000cf);
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-position: center;
         border-radius: 0.5rem 0.5rem 0 0;
 
         img {
@@ -92,7 +96,7 @@ a {
     }
 
     &:hover {
-        box-shadow: 0 25px 50px -12px $primary-color;
+        box-shadow: 0 10px 20px -1px #f6a80055;
     }
 }
 

@@ -17,10 +17,10 @@ const GuestLayout = () => {
 
     useEffect(() => {
         if (!localStorage.getItem('owenahub_newsletter')) {
-            document.body.style.overflow = 'hidden';
             setTimeout(() => {
+                document.body.style.overflow = 'hidden';
                 setModal(true);
-            }, 4000)
+            }, 10000)
         }
     }, [])
 
@@ -70,7 +70,6 @@ const GuestLayout = () => {
                     </div>
 
                     <div className="auth-btns">
-                        {/* <PrimaryBtn text="Start for free" link="/auth/register" /> */}
                         <Link to={"/auth/login"}>
                             <span className="sign-in fw-2">
                                 Sign in
@@ -138,11 +137,13 @@ const GuestLayout = () => {
                         <p className="text-center fw-3 text-white m-0">Subscribe to our Newsletter</p>
                     </div>
                     <div className="p-3">
-                        <p className="text-secondary">
+                        <p className="text-secondary m-0">
                             <b>Get notified for:</b> <br />
-                            🚀 Upcoming group sessions with mentors <br />
-                            🚀 Newly Published Articles
                         </p>
+                        <ul className="mt-1 text-secondary">
+                            <li>Upcoming group sessions with mentors</li>
+                            <li> Newly Published Articles</li>
+                        </ul>
 
                         <form className="mt-2" onSubmit={handleSubmit(onSubmit)}>
                             <div className="form-control">

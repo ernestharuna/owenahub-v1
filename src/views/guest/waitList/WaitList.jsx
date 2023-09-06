@@ -30,6 +30,7 @@ export default function WaitList() {
             const res = err.response;
             if (res && res.status === 422) {
                 setError(res.data.errors);
+                console.log(res.data.errors);
             }
         }
     }
@@ -44,20 +45,23 @@ export default function WaitList() {
                         to OwenaHub.
                     </p>
 
-                    {error && <div>
-                        {Object.keys(error).map(key => (
-                            <p key={key} className="animated fadeInDown2 form-error">{error[key][0]}</p>
-                        ))}
-                    </div>}
+                    {error &&
+                        <div>
+                            {Object.keys(error).map(key =>
+                                (<p key={key} className="animated fadeInDown2 form-error">{error[key][0]}</p>)
+                            )}
+                        </div>
+                    }
 
                     <form onSubmit={handleSubmit(onSubmit)}>
                         <div className="form-control">
-                            <select id="category" className={errors.interest ? 'error form-control' : 'form-control'} {...register("interest", { required: true })}>
-                                <option value={null} disabled={true}>Select your interest</option>
-                                <option value="Web Development">Web Development</option>
-                                <option value="UX Design">UX Design</option>
+                            <select id="category" className={errors.interest ? 'error form-control' : 'form-control'}
+                                {...register("interest", { required: true })} defaultValue={""}
+                            >
+                                <option value="" disabled>Select your interest</option>
+                                <option value="Newsletters">Newsletters</option>
+                                <option value="Mentorship Sessions">Mentorship Sessions</option>
                                 <option value="Slices">Slices</option>
-                                <option value="Product Management">Product Management</option>
                             </select>
                         </div>
 

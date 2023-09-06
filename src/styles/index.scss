@@ -30,11 +30,12 @@ $dark: #211502;
 $background: #F6F8FC;
 
 // shadow
-$text-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+$text-shadow: 0 10px 20px #0000004d;
 
-$box-shadow: 0 25px 50px -5px #BD34FE40;
-$box-shadow2: 0 0px 1px hsla(0, 0%, 0%, 0.2), 0 1px 2px hsla(0, 0%, 0%, 0.2);
-$box-shadow3: 0 0px 1px hsla(0, 0%, 0%, 0.6), 0 1px 2px hsla(0, 0%, 0%, 0.2);
+$box-shadow: 0 0px 1px #F6A700, 0 1px 2px #F6A700;
+// $box-shadow: 0 25px 50px -5px #BD34FE40;
+$box-shadow2: 0 0px 1px #00000033, 0 1px 2px #00000033;
+$box-shadow3: 0 0px 1px #00000099, 0 1px 2px #00000033;
 
 body {
     background: #fff;
@@ -54,55 +55,6 @@ body::-webkit-scrollbar-thumb {
     background: $primary-color;
 }
 
-header {
-    position: sticky;
-    top: 0;
-    background: #000000cf;
-    backdrop-filter: blur(7px);
-    padding: 0 1rem;
-    color: white;
-    z-index: 2;
-
-    #nav-list {
-        display: flex;
-        align-items: center;
-
-        h1 {
-            margin: 0 1rem;
-            font-size: 1.3rem;
-            position: relative;
-            left: -15px;
-            font-family: $font;
-        }
-    }
-
-    nav {
-        display: flex;
-        align-items: center;
-        justify-content: space-between;
-
-        .auth-btns {
-
-            .sign-in {
-                margin: 0 1rem;
-                color: #fff;
-            }
-
-            .register {
-                color: #fff;
-                padding: 0.4rem 0.8rem;
-                background: $primary-color;
-                border-radius: 0.5rem;
-                font-weight: 600;
-                transition: all .2s ease;
-
-                &:hover {
-                    background: $hover-color2;
-                }
-            }
-        }
-    }
-}
 
 h1 {
     font-family: $font;
@@ -143,6 +95,17 @@ hr {
     height: 1px;
     background: linear-gradient(50deg, $primary-color, $sec-color);
 }
+
+ul {
+    list-style-type: disc;
+
+    li {
+        &::marker {
+            color: #be34fe7a !important;
+        }
+    }
+}
+
 
 footer {
     background: #000000;
@@ -347,35 +310,6 @@ form {
 }
 
 @media screen and (max-width: 860px) {
-    header {
-        padding: 0 0.4rem;
-
-        #nav-list {
-            h1 {
-                font-size: 18px;
-            }
-        }
-
-        nav {
-            .auth-btns {
-                font-size: 0.8rem;
-
-                .sign-in {
-                    margin: 0 0.5rem;
-                    color: #fff;
-                }
-
-                .register {
-                    color: #fff;
-                    padding: 0.3rem 0.6rem;
-                    background: $primary-color;
-                    border-radius: 5px;
-                    font-weight: 600;
-                }
-            }
-        }
-    }
-
     .form-error {
         font-size: 10px;
         width: auto;

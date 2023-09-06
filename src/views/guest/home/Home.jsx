@@ -6,7 +6,7 @@ const Home = () => {
     return (
         <div>
             <section className="hero-section animated fadeInDown">
-                <div id="trailer">
+                <div id="trailer" className='image-container'>
 
                 </div>
                 <div id="atf">
