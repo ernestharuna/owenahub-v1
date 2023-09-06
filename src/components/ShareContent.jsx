@@ -2,7 +2,6 @@ import { useLocation } from "react-router-dom"
 
 export default function ShareContent() {
     const location = useLocation();
-    console.log(location.pathname);
     return (
         <div className="share-icons">
             <p className="fw-2">
