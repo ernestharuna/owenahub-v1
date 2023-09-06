@@ -17,9 +17,11 @@ export default function ErrorPage() {
                 onClick={() => window.location.reload()}>
                 reload
             </button>
+
             &nbsp;
+
             <Link to={"/articles"}>
-                <button className="btn p-2">
+                <button className="btn p-2" disabled={navigation.state === "loading"}>
                     to articles
                 </button>
             </Link>
