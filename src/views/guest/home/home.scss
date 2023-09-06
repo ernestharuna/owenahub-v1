@@ -136,7 +136,7 @@
             margin: 0 0 2rem;
             border-radius: 0.5rem;
             box-shadow: $box-shadow;
-            background-image: url('/src/assets/home/private-session.jpg');
+            background-image: url('/src/assets/home/private-session.jpg'), linear-gradient(45deg, #000000, #000000cf);
             background-size: cover;
             background-repeat: no-repeat;
             background-position: center;
@@ -173,8 +173,7 @@
             margin: 0 0 2rem;
             border-radius: 0.5rem;
             box-shadow: $box-shadow;
-            // background: linear-gradient(45deg, $primary-color, $hover-color);
-            background-image: url('/src/assets/home/group-session.jpg');
+            background-image: url('/src/assets/home/group-session.jpg'), linear-gradient(45deg, #000000, #000000cf);
             background-size: cover;
             background-repeat: no-repeat;
             background-position: center;
@@ -194,7 +193,7 @@
 
     .video-box {
         // background: linear-gradient(45deg, $primary-color, $hover-color);
-        background-image: url('/src/assets/home/private-session2.jpg');
+        background-image: url('/src/assets/home/private-session2.jpg'), linear-gradient(45deg, #000000, #000000cf);
         background-size: cover;
         background-repeat: no-repeat;
         background-position: center;
@@ -315,7 +314,7 @@
         font-weight: 700;
         text-decoration: none;
         font-size: 2.5rem;
-        font-family: $font2;
+        font-family: $cursive;
         border: 0.1253em solid $primary-color;
         padding: .25em 1em;
         border-radius: .25em;
@@ -376,11 +375,6 @@
         #trailer {
             width: auto;
             height: 35vh;
-            background-image: url('/src/assets/owena_logo.png'), linear-gradient(45deg, #000000, #000000cf);
-            background-size: cover;
-            background-repeat: no-repeat;
-            background-position: center;
-            box-shadow: $box-shadow;
         }
 
         #atf {
