@@ -10,7 +10,6 @@ export async function loader({ params }) {
     try {
         const res = await axiosClient.get(`/guest/articles/${params.articleId}`);
         const article = res.data;
-        console.log(article);
         return article;
     } catch (err) {
         console.log(err);

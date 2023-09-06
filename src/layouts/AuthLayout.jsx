@@ -64,7 +64,7 @@ export default function AuthLayout() {
                         <p>
                             Owenahub, &copy; 2023 - All rights reserved <br />
                             <i>
-                                version 1.0.1
+                                version 1.1
                             </i>
                         </p>
                     </div>

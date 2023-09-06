@@ -118,7 +118,7 @@ const GuestLayout = () => {
                         <p>
                             Owenahub, &copy; 2023 - All rights reserved <br />
                             <i>
-                                version 1.0.1
+                                version 1.2
                             </i>
                         </p>
                     </div>
@@ -149,7 +149,7 @@ const GuestLayout = () => {
                             <div className="form-control">
                                 <input {...register("name", { required: true })}
                                     className={errors.name ? 'error form-control' : 'form-control'}
-                                    type="text" placeholder="Scharzenneger Bjorn" />
+                                    type="text" placeholder="Scharzennegger Bjorn" />
                             </div>
 
                             <div className="form-control">
