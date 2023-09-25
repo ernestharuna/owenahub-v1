@@ -7,7 +7,7 @@ const Home = () => {
         <div>
             <section className="hero-section animated fadeInDown">
                 <div id="trailer" className='image-container'>
-
+                    {/* image here */}
                 </div>
                 <div id="atf">
                     <h2>
@@ -225,7 +225,7 @@ const Home = () => {
                             <div className="instagram">
                                 <i className="bi bi-instagram"></i>
                                 <strong>
-                                    30
+                                    50
                                 </strong>
                                 <span>followers</span>
                             </div>

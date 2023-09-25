@@ -18,7 +18,7 @@
         background-size: cover;
         background-repeat: no-repeat;
         background-position: center;
-        box-shadow: $box-shadow;
+        box-shadow: 0 5px 10px 0 #f6a800a4;
     }
 
     #atf {
@@ -135,7 +135,7 @@
         .mission-img {
             margin: 0 0 2rem;
             border-radius: 0.5rem;
-            box-shadow: $box-shadow;
+            box-shadow: 0 5px 10px 0 #f6a800a4;
             background-image: url('/src/assets/home/private-session.jpg'), linear-gradient(45deg, #000000, #000000cf);
             background-size: cover;
             background-repeat: no-repeat;
@@ -172,7 +172,7 @@
         .group-session-img {
             margin: 0 0 2rem;
             border-radius: 0.5rem;
-            box-shadow: $box-shadow;
+            box-shadow: 0 5px 10px 0 #f6a800a4;
             background-image: url('/src/assets/home/group-session.jpg'), linear-gradient(45deg, #000000, #000000cf);
             background-size: cover;
             background-repeat: no-repeat;
@@ -192,7 +192,6 @@
     background: $background;
 
     .video-box {
-        // background: linear-gradient(45deg, $primary-color, $hover-color);
         background-image: url('/src/assets/home/private-session2.jpg'), linear-gradient(45deg, #000000, #000000cf);
         background-size: cover;
         background-repeat: no-repeat;
@@ -200,7 +199,7 @@
         width: 100%;
         height: 80vh;
         border-radius: 0.5rem;
-        box-shadow: $box-shadow;
+        box-shadow: 0 5px 10px 0 #f6a800a4;
         display: flex;
         align-items: center;
         justify-content: center;

@@ -25,7 +25,6 @@ const GuestLayout = () => {
     }, [])
 
     const onSubmit = async (data) => {
-        // console.log(data);
         await axiosClient.post('/guest/waitlist/create', data)
             .then(({ data }) => {
                 dispatch(addMessage(data.message));
